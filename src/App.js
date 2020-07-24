@@ -1,14 +1,19 @@
 import React from 'react';
+
+//COMPONENTS
+import Wayfinder from './comp/wayfinder/wayfinder'
+//STYLES
 import './App.scss';
 
 function App() {
   return (
     <div className="App">
-      <header className="App__header">
+      <header>
+        <Wayfinder />
       </header>
-      <main className="App__main">
+      <main>
       </main>
-      <footer className="App__footer">
+      <footer>
       </footer>
     </div>
   );
