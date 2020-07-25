@@ -4,6 +4,7 @@ $purple : #3d5af1;
 $darkBlue : #0e153a;
 
 .wayfinder{
+    overflow: hidden;
     font-family: "Nunito-Bold";
     background-color: $darkBlue;
     width: 100%;
@@ -14,35 +15,35 @@ $darkBlue : #0e153a;
     display: inline-block;
     position:relative;
     margin: 1rem 0 1rem 0;
-    border-bottom: .5vh solid $white;
 }
 .wayfinder__waydirect{
+    color: $white;
     font-size: 1.5rem;
 }
-#competences , #projects{
+#wayfinder-competences , #wayfinder-projects{
     margin: 2.5rem 0 2.5rem 0;
 }
 .wayfinder__waysign{
+    color: $cyan;
     font-size: 2rem;
 }
 .wayfinder__waydirect, .wayfinder__waysign{
-    color: $white;
     display: block;
 }
 
-@media (min-width: 600px) {
+@media (min-width: 801px) {
     .wayfinder{
-        position: fixed;
         min-height: 6.5vh;
     }
     .wayfinder__waypaths{
         margin: 1vh 0 1vh 0;
+        border-bottom: .5vh solid $white;
     }
     .wayfinder__waydirect{
         font-size: 2.5vh;
         margin: 0;
     }
-    #competences , #projects{
+    #wayfinder-competences , #wayfinder-projects{
         margin: 0 5vh 0 5vh;
     }
     .wayfinder__waysign{
@@ -51,12 +52,9 @@ $darkBlue : #0e153a;
     .wayfinder__waydirect, .wayfinder__waysign{
         display: inline-block;
     }
-    .wayfinder__waydirect:hover , .wayfinder__waysign:hover{
+    .wayfinder__waydirect:hover {
         color: $cyan;
         cursor: pointer;
-    }
-    .--sticky-top{
-        position: fixed;
     }
 }
 .--activated{

@@ -1,0 +1,184 @@
+$white : #e2f3f5;
+$cyan : #22d1ee;
+$purple : #3d5af1;
+$darkBlue : #0e153a;
+
+span{
+    color: $purple;
+}
+.--about{
+    background-image: url('../images/about.svg');
+    background-size: 10rem;
+    min-width: 10rem;
+    min-height: 10rem;
+}
+.--competences{
+    text-align: center;
+    padding: 1rem;
+    border: .1rem solid $cyan;
+    border-radius: 15px;
+    width: 100%;
+    min-height: 35rem;
+    margin-bottom: 2rem;
+}
+.article{
+    text-align: center;
+    margin: 2rem;
+}
+.article__box{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 1rem;
+}
+.artcile__title{
+    font-family: "Nunito-Bold";
+    color: $purple;
+    font-size: 3rem;
+}
+.article__text{
+    font-family: "Nunito-Regular";
+    color: $darkBlue;
+    flex: 2;
+    margin: 0 0 1rem;
+    font-size: 1.25rem;
+    width: 20rem;
+}
+.article__sub-title{
+    font-family: "Nunito-SemiBold";
+    color: $purple;
+    font-size: 2rem;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+}
+.article__sub-text{
+    font-family: "Nunito-Light";
+    margin-bottom: 1rem;
+    font-size: 1.25rem;
+}
+.article__sub-text p{
+    margin: 1.5rem 0 1.5rem 0;
+}
+.article__image{
+    background-position: center;
+    background-repeat: no-repeat;
+}
+.contact__form{
+    font-family: "Nunito-Light";
+}
+.contact__form label{
+    color: $purple;
+}
+.contact__form-email{
+    min-height: 2rem;
+    padding-left: 0;
+    padding-right: 0;
+}
+.contact__form-message{
+    resize: none;
+    min-height: 10rem;
+    padding: 0;
+}
+.contact__form-email, .contact__form-message{
+    font-family: "Nunito-Light";
+    display: block;
+    background-color: transparent;
+    border-radius: 5px;
+    border: .1rem solid $darkBlue;
+    margin: 1rem 0 1rem 0;
+    font-size: 1rem;
+    min-width: 20rem;
+}
+.contact__form-button:hover, .contact__form-email:focus, .contact__form-message:focus{
+    outline: none;
+    border-color: $cyan;
+}
+.contact__form-button{
+    background-color: transparent;
+    border-radius: 5px;
+    border: .1rem solid $darkBlue;
+    font-size: 1rem;
+    min-width: 100%;
+    min-height: 3rem;
+    margin: 0 0 1rem 0;
+}
+@media (min-width: 801px) {
+    .--reverted{
+        text-align: right;
+    }
+    .--about{
+        background-size: 55vh;
+        min-width: 55vh;
+        min-height: 55vh;
+    }
+    .--competences{
+        padding: none;
+        padding-top: 2vh;
+        border: .3vh solid $cyan;
+        border-radius: 15px;
+        width: 45vh;
+        min-height: 80vh;
+    }
+    .--contact{
+        background-image: url('../images/contact.svg');
+        background-size: 75vh;
+        min-width: 75vh;
+        min-height: 60vh;
+        margin-left: 4vh;
+    }
+    .--spaced{
+        justify-content: space-between;
+    }
+    .article{
+        text-align: left;
+        margin: 8vh 4vh 20vh 4vh;
+    }
+    .artcile__title{
+        font-size: 6vh;
+    }
+    .article__box{
+        flex-direction: row;
+        align-content: space-between;
+        margin-top: 5vh;
+        padding-top: 2vh;
+    }
+    .article__text{
+        margin: 5vh 0 0;
+        font-size: 3vh;
+        width: 40vh;
+    }
+    .article__sub-title{
+        font-size: 4vh;
+        padding-top: 2vh;
+        padding-bottom: 2vh;
+    }
+    .article__sub-text{
+        margin-bottom: 2vh;
+        font-size: 2.5vh;
+    }
+    .article__sub-text p{
+        margin: 3vh 0 3vh 0;
+    }
+    .contact__form-email{
+        min-height: 4vh;
+        padding-left: 1vh;
+        padding-right: 1vh;
+    }
+    .contact__form-message{
+        min-height: 20vh;
+        padding: 1vh;
+    }
+    .contact__form-email, .contact__form-message{
+        border: .2vh solid $darkBlue;
+        margin: 2vh 0 2vh 0;
+        font-size: 2vh;
+        min-width: 50vh;
+    }
+    .contact__form-button{
+        border: .2vh solid $darkBlue;
+        font-size: 2vh;
+        min-width: 20vh;
+        min-height: 6vh;
+        margin: 0 0 2vh 0;
+    }
+}
