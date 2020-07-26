@@ -11,4 +11,6 @@
 ![github stats](https://github-readme-stats.vercel.app/api?username=pepeyen&show_icons=true)
 
 
+This portfolio was coded with React.JS
+
 Kudos to https://github.com/srIsaac/srIsaac for designing this awesome `Readme.md`
