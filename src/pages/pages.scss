@@ -21,6 +21,30 @@ span{
     min-height: 35rem;
     margin-bottom: 2rem;
 }
+.--language-c{
+    color: #659BD3;
+}
+.--language-dotnet{
+    color: #68217A;
+}
+.--language-html{
+    color: #E95727;
+}
+.--language-css{
+    color: #284DE4;
+}
+.--language-reactjs{
+    color: #19DBFE;
+}
+.--efrederickcli{
+    background-image: url('https://repository-images.githubusercontent.com/275693390/6b759e80-cf5d-11ea-8d8f-a22f2ac03276');
+}
+.--cstech{
+    background-image: url('https://repository-images.githubusercontent.com/245696462/5bab8980-cf60-11ea-95f0-bc5f566cd9e8');
+}
+.--efrederick{
+    background-image: url('https://repository-images.githubusercontent.com/280514081/218fb700-cf63-11ea-9aaf-b75efd0e17d2');
+}
 .article{
     text-align: center;
     margin: 2rem;
@@ -102,9 +126,41 @@ span{
     min-height: 3rem;
     margin: 0 0 1rem 0;
 }
+.project__box{
+    text-decoration: none;
+    margin: 2rem 0 0 0;
+    padding: 3vh;
+    border-radius: 10px;
+    border: .2vh solid $cyan;
+    max-width: 20rem;
+}
+.project__title{
+    font-family: "Nunito-Bold";
+    text-align: center;
+    font-size: 2rem;
+    color: $purple;
+}
+.project__image{
+    background-repeat: no-repeat;
+    background-size: 20rem;
+    min-width: 20rem;
+    min-height: 12rem;
+    margin: 1rem 0 1rem 0;
+    border: .1rem solid $cyan ;
+}
+.project__description{
+    font-family: "Nunito-Regular";
+    text-align: center;
+    color: $darkBlue;
+    font-size: 1rem;
+}
 @media (min-width: 801px) {
     .--reverted{
         text-align: right;
+    }
+    .--flex{
+        display: flex ;
+        justify-content: space-between;
     }
     .--about{
         background-size: 55vh;
@@ -180,5 +236,24 @@ span{
         min-width: 20vh;
         min-height: 6vh;
         margin: 0 0 2vh 0;
+    }
+    .project__box{
+        margin: 0;
+        border: .2vh solid $cyan;
+        max-width: 40vh;
+        min-height: 32vh;
+    }
+    .project__box:hover{
+        cursor: pointer;
+        border-color: $purple;
+    }
+    .project__image{
+        background-size: 40vh;
+        min-width: 40vh;
+        min-height: 19.5vh;
+        margin: 2vh 0 2vh 0;
+    }
+    .project__description{
+        font-size: 2vh;
     }
 }

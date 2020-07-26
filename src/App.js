@@ -6,22 +6,15 @@ import About from './pages/about/about'
 import Competences from './pages/competences/competences'
 import Projects from './pages/projects/projects'
 import Contact from './pages/contact/contact'
+import Footer from './comp/footer/footer'
 //STYLES
 import './App.scss';
 
 function App() {
-  let App = document.getElementsByClassName("about");
-  let waypathsCoordinates = [
-    App,
-    "1",
-    "2",
-    "3"
-  ]
-  console.log(waypathsCoordinates[0])
   return (
     <div className="App">
       <header>
-        <Wayfinder waypathsLocation = {waypathsCoordinates}/>
+        <Wayfinder/>
       </header>
       <main>
         <About />
@@ -30,6 +23,7 @@ function App() {
         <Contact />
       </main>
       <footer>
+        <Footer />
       </footer>
     </div>
   );
