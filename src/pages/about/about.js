@@ -7,7 +7,7 @@ function About() {
         <div className="artcile__title">About</div>
         <div className = "article__box">
             <div className = "article__text">
-                <p>Hi i'm Erick Frederick i love web developing and programming</p>
+                <p>Hi my name is Erick Frederick i'm from Brazil and i love programming</p>
                 <p>My few close loves are from front-end as <span className = "--language-html">HTML</span>, <span className = "--language-css">CSS</span>, <span className = "--language-reactjs">React.JS</span></p>
                 <p>I also love programming with <span className = "--language-c">C</span> and <span className = "--language-dotnet">C#</span></p>
                 <p>Looking for a developer?</p>

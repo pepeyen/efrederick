@@ -12,6 +12,9 @@ function Competences() {
                     <p>Companies i've worked and what i worked with.</p>
                     <span>Companies i've worked :</span>
                     <p>Faculdade Pitágoras</p>
+                    <p className = "position-description-title">Position Info</p>
+                    <span>Technical Support Intern</span>
+                    <p>Monitor and maintain Pitagora's computer systems and networks.</p>
                 </div>
             </div>
             <div className = "article__image --competences --spaced-middle">

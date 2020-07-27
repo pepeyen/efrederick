@@ -3,8 +3,8 @@ $cyan : #22d1ee;
 $purple : #3d5af1;
 $darkBlue : #0e153a;
 
-.--hidden{
-    display: none !important;
+.--visible{
+    display: block;
 }
 .wayfinder{
     overflow: hidden;
@@ -51,6 +51,9 @@ $darkBlue : #0e153a;
 }
 
 @media (min-width: 801px) {
+    .--active{
+        display: inline-block;
+    }
     .wayfinder{
         min-height: 6.5vh;
     }
@@ -75,10 +78,16 @@ $darkBlue : #0e153a;
         color: $cyan;
         cursor: pointer;
     }
+    .wayfinder__toggle{
+        display: none;
+    }
 }
-.--activated{
+.--hidden{
+    display: none;
+}
+.--visited{
     color: $cyan;
 }
-.--deactivated{
+.--unvisited{
     color: $white;
 }

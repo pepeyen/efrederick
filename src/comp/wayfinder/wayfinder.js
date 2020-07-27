@@ -2,140 +2,195 @@ import React, {Component} from 'react';
 import './wayfinder.scss';
 
 class Wayfinder extends Component { 
-  waydirectStatusList = ['','','','']
-  waydirectMobileStatusList = ['--hidden','--hidden','--hidden','--hidden']
+  waydirectVisitStatus = ['','','','']
+  waydirectVisibilityStatus = '--visible'
   constructor(props) {
     super(props);
     this.state = {
+      deviceWidth: 0,
+      deviceHeight: 0,
+      wayfinderBarStyle: { },
       wayfinderProgress: "0%",
-      isWaydirectsHidden: true
+      isWaydirectsHidden: false
     };
-    if(document.documentElement.clientWidth >= 801){
-      this.waydirectMobileStatusList = ['','','','']
-    }
   }
   componentDidMount() {
+    window.addEventListener("resize", this.updateDimensions);
     window.addEventListener("scroll", this.wayfinderBarProgress);
   }
   componentWillUnmount() {
+    window.removeEventListener("resize", this.updateDimensions);
     window.removeEventListener("scroll", this.wayfinderBarProgress);
   }
-  getElementPercentage = (elementBaseHeight) => {
+
+  //Function to update the state with the current window width and height
+  updateDimensions = () => {
+    if(document.documentElement.clientWidth >= 784){
+      this.setState({ width: window.innerWidth, height: window.innerHeight });
+      this.setState({
+        isWaydirectsHidden: true
+      })
+      this.updateStyle({targetedStyle: "waydirect-visibility"})
+    }
+  };
+
+  //Function that handles the overwall webapp inline styling
+  updateStyle = ({targetedStyle, targetedWaydirect}) => {
+    switch (targetedStyle) {
+      case "wayfinder-progression-bar":
+        if(document.documentElement.clientWidth >= 801){
+          this.setState({
+            wayfinderBarStyle: {
+              width: this.state.wayfinderProgress,
+              transitionProperty : "width",
+              transitionDuration : "2ms",
+              position : "absolute",
+              borderTop : ".5vh solid #22d1ee",
+              display : "block"
+            }
+          })
+        }else {
+          this.setState({
+            wayfinderBarStyle: {
+              display : "none"
+            }
+          })
+        }
+        break;
+      case "waydirect-visibility":
+        if(this.state.isWaydirectsHidden === false){
+          this.waydirectVisibilityStatus = '--hidden'
+          this.setState({ isWaydirectsHidden: true })
+        }else{
+          this.waydirectVisibilityStatus = '--visible'
+          this.setState({ isWaydirectsHidden: false })
+        }
+        break;
+      case "waydirect-live-status":
+        for(let i = 0; i <= targetedWaydirect; i++){
+          this.waydirectVisitStatus[i] = '--visited'
+        }
+    
+        let maxWaydirect = this.waydirectVisitStatus.length--
+    
+        for(let i = maxWaydirect; i > targetedWaydirect; i--){
+          this.waydirectVisitStatus[i] = '--unvisited'
+        }
+        break;
+      default:
+        break;
+    }
+  };
+
+  //Function that calculates the percentage of a given height based on the total height of the page
+  getScrollPercentage = (currentHeight) => {
     let pageTotalHeight = document.documentElement.scrollHeight - document.documentElement.clientHeight;
 
-    return((elementBaseHeight / pageTotalHeight) * 100);
-  }
+    return((currentHeight / pageTotalHeight) * 100);
+  };
+
+  //Function that calcultes the current height of a given element inside the page
   getElementHeight = (elementId) => {
     let element = document.getElementById(elementId)
     let wayfinderCurrentHeight
-    if(document.documentElement.clientWidth >= 801){
-      wayfinderCurrentHeight = (((Math.max(document.documentElement.clientHeight, window.innerHeight || 0) * 16))) / 100
-    } else wayfinderCurrentHeight = 14 * 16
+    if(document.documentElement.clientWidth >= 784){
+      wayfinderCurrentHeight = (((Math.max(document.documentElement.clientHeight, window.innerHeight || 0) * 15.5))) / 100
+    } else wayfinderCurrentHeight = 25.5 * 16
 
     let waydirectCoordinate = ((element.offsetTop - element.scrollTop) - wayfinderCurrentHeight);
 
     return waydirectCoordinate
-  }
-  wayfinderBarProgress = () => {
-    this.setState({
-      wayfinderProgress: `${this.getElementPercentage(window.scrollY)}%`
-    });
-    if(this.getElementPercentage(window.scrollY) >= this.getElementPercentage(this.getElementHeight("about"))){
-      this.updateWaydirectProgress(0);
-      if(this.getElementPercentage(window.scrollY) >= this.getElementPercentage(this.getElementHeight("competences"))){
-        this.updateWaydirectProgress(1);
-        if(this.getElementPercentage(window.scrollY) >= this.getElementPercentage(this.getElementHeight("projects"))){
-          this.updateWaydirectProgress(2);
-          if(this.getElementPercentage(window.scrollY) >= this.getElementPercentage(this.getElementHeight("contact"))){
-            this.updateWaydirectProgress(3);
-          }
-        }
-      }
-    }
-    if(this.getElementPercentage(window.scrollY) <= 0.99){
-      this.waydirectStatusList[0] = '--deactivated'
-    }
   };
-  updateWaydirectProgress = (targetedWaydirect) => {
-    for(let i = 0; i <= targetedWaydirect; i++){
-      this.waydirectStatusList[i] = '--activated'
-    }
 
-    let maxWaydirect = this.waydirectStatusList.length--
-
-    for(let i = maxWaydirect; i > targetedWaydirect; i--){
-      this.waydirectStatusList[i] = '--deactivated'
-    }
-  };
-  getWaydirectCoordinates = (targetedWaydirect) => {
+  //Function that updates the client viewing position given a target element
+  updateScreenPosition = (targetedWaydirect) => {
     window.scrollTo({
       top: this.getElementHeight(targetedWaydirect),
       left: 0,
       behavior: 'smooth'
     });
-  }
-  hideWaydirects = () => {
-    if(this.state.isWaydirectsHidden === false){
-      for(let i = 0; i < 4; i++){
-        this.waydirectMobileStatusList[i] = '--hidden'
+  };
+
+  //Function that updates the progress bar styling
+  wayfinderBarProgress = () => {
+    this.setState({
+      wayfinderProgress: `${this.getScrollPercentage(window.scrollY)}%`
+    });
+    this.updateStyle({targetedStyle: "wayfinder-progression-bar"})
+    if(window.scrollY >= this.getElementHeight("about")){
+      this.updateStyle({
+        targetedStyle: "waydirect-live-status",
+        targetedWaydirect: 0
+      });
+      if(window.scrollY >= this.getElementHeight("competences")){
+        this.updateStyle({
+          targetedStyle: "waydirect-live-status",
+          targetedWaydirect: 1
+        });
+        if(window.scrollY >= this.getElementHeight("projects")){
+          this.updateStyle({
+            targetedStyle: "waydirect-live-status",
+            targetedWaydirect: 2
+          });
+          if(window.scrollY >= this.getElementHeight("contact")){
+            this.updateStyle({
+              targetedStyle: "waydirect-live-status",
+              targetedWaydirect: 3
+            });
+          }
+        }
       }
-      this.setState({ isWaydirectsHidden: true })
-    }else{
-      for(let i = 0; i < 4; i++){
-        this.waydirectMobileStatusList[i] = ''
-      }
-      this.setState({ isWaydirectsHidden: false })
     }
-  }
-  wayfinderGoToAbout = () => {
-    this.getWaydirectCoordinates("about");
-    this.updateWaydirectProgress(0);
   };
-  wayfinderGoToCompetences = () => {
-    this.getWaydirectCoordinates("competences");
-    this.updateWaydirectProgress(1);
-  };
-  wayfinderGoToProjects = () => {
-    this.getWaydirectCoordinates("projects");
-    this.updateWaydirectProgress(2);
-  };
-  wayfinderGoToContact = () => {
-    this.getWaydirectCoordinates("contact");
-    this.updateWaydirectProgress(3);
+
+  //Function that handles UX given a target element
+  wayfinderRouteTo = (targetedWaydirect) => {
+    switch (targetedWaydirect) {
+      case "about":
+          this.updateScreenPosition("about");
+          this.updateStyle({
+            targetedStyle: "waydirect-live-status",
+            targetedWaydirect: 0
+          });
+          break;
+      case "competences":
+        this.updateScreenPosition("competences");
+        this.updateStyle({
+          targetedStyle: "waydirect-live-status",
+          targetedWaydirect: 1
+        });
+        break;
+
+      case "projects":
+        this.updateScreenPosition("projects");
+        this.updateStyle({
+          targetedStyle: "waydirect-live-status",
+          targetedWaydirect: 2
+        });
+        break;
+      case "contact":
+        this.updateScreenPosition("contact");
+        this.updateStyle({
+          targetedStyle: "waydirect-live-status",
+          targetedWaydirect: 3
+        });
+        break;
+                
+      default:
+        break;
+    }
   };
   render() {
-    let wayfinderBarStyle
-    let wayfinderToggleStyle
-    
-    if(document.documentElement.clientWidth >= 801){
-      wayfinderToggleStyle = {
-        display : "none"
-      }
-      wayfinderBarStyle = {
-        width: this.state.wayfinderProgress,
-        transitionProperty : "width",
-        transitionDuration : "2ms",
-        position : "absolute",
-        borderTop : ".5vh solid #22d1ee"
-      }
-    }else{
-      wayfinderToggleStyle = {
-        display : "block"
-      }
-      wayfinderBarStyle = {
-        display: "none"
-      }
-    }
     return (
       <nav className = "wayfinder">
         <ul className = "wayfinder__waypaths">
-          <div id = "wayfinder-about" className = {`wayfinder__waydirect ${this.waydirectStatusList[0]} ${this.waydirectMobileStatusList[0]}`}>
-            <li onClick={this.wayfinderGoToAbout}>
+          <div id = "wayfinder-about" className = {`wayfinder__waydirect ${this.waydirectVisitStatus[0]} ${this.waydirectVisibilityStatus}`}>
+            <li onClick={() => this.wayfinderRouteTo("about")}>
               About
             </li>
           </div>
-          <div id = "wayfinder-competences" className = {`wayfinder__waydirect ${this.waydirectStatusList[1]} ${this.waydirectMobileStatusList[1]}`}>
-            <li onClick={this.wayfinderGoToCompetences}>
+          <div id = "wayfinder-competences" className = {`wayfinder__waydirect ${this.waydirectVisitStatus[1]} ${this.waydirectVisibilityStatus}`}>
+            <li onClick={() => this.wayfinderRouteTo("competences")}>
               Competences
             </li>
           </div>
@@ -144,19 +199,19 @@ class Wayfinder extends Component {
               eFrederick
             </li>
           </div>
-          <div id = "wayfinder-projects" className = {`wayfinder__waydirect ${this.waydirectStatusList[2]} ${this.waydirectMobileStatusList[2]}`}>
-            <li onClick={this.wayfinderGoToProjects}>
+          <div id = "wayfinder-projects" className = {`wayfinder__waydirect ${this.waydirectVisitStatus[2]} ${this.waydirectVisibilityStatus}`}>
+            <li onClick={() => this.wayfinderRouteTo("projects")}>
               Projects
             </li>
           </div>
-          <div id = "wayfinder-contact" className = {`wayfinder__waydirect ${this.waydirectStatusList[3]} ${this.waydirectMobileStatusList[3]}`}>
-            <li onClick={this.wayfinderGoToContact}>
+          <div id = "wayfinder-contact" className = {`wayfinder__waydirect ${this.waydirectVisitStatus[3]} ${this.waydirectVisibilityStatus}`}>
+            <li onClick={() => this.wayfinderRouteTo("contact")}>
               Conctact
             </li>
           </div>
-          <div className = "wayfinder__waypaths-bar" style = {wayfinderBarStyle}/>
+          <div className = "wayfinder__waypaths-bar" style = {this.state.wayfinderBarStyle}/>
         </ul>
-        <div onClick={this.hideWaydirects}  className = "wayfinder__toggle" style = {wayfinderToggleStyle}> 
+        <div onClick={() => this.updateStyle({targetedStyle: "waydirect-visibility"})} className = "wayfinder__toggle"> 
           <div className = "wayfinder__hamburguer"/>
         </div>
       </nav>

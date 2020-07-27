@@ -47,7 +47,7 @@ span{
 }
 .article{
     text-align: center;
-    margin: 2rem;
+    margin: 5rem 2rem 10rem 2rem;
 }
 .article__box{
     display: flex;
@@ -87,8 +87,11 @@ span{
     background-position: center;
     background-repeat: no-repeat;
 }
+.position-description-title{
+    color: $cyan;
+}
 .contact__form{
-    font-family: "Nunito-Light";
+    font-family: "Nunito-Light"; 
 }
 .contact__form label{
     color: $purple;
@@ -135,7 +138,7 @@ span{
     max-width: 20rem;
 }
 .project__title{
-    font-family: "Nunito-Bold";
+    font-family: "Nunito-SemiBold";
     text-align: center;
     font-size: 2rem;
     color: $purple;
@@ -149,7 +152,7 @@ span{
     border: .1rem solid $cyan ;
 }
 .project__description{
-    font-family: "Nunito-Regular";
+    font-family: "Nunito-Light";
     text-align: center;
     color: $darkBlue;
     font-size: 1rem;
@@ -249,7 +252,6 @@ span{
     }
     .project__image{
         background-size: 40vh;
-        min-width: 40vh;
         min-height: 19.5vh;
         margin: 2vh 0 2vh 0;
     }
