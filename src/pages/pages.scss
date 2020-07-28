@@ -117,15 +117,11 @@ span{
     font-size: 1rem;
     min-width: 20rem;
 }
-.contact__form-button:hover{
-    cursor: pointer;
-}
-.contact__form-button:hover, .contact__form-email:focus, .contact__form-message:focus{
+.contact__form-email:focus, .contact__form-message:focus{
     outline: none;
     border-color: $purple;
 }
 .contact__form-button{
-    background-color: $lightWhite;
     border-radius: 5px;
     border: .1rem solid $darkBlue;
     font-size: 1rem;
@@ -134,7 +130,6 @@ span{
     margin: 0 0 1rem 0;
 }
 .project__box{
-    background-color: $lightWhite;
     text-decoration: none;
     margin: 2rem 0 0 0;
     padding: 3vh;
@@ -244,14 +239,25 @@ span{
         min-height: 6vh;
         margin: 0 0 2vh 0;
     }
+    .contact__form-button:hover{
+        outline: none;
+        border-color: $purple;
+        cursor: pointer;
+    }
     .project__box{
         margin: 0;
         border: .2vh solid $darkBlue;
         max-width: 40vh;
         min-height: 32vh;
     }
+    .project__image{
+        border: .2vh solid $darkBlue;
+    }
     .project__box:hover{
         cursor: pointer;
+        border-color: $purple;
+    }
+    .project__box:hover .project__image{
         border-color: $purple;
     }
     .project__image{
