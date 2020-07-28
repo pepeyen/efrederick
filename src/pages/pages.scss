@@ -1,3 +1,4 @@
+$lightWhite : #ebebeb;
 $white : #e2f3f5;
 $cyan : #22d1ee;
 $purple : #3d5af1;
@@ -12,7 +13,7 @@ span{
     min-width: 10rem;
     min-height: 10rem;
 }
-.--competences{
+.--competencies{
     text-align: center;
     padding: 1rem;
     border: .1rem solid $cyan;
@@ -116,12 +117,15 @@ span{
     font-size: 1rem;
     min-width: 20rem;
 }
+.contact__form-button:hover{
+    cursor: pointer;
+}
 .contact__form-button:hover, .contact__form-email:focus, .contact__form-message:focus{
     outline: none;
-    border-color: $cyan;
+    border-color: $purple;
 }
 .contact__form-button{
-    background-color: transparent;
+    background-color: $lightWhite;
     border-radius: 5px;
     border: .1rem solid $darkBlue;
     font-size: 1rem;
@@ -130,11 +134,12 @@ span{
     margin: 0 0 1rem 0;
 }
 .project__box{
+    background-color: $lightWhite;
     text-decoration: none;
     margin: 2rem 0 0 0;
     padding: 3vh;
     border-radius: 10px;
-    border: .2vh solid $cyan;
+    border: .2vh solid $darkBlue;
     max-width: 20rem;
 }
 .project__title{
@@ -166,11 +171,11 @@ span{
         justify-content: space-between;
     }
     .--about{
-        background-size: 55vh;
-        min-width: 55vh;
-        min-height: 55vh;
+        background-size: 55%;
+        min-width: 55%;
+        min-height: 60vh;
     }
-    .--competences{
+    .--competencies{
         padding: none;
         padding-top: 2vh;
         border: .3vh solid $cyan;
@@ -180,10 +185,9 @@ span{
     }
     .--contact{
         background-image: url('../images/contact.svg');
-        background-size: 75vh;
-        min-width: 75vh;
+        background-size: 60%;
+        min-width: 60%;
         min-height: 60vh;
-        margin-left: 4vh;
     }
     .--spaced{
         justify-content: space-between;
@@ -242,7 +246,7 @@ span{
     }
     .project__box{
         margin: 0;
-        border: .2vh solid $cyan;
+        border: .2vh solid $darkBlue;
         max-width: 40vh;
         min-height: 32vh;
     }

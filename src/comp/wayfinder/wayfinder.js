@@ -4,28 +4,68 @@ import React, {Component} from 'react';
 import './wayfinder.scss';
 
 class Wayfinder extends Component { 
-  waydirectVisitStatus = ['','','','']
-  waydirectVisibilityStatus = '--visible'
-  
   constructor(props) {
     super(props);
     this.state = {
+      pageLanguage: this.props.pageLanguage,
+      pageText : this.languageLibrary.en_us,
       deviceWidth: 0,
       deviceHeight: 0,
       wayfinderBarStyle: { },
       wayfinderProgress: "0%",
-      isWaydirectsHidden: false
+      isWaydirectsHidden: true
     };
   }
+  waydirectVisitStatus = ['','','','']
+  waydirectVisibilityStatus = '--hidden'
+  languageLibrary = {
+    en_us: [
+        "About",
+        "Competencies",
+        "Projects",
+        "Contact"
+    ],
+    pt_br: [
+      "Sobre",
+      "Competências",
+      "Projetos",
+      "Contato"
+    ]
+  }; 
   componentDidMount() {
     window.addEventListener("resize", this.updateDimensions);
     window.addEventListener("scroll", this.wayfinderBarProgress);
+    if(document.documentElement.clientWidth >= 784){
+      this.setState({ width: window.innerWidth, height: window.innerHeight });
+      this.setState({
+        isWaydirectsHidden: true
+      })
+      this.updateStyle({targetedStyle: "waydirect-visibility"})
+    }
   }
   componentWillUnmount() {
     window.removeEventListener("resize", this.updateDimensions);
     window.removeEventListener("scroll", this.wayfinderBarProgress);
   }
-
+  componentDidUpdate(prevProps){
+    if(prevProps.pageLanguage !== this.props.pageLanguage){
+      this.updatePageLanguage()
+    }
+  }
+  updatePageLanguage = () => {
+    switch (this.props.pageLanguage) {
+      case "en_us":
+        this.setState({pageText : this.languageLibrary.en_us})
+        break;
+    
+      case "pt_br":
+        this.setState({pageText : this.languageLibrary.pt_br})
+        break;
+        
+      default:
+        break;
+    }
+  };
   //Function to update the state with the current window width and height
   updateDimensions = () => {
     if(document.documentElement.clientWidth >= 784){
@@ -125,7 +165,7 @@ class Wayfinder extends Component {
         targetedStyle: "waydirect-live-status",
         targetedWaydirect: 0
       });
-      if(window.scrollY >= this.getElementHeight("competences")){
+      if(window.scrollY >= this.getElementHeight("competencies")){
         this.updateStyle({
           targetedStyle: "waydirect-live-status",
           targetedWaydirect: 1
@@ -156,8 +196,8 @@ class Wayfinder extends Component {
             targetedWaydirect: 0
           });
           break;
-      case "competences":
-        this.updateScreenPosition("competences");
+      case "competencies":
+        this.updateScreenPosition("competencies");
         this.updateStyle({
           targetedStyle: "waydirect-live-status",
           targetedWaydirect: 1
@@ -188,29 +228,19 @@ class Wayfinder extends Component {
       <nav className = "wayfinder">
         <ul className = "wayfinder__waypaths">
           <div id = "wayfinder-about" className = {`wayfinder__waydirect ${this.waydirectVisitStatus[0]} ${this.waydirectVisibilityStatus}`}>
-            <li onClick={() => this.wayfinderRouteTo("about")}>
-              About
-            </li>
+            <li onClick={() => this.wayfinderRouteTo("about")}>{this.state.pageText[0]}</li>
           </div>
-          <div id = "wayfinder-competences" className = {`wayfinder__waydirect ${this.waydirectVisitStatus[1]} ${this.waydirectVisibilityStatus}`}>
-            <li onClick={() => this.wayfinderRouteTo("competences")}>
-              Competences
-            </li>
+          <div id = "wayfinder-competencies" className = {`wayfinder__waydirect ${this.waydirectVisitStatus[1]} ${this.waydirectVisibilityStatus}`}>
+            <li onClick={() => this.wayfinderRouteTo("competencies")}>{this.state.pageText[1]}</li>
           </div>
           <div className = "wayfinder__waysign">
-            <li>
-              eFrederick
-            </li>
+            <li>eFrederick</li>
           </div>
           <div id = "wayfinder-projects" className = {`wayfinder__waydirect ${this.waydirectVisitStatus[2]} ${this.waydirectVisibilityStatus}`}>
-            <li onClick={() => this.wayfinderRouteTo("projects")}>
-              Projects
-            </li>
+            <li onClick={() => this.wayfinderRouteTo("projects")}>{this.state.pageText[2]}</li>
           </div>
           <div id = "wayfinder-contact" className = {`wayfinder__waydirect ${this.waydirectVisitStatus[3]} ${this.waydirectVisibilityStatus}`}>
-            <li onClick={() => this.wayfinderRouteTo("contact")}>
-              Conctact
-            </li>
+            <li onClick={() => this.wayfinderRouteTo("contact")}>{this.state.pageText[3]}</li>
           </div>
           <div className = "wayfinder__waypaths-bar" style = {this.state.wayfinderBarStyle}/>
         </ul>

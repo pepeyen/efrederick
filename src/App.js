@@ -3,7 +3,7 @@ import React, {Component} from 'react';
 //Components
 import Wayfinder from './comp/wayfinder/wayfinder'
 import About from './pages/about/about'
-import Competences from './pages/competences/competences'
+import Competencies from './pages/competencies/competencies'
 import Projects from './pages/projects/projects'
 import Contact from './pages/contact/contact'
 
@@ -54,11 +54,11 @@ class App extends Component {
     return (
       <div className="App">
         <header>
-          <Wayfinder/>
+          <Wayfinder pageLanguage = {this.state.pageLanguage}/>
         </header>
         <main>
           <About pageLanguage = {this.state.pageLanguage}/>
-          <Competences pageLanguage = {this.state.pageLanguage}/>
+          <Competencies pageLanguage = {this.state.pageLanguage}/>
           <Projects pageLanguage = {this.state.pageLanguage}/>
           <Contact pageLanguage = {this.state.pageLanguage}/>
         </main>
