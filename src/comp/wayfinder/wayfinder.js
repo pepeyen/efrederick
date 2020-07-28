@@ -1,9 +1,12 @@
 import React, {Component} from 'react';
+
+//Styles
 import './wayfinder.scss';
 
 class Wayfinder extends Component { 
   waydirectVisitStatus = ['','','','']
   waydirectVisibilityStatus = '--visible'
+  
   constructor(props) {
     super(props);
     this.state = {

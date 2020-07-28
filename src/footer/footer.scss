@@ -4,7 +4,7 @@ $purple : #3d5af1;
 $darkBlue : #0e153a;
 
 .--spaced-from-top{
-    margin-top: 2vh;
+    margin-top: 1rem;
 }
 .footer{
     background-color: $darkBlue;
@@ -31,7 +31,21 @@ $darkBlue : #0e153a;
     color: $cyan;
     text-decoration: none;
 }
+.footer__lang{
+    margin-top: 1rem;
+}
+.footer__lang-dropdown{
+    color: $white;
+    font-family: "Nunito-Bold";
+    background-color: $purple;
+    text-align: center;
+    border: .1rem solid $purple;
+    min-width: 6.4rem;
+}
 @media (min-width: 801px) {
+    .--spaced-from-top{
+        margin-top: 2vh;
+    }
     .footer{
         min-height: 15vh;
         padding-top: 5vh;
@@ -45,5 +59,12 @@ $darkBlue : #0e153a;
     }
     .footer__outside-link:hover{
         color: $purple;
+    }
+    .footer__lang{
+        margin-top: 6vh;
+    }
+    .footer__lang-dropdown{
+        border: .1vh solid $purple;
+        min-width: 5vh;
     }
 }
