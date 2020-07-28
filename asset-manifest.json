@@ -1,6 +1,6 @@
 {
   "files": {
-    "main.css": "/efrederick/static/css/main.0a9f42be.chunk.css",
+    "main.css": "/efrederick/static/css/main.3c43983e.chunk.css",
     "main.js": "/efrederick/static/js/main.931e83fa.chunk.js",
     "main.js.map": "/efrederick/static/js/main.931e83fa.chunk.js.map",
     "runtime-main.js": "/efrederick/static/js/runtime-main.94a0c0b8.js",
@@ -8,9 +8,9 @@
     "static/js/2.5ec40585.chunk.js": "/efrederick/static/js/2.5ec40585.chunk.js",
     "static/js/2.5ec40585.chunk.js.map": "/efrederick/static/js/2.5ec40585.chunk.js.map",
     "index.html": "/efrederick/index.html",
-    "precache-manifest.a6da6364b49ed73395c9ec532551ad09.js": "/efrederick/precache-manifest.a6da6364b49ed73395c9ec532551ad09.js",
+    "precache-manifest.9be5211af13e1bedf44b7e46bf1b0345.js": "/efrederick/precache-manifest.9be5211af13e1bedf44b7e46bf1b0345.js",
     "service-worker.js": "/efrederick/service-worker.js",
-    "static/css/main.0a9f42be.chunk.css.map": "/efrederick/static/css/main.0a9f42be.chunk.css.map",
+    "static/css/main.3c43983e.chunk.css.map": "/efrederick/static/css/main.3c43983e.chunk.css.map",
     "static/js/2.5ec40585.chunk.js.LICENSE.txt": "/efrederick/static/js/2.5ec40585.chunk.js.LICENSE.txt",
     "static/media/index.scss": "/efrederick/static/media/Nunito-SemiBold.b4ee600d.svg",
     "static/media/pages.scss": "/efrederick/static/media/contact.84cddfd3.svg",
@@ -19,7 +19,7 @@
   "entrypoints": [
     "static/js/runtime-main.94a0c0b8.js",
     "static/js/2.5ec40585.chunk.js",
-    "static/css/main.0a9f42be.chunk.css",
+    "static/css/main.3c43983e.chunk.css",
     "static/js/main.931e83fa.chunk.js"
   ]
 }
