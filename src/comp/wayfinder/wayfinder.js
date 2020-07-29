@@ -31,27 +31,35 @@ class Wayfinder extends Component {
       "Projetos",
       "Contato"
     ]
-  }; 
+  }
+
   componentDidMount() {
     window.addEventListener("resize", this.updateDimensions);
     window.addEventListener("scroll", this.wayfinderBarProgress);
+    
     if(document.documentElement.clientWidth >= 784){
-      this.setState({ width: window.innerWidth, height: window.innerHeight });
       this.setState({
+        width: window.innerWidth, 
+        height: window.innerHeight,
         isWaydirectsHidden: true
       })
-      this.updateStyle({targetedStyle: "waydirect-visibility"})
+      this.updateStyle({
+        targetedStyle: "waydirect-visibility"
+      })
     }
-  }
+  };
+
   componentWillUnmount() {
     window.removeEventListener("resize", this.updateDimensions);
     window.removeEventListener("scroll", this.wayfinderBarProgress);
   }
+
   componentDidUpdate(prevProps){
     if(prevProps.pageLanguage !== this.props.pageLanguage){
       this.updatePageLanguage()
     }
-  }
+  };
+
   updatePageLanguage = () => {
     switch (this.props.pageLanguage) {
       case "en_us":
@@ -66,6 +74,7 @@ class Wayfinder extends Component {
         break;
     }
   };
+
   //Function to update the state with the current window width and height
   updateDimensions = () => {
     if(document.documentElement.clientWidth >= 784){
@@ -133,7 +142,7 @@ class Wayfinder extends Component {
   };
 
   //Function that calcultes the current height of a given element inside the page
-  getElementHeight = (elementId) => {
+  getElementPosition = (elementId) => {
     let element = document.getElementById(elementId)
     let wayfinderCurrentHeight
     if(document.documentElement.clientWidth >= 784){
@@ -148,7 +157,7 @@ class Wayfinder extends Component {
   //Function that updates the client viewing position given a target element
   updateScreenPosition = (targetedWaydirect) => {
     window.scrollTo({
-      top: this.getElementHeight(targetedWaydirect),
+      top: this.getElementPosition(targetedWaydirect),
       left: 0,
       behavior: 'smooth'
     });
@@ -160,22 +169,22 @@ class Wayfinder extends Component {
       wayfinderProgress: `${this.getScrollPercentage(window.scrollY)}%`
     });
     this.updateStyle({targetedStyle: "wayfinder-progression-bar"})
-    if(window.scrollY >= this.getElementHeight("about")){
+    if(window.scrollY >= this.getElementPosition("about")){
       this.updateStyle({
         targetedStyle: "waydirect-live-status",
         targetedWaydirect: 0
       });
-      if(window.scrollY >= this.getElementHeight("competencies")){
+      if(window.scrollY >= this.getElementPosition("competencies")){
         this.updateStyle({
           targetedStyle: "waydirect-live-status",
           targetedWaydirect: 1
         });
-        if(window.scrollY >= this.getElementHeight("projects")){
+        if(window.scrollY >= this.getElementPosition("projects")){
           this.updateStyle({
             targetedStyle: "waydirect-live-status",
             targetedWaydirect: 2
           });
-          if(window.scrollY >= this.getElementHeight("contact")){
+          if(window.scrollY >= this.getElementPosition("contact")){
             this.updateStyle({
               targetedStyle: "waydirect-live-status",
               targetedWaydirect: 3
@@ -223,6 +232,7 @@ class Wayfinder extends Component {
         break;
     }
   };
+
   render() {
     return (
       <nav className = "wayfinder">

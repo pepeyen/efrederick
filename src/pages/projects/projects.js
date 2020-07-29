@@ -1,4 +1,7 @@
 import React, {Component} from 'react';
+
+//Styles
+import './projects.scss'
 import '../pages.scss'
 
 class Projects extends Component{
@@ -12,15 +15,11 @@ class Projects extends Component{
   languageLibrary = {
     en_us: [
       "Projects",
-      "A more gimmick version of my portfolio",
-      "A webapp where i used to learn React.JS and API consumption",
-      "This webapp"
+      "Click here to visit the webapp"
     ],
     pt_br: [
       "Projetos",
-      "Uma versão engenhosa do meu portfólio",
-      "Um aplicativo web onde usei para aprender React.js e consumo de API",
-      "Este aplicativo web"
+      "Clique aqui para visitar o aplicativo web"
     ]
   }; 
   componentDidUpdate(prevProps){
@@ -48,25 +47,19 @@ class Projects extends Component{
           <div className="artcile__title">{this.state.pageText[0]}</div>
           <div className = "article__box --flex">
               <a className = "project__box" href = "https://pepeyen.github.io/efrederick-cli/" target = "_blank" rel="noopener noreferrer">
-                <div className = "project__title">eFrederick CLI</div>
                 <div className = "project__image --efrederickcli"/>
-                <div className = "project__description">
-                  <p>{this.state.pageText[1]}</p>
-                </div>
+                <div className = "project__title">eFrederick CLI</div>
+                <div className = "project__description">{this.state.pageText[1]}</div>
               </a>
               <a className = "project__box" href = "https://pepeyen.github.io/cs-tech/" target = "_blank" rel="noopener noreferrer">
-                <div className = "project__title">CS Tech</div>
                 <div className = "project__image --cstech"/>
-                <div className = "project__description">
-                  <p>{this.state.pageText[2]}</p>
-                </div>
+                <div className = "project__title">CS Tech</div>
+                <div className = "project__description">{this.state.pageText[1]}</div>
               </a>
               <a className = "project__box" href = "https://pepeyen.github.io/efrederick/" target = "_blank" rel="noopener noreferrer">
-                <div className = "project__title">eFrederick</div>
                 <div className = "project__image --efrederick"/>
-                <div className = "project__description">
-                  <p>{this.state.pageText[3]}</p>
-                </div>
+                <div className = "project__title">eFrederick</div>
+                <div className = "project__description">{this.state.pageText[1]}</div>
               </a>
           </div>
       </div>

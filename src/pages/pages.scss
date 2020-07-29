@@ -7,48 +7,10 @@ $darkBlue : #0e153a;
 span{
     color: $purple;
 }
-.--about{
-    background-image: url('../images/about.svg');
-    background-size: 10rem;
-    min-width: 10rem;
-    min-height: 10rem;
-}
-.--competencies{
-    text-align: center;
-    padding: 1rem;
-    border: .1rem solid $cyan;
-    border-radius: 15px;
-    width: 100%;
-    min-height: 35rem;
-    margin-bottom: 2rem;
-}
-.--language-c{
-    color: #659BD3;
-}
-.--language-dotnet{
-    color: #68217A;
-}
-.--language-html{
-    color: #E95727;
-}
-.--language-css{
-    color: #284DE4;
-}
-.--language-reactjs{
-    color: #19DBFE;
-}
-.--efrederickcli{
-    background-image: url('https://repository-images.githubusercontent.com/275693390/6b759e80-cf5d-11ea-8d8f-a22f2ac03276');
-}
-.--cstech{
-    background-image: url('https://repository-images.githubusercontent.com/245696462/5bab8980-cf60-11ea-95f0-bc5f566cd9e8');
-}
-.--efrederick{
-    background-image: url('https://repository-images.githubusercontent.com/280514081/218fb700-cf63-11ea-9aaf-b75efd0e17d2');
-}
 .article{
     text-align: center;
-    margin: 5rem 2rem 10rem 2rem;
+    width: 100%;
+    margin: 8rem 0 15rem 0;
 }
 .article__box{
     display: flex;
@@ -60,6 +22,7 @@ span{
     font-family: "Nunito-Bold";
     color: $purple;
     font-size: 3rem;
+    margin-bottom: 2rem;
 }
 .article__text{
     font-family: "Nunito-Regular";
@@ -69,95 +32,7 @@ span{
     font-size: 1.25rem;
     width: 20rem;
 }
-.article__sub-title{
-    font-family: "Nunito-SemiBold";
-    color: $purple;
-    font-size: 2rem;
-    padding-top: 1rem;
-    padding-bottom: 1rem;
-}
-.article__sub-text{
-    font-family: "Nunito-Light";
-    margin-bottom: 1rem;
-    font-size: 1.25rem;
-}
-.article__sub-text p{
-    margin: 1.5rem 0 1.5rem 0;
-}
-.article__image{
-    background-position: center;
-    background-repeat: no-repeat;
-}
-.position-description-title{
-    color: $cyan;
-}
-.contact__form{
-    font-family: "Nunito-Light"; 
-}
-.contact__form label{
-    color: $purple;
-}
-.contact__form-email{
-    min-height: 2rem;
-    padding-left: 0;
-    padding-right: 0;
-}
-.contact__form-message{
-    resize: none;
-    min-height: 10rem;
-    padding: 0;
-}
-.contact__form-email, .contact__form-message{
-    font-family: "Nunito-Light";
-    display: block;
-    background-color: transparent;
-    border-radius: 5px;
-    border: .1rem solid $darkBlue;
-    margin: 1rem 0 1rem 0;
-    font-size: 1rem;
-    min-width: 20rem;
-}
-.contact__form-email:focus, .contact__form-message:focus{
-    outline: none;
-    border-color: $purple;
-}
-.contact__form-button{
-    border-radius: 5px;
-    border: .1rem solid $darkBlue;
-    font-size: 1rem;
-    min-width: 100%;
-    min-height: 3rem;
-    margin: 0 0 1rem 0;
-}
-.project__box{
-    text-decoration: none;
-    margin: 2rem 0 0 0;
-    padding: 3vh;
-    border-radius: 10px;
-    border: .2vh solid $darkBlue;
-    max-width: 20rem;
-}
-.project__title{
-    font-family: "Nunito-SemiBold";
-    text-align: center;
-    font-size: 2rem;
-    color: $purple;
-}
-.project__image{
-    background-repeat: no-repeat;
-    background-size: 20rem;
-    min-width: 20rem;
-    min-height: 9.5rem;
-    margin: 1rem 0 1rem 0;
-    border: .1rem solid $cyan ;
-}
-.project__description{
-    font-family: "Nunito-Light";
-    text-align: center;
-    color: $darkBlue;
-    font-size: 1rem;
-}
-@media (min-width: 801px) {
+@media (min-width: 801px) {  
     .--reverted{
         text-align: right;
     }
@@ -165,34 +40,16 @@ span{
         display: flex ;
         justify-content: space-between;
     }
-    .--about{
-        background-size: 55%;
-        min-width: 55%;
-        min-height: 60vh;
-    }
-    .--competencies{
-        padding: none;
-        padding-top: 2vh;
-        border: .3vh solid $cyan;
-        border-radius: 15px;
-        width: 45vh;
-        min-height: 80vh;
-    }
-    .--contact{
-        background-image: url('../images/contact.svg');
-        background-size: 60%;
-        min-width: 60%;
-        min-height: 60vh;
-    }
     .--spaced{
         justify-content: space-between;
     }
     .article{
         text-align: left;
-        margin: 8vh 4vh 20vh 4vh;
+        margin:0 0 20vh 0;
     }
     .artcile__title{
         font-size: 6vh;
+        margin-bottom: 0;
     }
     .article__box{
         flex-direction: row;
@@ -204,68 +61,5 @@ span{
         margin: 5vh 0 0;
         font-size: 3vh;
         width: 40vh;
-    }
-    .article__sub-title{
-        font-size: 4vh;
-        padding-top: 2vh;
-        padding-bottom: 2vh;
-    }
-    .article__sub-text{
-        margin-bottom: 2vh;
-        font-size: 2.5vh;
-    }
-    .article__sub-text p{
-        margin: 3vh 0 3vh 0;
-    }
-    .contact__form-email{
-        min-height: 4vh;
-        padding-left: 1vh;
-        padding-right: 1vh;
-    }
-    .contact__form-message{
-        min-height: 20vh;
-        padding: 1vh;
-    }
-    .contact__form-email, .contact__form-message{
-        border: .2vh solid $darkBlue;
-        margin: 2vh 0 2vh 0;
-        font-size: 2vh;
-        min-width: 50vh;
-    }
-    .contact__form-button{
-        border: .2vh solid $darkBlue;
-        font-size: 2vh;
-        min-width: 20vh;
-        min-height: 6vh;
-        margin: 0 0 2vh 0;
-    }
-    .contact__form-button:hover{
-        outline: none;
-        border-color: $purple;
-        cursor: pointer;
-    }
-    .project__box{
-        margin: 0;
-        border: .2vh solid $darkBlue;
-        max-width: 40vh;
-        min-height: 32vh;
-    }
-    .project__image{
-        border: .2vh solid $darkBlue;
-    }
-    .project__box:hover{
-        cursor: pointer;
-        border-color: $purple;
-    }
-    .project__box:hover .project__image{
-        border-color: $purple;
-    }
-    .project__image{
-        background-size: 40vh;
-        min-height: 19.5vh;
-        margin: 2vh 0 2vh 0;
-    }
-    .project__description{
-        font-size: 2vh;
     }
 }

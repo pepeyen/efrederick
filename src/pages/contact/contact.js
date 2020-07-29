@@ -1,4 +1,7 @@
 import React, { Component } from 'react';
+
+//Styles
+import './contact.scss'
 import '../pages.scss'
 
 class Contact extends Component {
@@ -29,11 +32,13 @@ class Contact extends Component {
       "Ooops! Ocorreu um erro."
     ]
   }; 
+
   componentDidUpdate(prevProps){
     if(prevProps.pageLanguage !== this.props.pageLanguage){
       this.updatePageLanguage()
     }
   };
+  
   updatePageLanguage = () => {
     switch (this.props.pageLanguage) {
       case "en_us":
@@ -48,41 +53,7 @@ class Contact extends Component {
         break;
     }
   };
-  render () {
-    const { status } = this.state;
-    return (
-      <div id="contact" className = "article">  
-        <div className="artcile__title --reverted">{this.state.pageText[0]}</div>
-          <div className = "article__box">
-            <div className = "article__text">
-              <div className = "contact">
-                <div className = "article__sub-title">{this.state.pageText[1]}</div>
-                <form
-                  className = "contact__form"
-                  onSubmit={this.submitForm}
-                  action="https://formspree.io/mgennyyw"
-                  method="POST"
-                >
-                  <div className = "contact__form-input">
-                    <label htmlFor = "email">Email</label>
-                    <input className = "contact__form-email" type="email" name="email" />
-                  </div>
-                  <div className = "contact__form-input">
-                    <label htmlFor = "message">{this.state.pageText[2]}</label>
-                      <textarea className = "contact__form-message" name="message" />
-                  </div>
-                  <div className = "contact__form-submit">
-                    {status === "SUCCESS" ? <p>{this.state.pageText[3]}</p> : <button className = "contact__form-button">{this.state.pageText[4]}</button>}
-                    {status === "ERROR" && <p>{this.state.pageText[5]}</p>} 
-                  </div>
-                </form>
-              </div>
-            </div>
-          <div className = "article__image --contact"/>
-        </div>
-      </div>  
-    );
-  }
+
   submitForm(ev) {
     ev.preventDefault();
     const form = ev.target;
@@ -100,6 +71,39 @@ class Contact extends Component {
       }
     };
     xhr.send(data);
+  };
+
+  render () {
+    const { status } = this.state;
+    return (
+      <div id="contact" className = "article">  
+        <div className="artcile__title --reverted">{this.state.pageText[0]}</div>
+          <div className = "article__box --contact">
+            <div className = "contact">
+              <div className = "contact__sub-title">{this.state.pageText[1]}</div>
+              <form
+                className = "contact__form"
+                onSubmit={this.submitForm}
+                action="https://formspree.io/mgennyyw"
+                method="POST"
+              >
+                <div className = "contact__form-input">
+                  <label htmlFor = "email">Email</label>
+                  <input className = "contact__form-email" type="email" name="email" />
+                </div>
+                <div className = "contact__form-input">
+                  <label htmlFor = "message">{this.state.pageText[2]}</label>
+                  <textarea className = "contact__form-message" name="message" />
+                </div>
+                <div className = "contact__form-submit">
+                  {status === "SUCCESS" ? <p>{this.state.pageText[3]}</p> : <button className = "contact__form-button">{this.state.pageText[4]}</button>}
+                  {status === "ERROR" && <p>{this.state.pageText[5]}</p>} 
+                </div>
+              </form>
+            </div>
+        </div>
+      </div>  
+    );
   }
 }
 

@@ -1,4 +1,7 @@
 import React, {Component} from 'react';
+
+//Styles
+import './competencies.scss'
 import '../pages.scss'
 
 class Competencies extends Component {
@@ -15,7 +18,6 @@ class Competencies extends Component {
       "Career",
       "Companies i've worked and what i worked with",
       "Companies i've worked :",
-      "Position Info",
       "Technical Support Internship",
       "Monitor and maintain Pitagora's computer systems and networks.",
       "Which are my main loves from web development",
@@ -29,7 +31,6 @@ class Competencies extends Component {
       "Carreira",
       "Empresas com quem eu trabalhei e com o que trabalhei",
       "Empresas com quem eu trabalhei :",
-      "Informação sobre a posição",
       "Estágio de Suporte Técnico ",
       "Prover manuntenção aos aparelhos digitais e de rede da empresa",
       "Quais são meus maiores amores de desenvolvimento web",
@@ -63,42 +64,51 @@ class Competencies extends Component {
       <div id="competencies" className = "article">
         <div className="artcile__title  --reverted">{this.state.pageText[0]}</div>
         <div className = "article__box --spaced">
-          <div className = "article__image --competencies"> 
-            <div className = "article__sub-title">{this.state.pageText[1]}</div>
-            <div className = "article__sub-text">
-              <p>{this.state.pageText[2]}</p>
+          <div className = "competence"> 
+            <div className = "competence__title">{this.state.pageText[1]}</div>
+            <p>{this.state.pageText[2]}</p>
+            <div className = "competence__description">
               <span>{this.state.pageText[3]}</span>
-              <p>Faculdade Pitágoras</p>
-              <p className = "position-description-title">{this.state.pageText[4]}</p>
-              <span>{this.state.pageText[5]}</span>
-              <p>{this.state.pageText[6]}</p>
+              <div className = "competence__sub-description">
+                <p>Faculdade Pitágoras</p>
+                <p>{this.state.pageText[4]}</p>
+                <p>{this.state.pageText[5]}</p>
+              </div>
             </div>
           </div>
-          <div className = "article__image --competencies --spaced-middle">
-            <div className = "article__sub-title">Web Front End</div>
-            <div className = "article__sub-text">
-              <p>{this.state.pageText[7]}</p>
+          <div className = "competence --spaced-middle">
+            <div className = "competence__title">Web Front End</div>
+            <p>{this.state.pageText[6]}</p>
+            <div className = "competence__description">
+              <span>{this.state.pageText[7]}</span>
+              <div className = "competence__sub-description">
+                <p>HTML</p>
+                <p>CSS</p>
+                <p>SCSS</p>
+                <p>Javascript</p>
+                <p>React.JS</p>
+              </div>
               <span>{this.state.pageText[8]}</span>
-              <p>HTML</p>
-              <p>CSS</p>
-              <p>SCSS</p>
-              <p>Javascript</p>
-              <p>React.JS</p>
-              <span>{this.state.pageText[9]}</span>
-              <p>Github</p>
-              <p>Terminal</p>
+              <div className = "competence__sub-description">
+                <p>Github</p>
+                <p>Terminal</p>
+              </div>
             </div>
           </div>
-          <div className = "article__image --competencies">
-            <div className = "article__sub-title">{this.state.pageText[10]}</div>
-            <div className = "article__sub-text">
-              <p>{this.state.pageText[11]}</p>
+          <div className = "competence">
+            <div className = "competence__title">{this.state.pageText[9]}</div>
+            <p>{this.state.pageText[10]}</p>
+            <div className = "competence__description">
+              <span>{this.state.pageText[7]}</span>
+              <div className = "competence__sub-description">
+                <p>C</p>
+                <p>C#</p>
+                <p>Java</p>
+              </div>
               <span>{this.state.pageText[8]}</span>
-              <p>C</p>
-              <p>C#</p>
-              <p>Java</p>
-              <span>{this.state.pageText[9]}</span>
-              <p>Visual Studio</p>
+              <div className = "competence__sub-description">
+                <p>Visual Studio</p>
+              </div>
             </div>
           </div>
         </div>

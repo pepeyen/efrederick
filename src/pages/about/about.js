@@ -1,4 +1,7 @@
 import React, {Component} from 'react';
+
+//Styles
+import './about.scss'
 import '../pages.scss'
 
 class About extends Component {
@@ -53,7 +56,7 @@ class About extends Component {
     return (
       <div id="about" className = "article">
           <div className="artcile__title">{this.state.pageText[0]}</div>
-          <div className = "article__box">
+          <div className = "article__box  --about">
               <div className = "article__text">
                   <p>{this.state.pageText[1]}</p>
                   <p>{this.state.pageText[2]}<span className = "--language-html">HTML</span>, <span className = "--language-css">CSS</span>, <span className = "--language-reactjs">React.JS</span></p>
@@ -61,7 +64,7 @@ class About extends Component {
                   <p>{this.state.pageText[5]}</p>
                   <p>{this.state.pageText[6]}</p>
               </div>
-              <div className = "article__image --about"/>
+
           </div>
       </div>
     );

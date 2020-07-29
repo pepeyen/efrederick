@@ -1,0 +1,39 @@
+$lightWhite : #ebebeb;
+$white : #e2f3f5;
+$cyan : #22d1ee;
+$purple : #3d5af1;
+$darkBlue : #0e153a;
+
+.--language-c{
+    color: #659BD3;
+}
+.--language-dotnet{
+    color: #68217A;
+}
+.--language-html{
+    color: #E95727;
+}
+.--language-css{
+    color: #284DE4;
+}
+.--language-reactjs{
+    color: #19DBFE;
+}
+.--efrederickcli{
+    background-image: url('https://repository-images.githubusercontent.com/275693390/6b759e80-cf5d-11ea-8d8f-a22f2ac03276');
+}
+.--cstech{
+    background-image: url('https://repository-images.githubusercontent.com/245696462/5bab8980-cf60-11ea-95f0-bc5f566cd9e8');
+}
+.--efrederick{
+    background-image: url('https://repository-images.githubusercontent.com/280514081/218fb700-cf63-11ea-9aaf-b75efd0e17d2');
+}
+@media (min-width: 801px) {  
+    .--about{
+        background-image: url('../../images/about.svg');
+        background-repeat: no-repeat;
+        background-position-x: right;
+        background-size: 55vh;
+        min-height: 60vh;
+    }
+}
