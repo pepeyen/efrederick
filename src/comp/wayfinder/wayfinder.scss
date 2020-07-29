@@ -3,9 +3,6 @@ $cyan : #22d1ee;
 $purple : #3d5af1;
 $darkBlue : #0e153a;
 
-.--visible{
-    display: block;
-}
 .wayfinder{
     overflow: hidden;
     font-family: "Nunito-Bold";
@@ -49,17 +46,29 @@ $darkBlue : #0e153a;
 .wayfinder__waydirect, .wayfinder__waysign{
     display: block;
 }
-
+.--visible{
+    display: block;
+}
+.--hidden{
+    display: none;
+}
+.--visited{
+    color: $cyan;
+    border-bottom: .4rem solid $cyan;
+    transition: border-bottom ease-in-out 100ms;
+}
+.--unvisited{
+    color: $white;
+    border-bottom: .4rem solid transparent;
+    transition: border-bottom ease-in-out 100ms;
+}
 @media (min-width: 801px) {
-    .--active{
-        display: inline-block;
-    }
     .wayfinder{
         min-height: 6.5vh;
     }
     .wayfinder__waypaths{
         margin: 1vh 0 1vh 0;
-        border-bottom: .5vh solid $white;
+        //border-bottom: .5vh solid $white;
     }
     .wayfinder__waydirect{
         font-size: 2.5vh;
@@ -81,13 +90,13 @@ $darkBlue : #0e153a;
     .wayfinder__toggle{
         display: none;
     }
-}
-.--hidden{
-    display: none;
-}
-.--visited{
-    color: $cyan;
-}
-.--unvisited{
-    color: $white;
+    .--active{
+        display: inline-block;
+    }
+    .--visited{
+        border-bottom: .5vh solid $cyan;
+    }
+    .--unvisited{
+        border-bottom: .5vh solid transparent;
+    }
 }
