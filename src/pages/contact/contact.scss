@@ -1,4 +1,3 @@
-$lightWhite : #ebebeb;
 $white : #e2f3f5;
 $cyan : #22d1ee;
 $purple : #3d5af1;
@@ -24,20 +23,19 @@ $darkBlue : #0e153a;
 }
 .contact__form-email{
     min-height: 2rem;
-    padding-left: 0;
-    padding-right: 0;
+    padding: .5rem;
 }
 .contact__form-message{
     resize: none;
     min-height: 10rem;
-    padding: 0;
+    padding: .5rem;
 }
 .contact__form-email, .contact__form-message{
     font-family: "Nunito-Light";
     display: block;
     background-color: transparent;
     border-radius: 5px;
-    border: .1rem solid $darkBlue;
+    border: .05rem solid$darkBlue;
     margin: 1rem 0 1rem 0;
     font-size: 1rem;
     min-width: 20rem;
@@ -47,12 +45,18 @@ $darkBlue : #0e153a;
     border-color: $purple;
 }
 .contact__form-button{
-    background-color: transparent;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    
+    color: $white;
+    background-color: $darkBlue;
     border-radius: 5px;
-    border: .1rem solid $darkBlue;
+    border: .05rem solid $darkBlue;
     font-size: 1rem;
     min-width: 100%;
-    min-height: 3rem;
+    height: 3rem;
     margin: 0 0 1rem 0;
 }
 @media (min-width: 801px) {
@@ -71,8 +75,7 @@ $darkBlue : #0e153a;
     }
     .contact__form-email{
         min-height: 4vh;
-        padding-left: 1vh;
-        padding-right: 1vh;
+        padding: 1vh;
     }
     .contact__form-message{
         min-height: 20vh;
@@ -85,15 +88,19 @@ $darkBlue : #0e153a;
         min-width: 50vh;
     }
     .contact__form-button{
+        color: $darkBlue;
+        background-color: transparent;
         border: .2vh solid $darkBlue;
         font-size: 2vh;
         min-width: 20vh;
-        min-height: 6vh;
+        height: 6vh;
         margin: 0 0 2vh 0;
     }
     .contact__form-button:hover{
-        outline: none;
-        border-color: $purple;
         cursor: pointer;
+        font-family: "Nunito-SemiBold";
+        background-color: $darkBlue;
+        color: $white;
+        transition: background-color ease-in-out 100ms;
     }
 }

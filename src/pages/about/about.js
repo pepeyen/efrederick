@@ -15,28 +15,26 @@ class About extends Component {
   languageLibrary = {
     en_us: [
       "About",
-      "Hi my name is Erick Frederick i'm Brazillian and i love programming",
-      "My few close loves are from front-end as ",
-      "I also love programming with ",
-      " and ",
-      "Looking for a developer?",
-      "You can reach me at the end of the page"
+      "Hi, my name's Erick Frederick...",
+      "i'm a devloper you can trust",
+      "...who is available 24/7/365",
+      "View My Work",
+      "Contact Me"
     ],
     pt_br: [
       "Sobre",
-      "Olá meu nome é Erick Frederick sou Brasileiro e amo programar",
-      "Meus melhores amores vêm do front-end como ",
-      "Eu também amo programar ",
-      " e ",
-      "Procurando um desenvolvedor?",
-      "Você pode entrar em contato comigo no final desta página"
+      "Olá meu nome é Erick Frederick...",
+      "sou um desenvolvedor muito confiável",
+      "...que sempre estará disponível",
+      "Veja Meu Trabalho",
+      "Entre em contato"
     ]
   }; 
   componentDidUpdate(prevProps){
     if(prevProps.pageLanguage !== this.props.pageLanguage){
       this.updatePageLanguage()
     }
-  }
+  };
   updatePageLanguage = () => {
     switch (this.props.pageLanguage) {
       case "en_us":
@@ -51,21 +49,58 @@ class About extends Component {
         break;
     }
   };
+  //Function that calcultes the current height of a given element inside the page
+  getElementPosition = (elementId) => {
+    let element = document.getElementById(elementId)
+    let wayfinderCurrentHeight
+    if(document.documentElement.clientWidth >= 784){
+      wayfinderCurrentHeight = (((Math.max(document.documentElement.clientHeight, window.innerHeight || 0) * 15.5))) / 100
+    } else wayfinderCurrentHeight = 25.5 * 16
 
+    let waydirectCoordinate = ((element.offsetTop - element.scrollTop) - wayfinderCurrentHeight);
+
+    return waydirectCoordinate
+  };
+  wayfinderRoute = (targetedWaydirect) => {
+    window.scrollTo({
+      top: this.getElementPosition(targetedWaydirect),
+      left: 0,
+      behavior: 'smooth'
+    });
+  };
   render() {
     return (
       <div id="about" className = "article">
-          <div className="artcile__title">{this.state.pageText[0]}</div>
-          <div className = "article__box  --about">
-              <div className = "article__text">
+        <div className="artcile__title">{this.state.pageText[0]}</div>
+        <div className = "article__box  --about">
+          <div className = "article__text">
+            <div className = "about">
+              <div className = "about__headline">
+                <div className = "about__headline-comment --start">
                   <p>{this.state.pageText[1]}</p>
-                  <p>{this.state.pageText[2]}<span className = "--language-html">HTML</span>, <span className = "--language-css">CSS</span>, <span className = "--language-reactjs">React.JS</span></p>
-                  <p>{this.state.pageText[3]}<span className = "--language-c">C</span>{this.state.pageText[4]}<span className = "--language-dotnet">C#</span></p>
-                  <p>{this.state.pageText[5]}</p>
-                  <p>{this.state.pageText[6]}</p>
+                </div>
+                <p>{this.state.pageText[2]}</p>
+                <div className = "about__headline-comment --end">
+                  <p>{this.state.pageText[3]}</p>
+                </div>
+              </div>        
+            </div>
+            <div className = "about__route">
+              <div
+                onClick={() => this.wayfinderRoute("projects")}
+                className = "about__route-button --to-projects"
+              >
+                {this.state.pageText[4]}
               </div>
-
+              <div
+                onClick={() => this.wayfinderRoute("contact")}
+                className = "about__route-button --to-contact"
+              >
+                {this.state.pageText[5]}
+              </div>
+            </div>
           </div>
+        </div>
       </div>
     );
   }

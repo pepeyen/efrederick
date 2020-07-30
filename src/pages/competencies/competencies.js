@@ -20,11 +20,11 @@ class Competencies extends Component {
       "Companies i've worked :",
       "Technical Support Internship",
       "Monitor and maintain Pitagora's computer systems and networks.",
-      "Which are my main loves from web development",
+      "Which are my main knowledges from web development",
       "Languages I speak :",
       "Dev Tools :",
       "Programming",
-      "Which are my loves aside from web development"
+      "Which are my main knowledges aside from web development"
     ],
     pt_br: [
       "Competências",
@@ -33,11 +33,11 @@ class Competencies extends Component {
       "Empresas com quem eu trabalhei :",
       "Estágio de Suporte Técnico ",
       "Prover manuntenção aos aparelhos digitais e de rede da empresa",
-      "Quais são meus maiores amores de desenvolvimento web",
+      "Quais são meus maiores conhecimentos de desenvolvimento web",
       "Línguas qual eu falo :",
       "Ferramentas Dev :",
       "Programação",
-      "Quais são meus amores por fora do desenvolvimento web"
+      "Quais são meus maiores conhecimentos por fora do desenvolvimento web"
     ]
   }; 
   componentDidUpdate(prevProps){
@@ -64,9 +64,9 @@ class Competencies extends Component {
       <div id="competencies" className = "article">
         <div className="artcile__title  --reverted">{this.state.pageText[0]}</div>
         <div className = "article__box --spaced">
-          <div className = "competence"> 
+          <div className = "competence --secondary-competence"> 
             <div className = "competence__title">{this.state.pageText[1]}</div>
-            <p>{this.state.pageText[2]}</p>
+            <div className = "competence__info"><p>{this.state.pageText[2]}</p></div>
             <div className = "competence__description">
               <span>{this.state.pageText[3]}</span>
               <div className = "competence__sub-description">
@@ -76,9 +76,9 @@ class Competencies extends Component {
               </div>
             </div>
           </div>
-          <div className = "competence --spaced-middle">
+          <div className = "competence">
             <div className = "competence__title">Web Front End</div>
-            <p>{this.state.pageText[6]}</p>
+            <div className = "competence__info"><p>{this.state.pageText[6]}</p></div>
             <div className = "competence__description">
               <span>{this.state.pageText[7]}</span>
               <div className = "competence__sub-description">
@@ -97,7 +97,7 @@ class Competencies extends Component {
           </div>
           <div className = "competence">
             <div className = "competence__title">{this.state.pageText[9]}</div>
-            <p>{this.state.pageText[10]}</p>
+            <div className = "competence__info"><p>{this.state.pageText[10]}</p></div>
             <div className = "competence__description">
               <span>{this.state.pageText[7]}</span>
               <div className = "competence__sub-description">

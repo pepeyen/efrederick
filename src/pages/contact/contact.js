@@ -17,7 +17,7 @@ class Contact extends Component {
   languageLibrary = {
     en_us: [
       "Contact",
-      "Get in touch with me",
+      "Let's work together",
       "Message",
       "Thanks!",
       "Submit",
@@ -25,7 +25,7 @@ class Contact extends Component {
     ],
     pt_br: [
       "Contato",
-      "Entre em contato comigo",
+      "Vamos trabalhar juntos",
       "Menssagem",
       "Obrigado!",
       "Enviar",

@@ -68,7 +68,6 @@ $darkBlue : #0e153a;
     }
     .wayfinder__waypaths{
         margin: 1vh 0 1vh 0;
-        //border-bottom: .5vh solid $white;
     }
     .wayfinder__waydirect{
         font-size: 2.5vh;
@@ -84,7 +83,7 @@ $darkBlue : #0e153a;
         display: inline-block;
     }
     .wayfinder__waydirect:hover {
-        color: $purple;
+        color: $cyan;
         cursor: pointer;
     }
     .wayfinder__toggle{
