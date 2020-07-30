@@ -3,104 +3,115 @@ $cyan : #22d1ee;
 $purple : #3d5af1;
 $darkBlue : #0e153a;
 
-.contact{
-    font-family: "Nunito-Regular";
-    color: $darkBlue;
-    flex: 2;
-    font-size: 1.25rem;
-}
-.contact__sub-title{
-    font-family: "Nunito-SemiBold";
-    color: $purple;
-    font-size: 2rem;
-    padding-bottom: 1rem;
-}
-.contact__form{
-    font-family: "Nunito-Light"; 
-}
-.contact__form label{
-    color: $purple;
-}
-.contact__form-email{
-    min-height: 2rem;
-    padding: .5rem;
-}
-.contact__form-message{
-    resize: none;
-    min-height: 10rem;
-    padding: .5rem;
-}
-.contact__form-email, .contact__form-message{
-    font-family: "Nunito-Light";
-    display: block;
-    background-color: transparent;
-    border-radius: 5px;
-    border: .05rem solid$darkBlue;
-    margin: 1rem 0 1rem 0;
-    font-size: 1rem;
-    min-width: 20rem;
-}
-.contact__form-email:focus, .contact__form-message:focus, .contact__form-button:focus{
-    outline: none;
-    border-color: $purple;
-}
-.contact__form-button{
-    -webkit-user-select: none;
-    -moz-user-select: none;
-    -ms-user-select: none;
-    user-select: none;
+.article{
     
-    color: $white;
-    background-color: $darkBlue;
-    border-radius: 5px;
-    border: .05rem solid $darkBlue;
-    font-size: 1rem;
-    min-width: 100%;
-    height: 3rem;
-    margin: 0 0 1rem 0;
+    &__contact{
+        font-family: "Nunito-Regular";
+        color: $darkBlue;
+        flex: 2;
+        font-size: 1.25rem;
+
+        &-sub-title{
+            font-family: "Nunito-SemiBold";
+            color: $purple;
+            font-size: 2rem;
+            padding-bottom: 1rem;
+        }
+        &-form{
+            font-family: "Nunito-Light"; 
+
+            & label{
+                color: $purple;
+            }
+            &-email{
+                min-height: 2rem;
+                padding: .5rem;
+            }
+            &-message{
+                resize: none;
+                min-height: 10rem;
+                padding: .5rem;
+            }
+            &-email, &-message{
+                font-family: "Nunito-Light";
+                display: block;
+                background-color: transparent;
+                border-radius: 5px;
+                border: .05rem solid$darkBlue;
+                margin: 1rem 0 1rem 0;
+                font-size: 1rem;
+                min-width: 20rem;
+            }
+            &-email:focus, &-message:focus, &-button:focus{
+                outline: none;
+                border-color: $purple;
+            }
+            &-button{
+                -webkit-user-select: none;
+                -moz-user-select: none;
+                -ms-user-select: none;
+                user-select: none;
+                
+                color: $white;
+                background-color: $darkBlue;
+                border-radius: 5px;
+                border: .05rem solid $darkBlue;
+                font-size: 1rem;
+                min-width: 100%;
+                height: 3rem;
+                margin: 0 0 1rem 0;
+            }
+        }
+    }
 }
+
 @media (min-width: 801px) {
+    .article{
+
+        &__contact{
+            font-size: 3vh;
+
+            &-sub-title{
+                font-size: 4vh;
+                padding-bottom: 2vh;
+            }
+            &-form-email{
+                min-height: 3vh;
+                padding: 1vh;
+            }
+            &-form-message{
+                min-height: 20vh;
+                padding: 1vh;
+            }
+            &-form-email, &-form-message{
+                border: .2vh solid $darkBlue;
+                margin: 2vh 0 2vh 0;
+                font-size: 2vh;
+                min-width: 50vh;
+            }
+            &-form-button{
+                font-family: "Nunito-Light";
+                color: $darkBlue;
+                background-color: transparent;
+                border: .2vh solid $darkBlue;
+                font-size: 2vh;
+                min-width: 20vh;
+                height: 6vh;
+                margin: 0 0 2vh 0;
+            }
+            &-form-button:hover{
+                cursor: pointer;
+                font-family: "Nunito-SemiBold";
+                background-color: $darkBlue;
+                color: $white;
+                transition: background-color ease-in-out 100ms;
+            }
+        }
+    }
     .--contact{
         background-image: url('../../images/contact.svg');
         background-repeat: no-repeat;
         background-position-x: right;
         background-size: 60vh;
-    }
-    .contact{
-        font-size: 3vh;
-    }
-    .contact__sub-title{
-        font-size: 4vh;
-        padding-bottom: 2vh;
-    }
-    .contact__form-email{
-        min-height: 4vh;
-        padding: 1vh;
-    }
-    .contact__form-message{
-        min-height: 20vh;
-        padding: 1vh;
-    }
-    .contact__form-email, .contact__form-message{
-        border: .2vh solid $darkBlue;
-        margin: 2vh 0 2vh 0;
-        font-size: 2vh;
-        min-width: 50vh;
-    }
-    .contact__form-button{
-        color: $darkBlue;
-        background-color: transparent;
-        border: .2vh solid $darkBlue;
-        font-size: 2vh;
-        min-width: 20vh;
-        height: 6vh;
-        margin: 0 0 2vh 0;
-    }
-    .contact__form-button:hover{
-        cursor: pointer;
-        font-family: "Nunito-SemiBold";
-        background-color: $darkBlue;
-        color: $white;
-        transition: background-color ease-in-out 100ms;
     }
 }

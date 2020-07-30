@@ -44,23 +44,29 @@ class Projects extends Component{
   render() {
     return (
       <div id="projects" className = "article">
-          <div className="artcile__title">{this.state.pageText[0]}</div>
-          <div className = "article__box --flex">
-              <a className = "project__box" href = "https://pepeyen.github.io/efrederick-cli/" target = "_blank" rel="noopener noreferrer">
-                <div className = "project__image --efrederickcli"/>
-                <div className = "project__title">eFrederick CLI</div>
-                <div className = "project__description">{this.state.pageText[1]}</div>
-              </a>
-              <a className = "project__box" href = "https://pepeyen.github.io/cs-tech/" target = "_blank" rel="noopener noreferrer">
-                <div className = "project__image --cstech"/>
-                <div className = "project__title">CS Tech</div>
-                <div className = "project__description">{this.state.pageText[1]}</div>
-              </a>
-              <a className = "project__box" href = "https://pepeyen.github.io/efrederick/" target = "_blank" rel="noopener noreferrer">
-                <div className = "project__image --efrederick"/>
-                <div className = "project__title">eFrederick</div>
-                <div className = "project__description">{this.state.pageText[1]}</div>
-              </a>
+          <div className="article__title">{this.state.pageText[0]}</div>
+          <div className = "article__box --flex-row-spaced">
+              <div className = "article__project-box">
+                <div className = "article__project-image --efrederickcli"/>
+                <div className = "article__project-description">
+                  <div className = "article__project-title">eFrederick CLI</div>
+                  <a className = "article__project-button" href = "https://pepeyen.github.io/efrederick-cli/" target = "_blank" rel="noopener noreferrer">{this.state.pageText[1]}</a>
+                </div>
+              </div>
+              <div className = "article__project-box">
+                <div className = "article__project-image --cstech"/>
+                <div className = "article__project-description">
+                  <div className = "article__project-title">CS Tech</div>
+                  <a className = "article__project-button" href = "https://pepeyen.github.io/cs-tech/" target = "_blank" rel="noopener noreferrer">{this.state.pageText[1]}</a>
+                </div>  
+              </div>
+              <div className = "article__project-box">
+                <div className = "article__project-image --efrederick"/>
+                <div className = "article__project-description">
+                  <div className = "article__project-title">eFrederick</div>
+                  <a className = "article__project-button" href = "https://pepeyen.github.io/efrederick/" target = "_blank" rel="noopener noreferrer">{this.state.pageText[1]}</a>
+                </div> 
+              </div>
           </div>
       </div>
     );

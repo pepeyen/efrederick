@@ -71,30 +71,30 @@ class About extends Component {
   render() {
     return (
       <div id="about" className = "article">
-        <div className="artcile__title">{this.state.pageText[0]}</div>
-        <div className = "article__box  --about">
+        <div className="article__title">{this.state.pageText[0]}</div>
+        <div className = "article__box  --about-image">
           <div className = "article__text">
-            <div className = "about">
-              <div className = "about__headline">
-                <div className = "about__headline-comment --start">
+            <div className = "article__about">
+              <div className = "article__about-headline">
+                <div className = "article__about-headline-comment --start">
                   <p>{this.state.pageText[1]}</p>
                 </div>
                 <p>{this.state.pageText[2]}</p>
-                <div className = "about__headline-comment --end">
+                <div className = "article__about-headline-comment --end">
                   <p>{this.state.pageText[3]}</p>
                 </div>
               </div>        
             </div>
-            <div className = "about__route">
+            <div className = "article__about-route">
               <div
                 onClick={() => this.wayfinderRoute("projects")}
-                className = "about__route-button --to-projects"
+                className = "article__about-route-button --to-projects"
               >
                 {this.state.pageText[4]}
               </div>
               <div
                 onClick={() => this.wayfinderRoute("contact")}
-                className = "about__route-button --to-contact"
+                className = "article__about-route-button --to-contact"
               >
                 {this.state.pageText[5]}
               </div>

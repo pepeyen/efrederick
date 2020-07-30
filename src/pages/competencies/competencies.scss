@@ -3,60 +3,68 @@ $cyan : #22d1ee;
 $purple : #3d5af1;
 $darkBlue : #0e153a;
 
-.competence{
-    font-family: "Nunito-SemiBold";
-    text-align: center;
-    font-size: 1.617rem;
-    border: .05rem solid $darkBlue;
-    border-radius: 15px;
-    width: 90%;
-    height: 35rem;
-    margin-bottom: 2rem;
-    padding-top: 1rem;
-    font-size: 1.5rem;
-}
-.competence p{
-    margin: 1.5rem 0 1.5rem 0;
-}
-.competence__title{
-    font-family: "Nunito-Bold";
-    color: $purple;
-    font-size: 2.2rem;
-    padding-top: 1rem;
-    padding-bottom: 1rem;
-}
-.competence__description{
-    font-family: "Nunito-Regular";
-    margin-bottom: 1rem;
-    font-size: 1.2rem;
-}
-.competence__sub-description{
-    font-family: "Nunito-ExtraLight";
+.article{
+    &__competence{
+        font-family: "Nunito-SemiBold";
+        text-align: center;
+        font-size: 1.617rem;
+        border: .05rem solid $darkBlue;
+        border-radius: 15px;
+        width: 90%;
+        height: 35rem;
+        margin-bottom: 2rem;
+        padding-top: 1rem;
+        font-size: 1.5rem;
+
+        
+        & p{
+            margin: 1.5rem 0 1.5rem 0;
+        }
+        &-title{
+            font-family: "Nunito-Bold";
+            color: $purple;
+            font-size: 2.2rem;
+            padding-top: 1rem;
+            padding-bottom: 1rem;
+        }
+        &-description{
+            font-family: "Nunito-Regular";
+            margin-bottom: 1rem;
+            font-size: 1.2rem;
+        }
+        &-sub-description{
+            font-family: "Nunito-ExtraLight";
+        }
+    }
 }
 @media (min-width: 801px) {
-    .competence{
-        padding: 2vh;
-        border: .2vh solid $darkBlue;
-        width: 25%;
-        min-height: 80vh;
-        font-size: 2.5vh;
-        margin-bottom: 0;
-    }
-    .competence__title{
-        font-size: 4vh;
-        padding-top: 2vh;
-        padding-bottom: 2vh;
-    }
-    .competence__info{
-        min-height: 8vh;
-    }
-    .competence__description{
-        padding-top: 2vh;
-        border-top: .2vh solid $darkBlue;
-        margin: 4vh 0 2vh 0;
-        font-size: 2.3vh;
-    }
-    .competence__description p{ 
-        margin: 3vh 0 3vh 0;
+    .article{
+
+        &__competence{
+            padding: 2vh;
+            border: .2vh solid $darkBlue;
+            width: 25%;
+            min-height: 80vh;
+            font-size: 2.5vh;
+            margin-bottom: 0;
+
+            &p{ 
+                margin: 3vh 0 3vh 0;
+            }
+            &-title{
+                font-size: 4vh;
+                padding-top: 2vh;
+                padding-bottom: 2vh;
+            }
+            &-info{
+                min-height: 8vh;
+            }
+            &-description{
+                padding-top: 2vh;
+                border-top: .2vh solid $darkBlue;
+                margin: 4vh 0 2vh 0;
+                font-size: 2.3vh;
+            }
+        }
     }
 }

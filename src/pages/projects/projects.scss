@@ -3,57 +3,99 @@ $cyan : #22d1ee;
 $purple : #3d5af1;
 $darkBlue : #0e153a;
 
-.project__box{
-    text-decoration: none;
-    min-width: 90%;
-    margin: 2rem 0 0 0;
-    padding-top: 3rem;
-    padding-bottom: 3rem;
-    border-radius: 10px;
-    border: .05rem solid $darkBlue;
-}
-.project__title{
-    font-family: "Nunito-SemiBold";
-    text-align: center;
-    font-size: 2rem;
-    color: $darkBlue;
-}
-.project__image{
-    display: block;
-    background-repeat: no-repeat;
-    background-size: 20rem;
-    max-width: 20rem;
-    min-height: 9.5rem;
-    margin: 1rem auto 1rem auto;
-    border: .05rem solid $darkBlue;
-}
-.project__description{
-    font-family: "Nunito-Light";
-    text-align: center;
-    color: $darkBlue;
-    font-size: 1rem;
+.article{
+
+    &__project-box{
+        min-width: 30%;
+        min-height: 20rem;
+        margin: 2rem 0 0 0;
+        border-radius:  0 0 10px 10px;
+    }
+    &__project-image{
+        display: block;
+        background-repeat: no-repeat;
+        background-size: 20rem;
+        min-width: 100%;
+        min-height: 9.5rem;
+        margin: 1rem auto 1rem auto;
+        border: .05rem solid $darkBlue;
+    }
+    &__project-description{
+        padding-top: 1rem;
+        border: .05rem solid $darkBlue;
+        border-radius: 0 0 10px 10px;
+        border-top: none;
+        width: 100%;
+    }
+    &__project-title{
+        font-family: "Nunito-SemiBold";
+        text-align: center;
+        color: $purple;
+        font-size: 2rem;
+    }
+    &__project-button{
+        display: inline-block;
+        font-family: "Nunito-Light";
+        text-decoration: none;
+        text-align: center;
+        color: $darkBlue;
+        margin:  1rem 10% 1rem 10%;
+        font-size: 1rem;
+        border: .05rem solid $darkBlue;
+        border-radius: 5px;
+        padding: .25rem;
+
+        &:hover{
+            cursor: pointer;
+            font-family: "Nunito-SemiBold";
+            background-color: $darkBlue;
+            color: $white;
+            transition: background-color ease-in-out 100ms;
+        }
+    }
+
 }
 @media (min-width: 801px) {
-    .project__box{
-        margin: 0;
-        padding: 3vh;
-        border-radius: 10px;
-        border: .2vh solid $darkBlue;
-        min-width: 25%;
-        max-width: 40vh;
-        height: 32vh;
+    .article{
+
+        &__project-box{
+            margin: 0;
+            padding: 0;
+            min-width: 25%;
+            min-height: 32vh;
+        }
+        &__project-image{
+            background-size: 100%;
+            min-height: 19.5vh;
+            margin: 0;
+            border: .2vh solid $darkBlue;
+        }
+        &__project-description{
+            padding-top: 2vh;
+            border: .2vh solid $darkBlue;
+            border-top: none;
+        }
+        &__project-title{
+            font-size: 3vh;
+        }
+        &__project-button{
+            margin:  1vh 25% 1vh 25%;
+            font-size: 2vh;
+            padding: .5vh;
+        }
     }
-    .project__image{
-        background-size: 40vh;
-        min-height: 19.5vh;
-        margin: 2vh auto 2vh auto;
-        border: .2vh solid $darkBlue;
-    }
-    .project__description{
-        font-size: 2vh;
-    }
-    .project__box:hover, .project__box:hover .project__image {
-        cursor: pointer;
-        border-color: $purple;
-    }
+
+}
+.--efrederickcli{
+    background-image: url('https://repository-images.githubusercontent.com/275693390/6b759e80-cf5d-11ea-8d8f-a22f2ac03276');
+}
+.--cstech{
+    background-image: url('https://repository-images.githubusercontent.com/245696462/5bab8980-cf60-11ea-95f0-bc5f566cd9e8');
+}
+.--efrederick{
+    background-image: url('https://repository-images.githubusercontent.com/280514081/218fb700-cf63-11ea-9aaf-b75efd0e17d2');
+}
+.--flex-row-spaced{
+    flex-direction: row;
+    justify-content: space-between;
 }

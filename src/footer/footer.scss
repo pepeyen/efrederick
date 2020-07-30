@@ -3,68 +3,72 @@ $cyan : #22d1ee;
 $purple : #3d5af1;
 $darkBlue : #0e153a;
 
-.--spaced-from-top{
-    margin-top: 1rem;
-}
 .footer{
     background-color: $darkBlue;
     color: $white;
     width: 100%;
     font-family: "Nunito-Light";
     min-height: 10rem;
+
+    &__text{
+        display: flex;
+        text-align: center;
+        flex-direction: column;
+        padding: 2.5rem;
+    }
+    &__logo{
+        font-family: "Nunito-Bold";
+        color: $cyan;
+        font-size: 1.5rem;
+    }
+    &__social-link{
+        display: block;
+    }
+    &__outside-link{
+        color: $cyan;
+        text-decoration: none;
+    }
+    &__lang{
+        margin-top: 1rem;
+
+        &-dropdown{
+            color: $white;
+            font-family: "Nunito-Bold";
+            background-color: $purple;
+            text-align: center;
+            border: .1rem solid $purple;
+            min-width: 6.4rem;
+        }
+    }
 }
-.footer__text{
-    display: flex;
-    text-align: center;
-    flex-direction: column;
-    padding: 2.5rem;
-}
-.footer__logo{
-    font-family: "Nunito-Bold";
-    color: $cyan;
-    font-size: 1.5rem;
-}
-.footer__social-link{
-    display: block;
-}
-.footer__outside-link{
-    color: $cyan;
-    text-decoration: none;
-}
-.footer__lang{
+.--spaced-from-top{
     margin-top: 1rem;
 }
-.footer__lang-dropdown{
-    color: $white;
-    font-family: "Nunito-Bold";
-    background-color: $purple;
-    text-align: center;
-    border: .1rem solid $purple;
-    min-width: 6.4rem;
-}
 @media (min-width: 801px) {
-    .--spaced-from-top{
-        margin-top: 2vh;
-    }
     .footer{
         min-height: 15vh;
         padding-top: 5vh;
         padding-bottom: 5vh;
+
+        &__text{
+            padding: 1.5vh;
+        }
+        &__logo{
+            font-size: 3vh;
+        }
+        &__outside-link:hover{
+            color: $purple;
+        }
+        &__lang{
+            margin-top: 6vh;
+
+            &-dropdown{
+                border: .1vh solid $purple;
+                min-width: 5vh;
+            }
+        }
     }
-    .footer__text{
-        padding: 1.5vh;
-    }
-    .footer__logo{
-        font-size: 3vh;
-    }
-    .footer__outside-link:hover{
-        color: $purple;
-    }
-    .footer__lang{
-        margin-top: 6vh;
-    }
-    .footer__lang-dropdown{
-        border: .1vh solid $purple;
-        min-width: 5vh;
+    .--spaced-from-top{
+        margin-top: 2vh;
     }
 }

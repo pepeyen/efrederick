@@ -3,38 +3,43 @@ $cyan : #22d1ee;
 $purple : #3d5af1;
 $darkBlue : #0e153a;
 
-.about{
-    font-family: "Nunito-Bold";
-}
-.about__headline{
-    font-size: 2rem;
-}
-.about__headline-comment{
-    color: #5766b5;
-    font-family: "Nunito-Regular";
-    font-size: 1.5rem;
-    margin-top:.5rem;
-}
-.about__description{
-    font-family: "Nunito-ExtraLight";
-}
-.about__description p{
-    margin-top: 1rem;
-}
-.about__route{
-    margin: 5vh 0 0 0;
-}
-.about__route-button{
-    -webkit-user-select: none;
-    -moz-user-select: none;
-    -ms-user-select: none;
-    user-select: none;
-    display: inline-block;
-    padding: 2rem;
-    border: .05rem solid $darkBlue;
-    border-radius: 5px;
-    font-size: 1.2rem;
-    width: 10rem;
+.article{
+    &__about{
+        font-family: "Nunito-Bold";
+    }
+    &__about-headline{
+        font-size: 2rem;
+
+        &-comment{
+            color: #5766b5;
+            font-family: "Nunito-Regular";
+            font-size: 1.5rem;
+            margin-top:.5rem;
+        }
+    }
+    &__about-description{
+        font-family: "Nunito-ExtraLight";
+
+        & p{
+            margin-top: 1rem;
+        }
+    }
+    &__about-route{
+        margin: 5vh 0 0 0;
+
+        &-button{
+            -webkit-user-select: none;
+            -moz-user-select: none;
+            -ms-user-select: none;
+            user-select: none;
+            display: inline-block;
+            padding: 2rem;
+            border: .05rem solid $darkBlue;
+            border-radius: 5px;
+            font-size: 1.2rem;
+            width: 10rem;
+        }
+    }
 }
 .--language-c{
     color: #659BD3;
@@ -51,15 +56,6 @@ $darkBlue : #0e153a;
 .--language-reactjs{
     color: #19DBFE;
 }
-.--efrederickcli{
-    background-image: url('https://repository-images.githubusercontent.com/275693390/6b759e80-cf5d-11ea-8d8f-a22f2ac03276');
-}
-.--cstech{
-    background-image: url('https://repository-images.githubusercontent.com/245696462/5bab8980-cf60-11ea-95f0-bc5f566cd9e8');
-}
-.--efrederick{
-    background-image: url('https://repository-images.githubusercontent.com/280514081/218fb700-cf63-11ea-9aaf-b75efd0e17d2');
-}
 .--start{
     margin-bottom: 1rem;
 }
@@ -73,32 +69,36 @@ $darkBlue : #0e153a;
     margin: 0 0 1rem 0;
 }
 @media (min-width: 801px) {  
-    .about__headline{
-        display: inline-block;
-        font-size: 5vh;
-    }
-    .about__headline-comment{
-        font-size: 2.5vh;
-        margin-top: 1vh;
-    }
-    .about__description{
-        font-size: 2.5vh;
-        margin-top: 4vh;
-    }
-    .about__description p{
-        margin-top: 1vh;
-    }
-    .about__route{
-        margin: 5vh 0 0 0;
-    }
-    .about__route-button{
-        padding: 1.5vh;
-        border: .1rem solid $darkBlue;
-        font-size: 2vh;
-        text-align: center;
-    }
+    .article{
+        &__about-headline{
+            display: inline-block;
+            font-size: 5vh;
 
-    .--about{
+            &-comment{
+                font-size: 2.5vh;
+                margin-top: 1vh;
+            }
+        }
+        &__about-description{
+            font-size: 2.5vh;
+            margin-top: 4vh;
+
+            & p{
+                margin-top: 1vh;
+            }
+        }
+        &__about-route{
+            margin: 5vh 0 0 0;
+
+            &-button{
+                padding: 1.5vh;
+                border: .1rem solid $darkBlue;
+                font-size: 2vh;
+                text-align: center;
+            }
+        }       
+    }
+    .--about-image{
         background-image: url('../../images/about.svg');
         background-repeat: no-repeat;
         background-position-x: right;
@@ -116,10 +116,12 @@ $darkBlue : #0e153a;
     .--to-projects{
         margin: 0 2vh 0 0;
     }  
-    .--to-projects:hover,.--to-contact:hover{
+    .--to-projects:hover{
         cursor: pointer;
+        color: $cyan;
     }
     .--to-contact:hover{
+        cursor: pointer;
         font-family: "Nunito-SemiBold";
         background-color: $darkBlue;
         color: $white;
