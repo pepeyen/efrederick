@@ -45,7 +45,7 @@ class Projects extends Component{
     return (
       <div id="projects" className = "article">
           <div className="article__title">{this.state.pageText[0]}</div>
-          <div className = "article__box --flex-row-spaced">
+          <div className = "article__box --spaced-flex">
               <div className = "article__project-box">
                 <div className = "article__project-image --efrederickcli"/>
                 <div className = "article__project-description">

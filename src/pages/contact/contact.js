@@ -84,7 +84,7 @@ class Contact extends Component {
               <form
                 className = "article__contact-form"
                 onSubmit={this.submitForm}
-                action="https://formspree.io/mgennyyw"
+                action="https://formspree.io/mknqyejb"
                 method="POST"
               >
                 <div className = "article__contact-form-input">
