@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
 
 //Components
-import Wayfinder from './comp/wayfinder/wayfinder'
+import Wayfinder from './components/wayfinder/wayfinder'
 import About from './pages/about/about'
 import Competencies from './pages/competencies/competencies'
 import Projects from './pages/projects/projects'
@@ -18,7 +18,6 @@ class App extends Component {
       pageLanguage: "en_us",
       pageText : this.languageLibrary.en_us
     };
-    this.updatePageLanguage()
   }
   languageLibrary = {
     en_us: [
@@ -33,18 +32,9 @@ class App extends Component {
     ]
   }
   updatePageLanguage = (targetLanguage) => {
-    switch (targetLanguage) {
-      case "en_us":
-        this.setState({pageText : this.languageLibrary.en_us})
-        break;
-
-      case "pt_br":
-        this.setState({pageText : this.languageLibrary.pt_br})
-        break;
-    
-      default:
-        break;
-    };
+    this.setState({
+      pageText : this.languageLibrary[targetLanguage]
+    })
   }
   __handleLanguage = (event) => {
     this.setState({pageLanguage: event.target.value})
@@ -54,13 +44,13 @@ class App extends Component {
     return (
       <div className="App">
         <header>
-          <Wayfinder pageLanguage = {this.state.pageLanguage}/>
+          <Wayfinder pageLanguage={this.state.pageLanguage}/>
         </header>
         <main>
-          <About pageLanguage = {this.state.pageLanguage}/>
-          <Competencies pageLanguage = {this.state.pageLanguage}/>
-          <Projects pageLanguage = {this.state.pageLanguage}/>
-          <Contact pageLanguage = {this.state.pageLanguage}/>
+          <About pageLanguage={this.state.pageLanguage}/>
+          <Competencies pageLanguage={this.state.pageLanguage}/>
+          <Projects pageLanguage={this.state.pageLanguage}/>
+          <Contact pageLanguage={this.state.pageLanguage}/>
         </main>
         <footer>
           <div className="footer">
@@ -73,10 +63,22 @@ class App extends Component {
               </div>
               <div className="footer__social">
                 <div className="footer__social-link --spaced-from-top">
-                  <a className="footer__outside-link" href = "https://www.linkedin.com/in/erick-frederick-c/" target = "_blank" rel="noopener noreferrer">Linkedin</a>
+                  <a 
+                    className="footer__outside-link" 
+                    href="https://www.linkedin.com/in/erick-frederick-c/" 
+                    target="_blank" rel="noopener noreferrer"
+                  >
+                    Linkedin
+                  </a>
                 </div>
                 <div className="footer__social-link --spaced-from-top">
-                  <a className="footer__outside-link" href = "https://github.com/pepeyen" target = "_blank" rel="noopener noreferrer">Github</a>
+                  <a 
+                    className="footer__outside-link" 
+                    href="https://github.com/pepeyen" 
+                    target="_blank" rel="noopener noreferrer"
+                  >
+                    Github
+                  </a>
                 </div>
               </div>
               <div className="footer__lang">

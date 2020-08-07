@@ -1,5 +1,8 @@
 import React, {Component} from 'react';
 
+//Innerpage Routing
+import { getElementPosition, updateScreenPosition } from '../../routing/PageRouting'
+
 //Styles
 import './wayfinder.scss';
 
@@ -36,7 +39,7 @@ class Wayfinder extends Component {
   componentDidMount() {
     window.addEventListener("resize", this.updateDimensions);
     window.addEventListener("scroll", this.wayfinderBarProgress);
-    
+
     if(document.documentElement.clientWidth >= 784){
       this.setState({
         width: window.innerWidth, 
@@ -58,17 +61,21 @@ class Wayfinder extends Component {
     if(prevProps.pageLanguage !== this.props.pageLanguage){
       this.setState({
         pageText : this.languageLibrary[this.props.pageLanguage]
-      })
+      });
     }
   };
 
   //Function to update the state with the current window width and height
   updateDimensions = () => {
     if(document.documentElement.clientWidth >= 784){
-      this.setState({ width: window.innerWidth, height: window.innerHeight });
+      this.setState({ 
+        width: window.innerWidth, 
+        height: window.innerHeight 
+      });
       this.setState({
         isWaydirectsHidden: true
-      })
+      });
+
       this.updateWaydirectState({targetedState: "waydirect-visibility"})
     }
   };
@@ -87,6 +94,7 @@ class Wayfinder extends Component {
           this.setState({ isWaydirectsHidden: false })
         }
         break;
+
       case "waydirect-live-status":
         for(let i = 0; i <= targetedWaydirect; i++){
           this.waydirectLiveStatus[i] = '--visited'
@@ -97,63 +105,40 @@ class Wayfinder extends Component {
           this.waydirectLiveStatus[i] = '--unvisited'
         }
         break;
+
       default:
         break;
     }
   };
 
-  //Function that calculates the percentage of a given height based on the total height of the page
   getScrollPercentage = (currentHeight) => {
     let pageTotalHeight = document.documentElement.scrollHeight - document.documentElement.clientHeight;
 
     return((currentHeight / pageTotalHeight) * 100);
   };
 
-  //Function that calcultes the current height of a given element inside the page
-  getElementPosition = (elementId) => {
-    let wayfinderCurrentHeight,waydirectCoordinate
-    let element = document.getElementById(elementId)
-
-    if(document.documentElement.clientWidth >= 784)
-      wayfinderCurrentHeight = (((Math.max(document.documentElement.clientHeight, window.innerHeight || 0) * 15.5))) / 100
-    else wayfinderCurrentHeight = 10 * 16
-
-    waydirectCoordinate = ((element.offsetTop - element.scrollTop) - wayfinderCurrentHeight);
-
-    return waydirectCoordinate
-  };
-
-  //Function that updates the client viewing position given a target element
-  updateScreenPosition = (targetedWaydirect) => {
-    window.scrollTo({
-      top: this.getElementPosition(targetedWaydirect),
-      left: 0,
-      behavior: 'smooth'
-    });
-  };
-
   //Function that updates the progress bar styling
   wayfinderBarProgress = () => {
     this.setState({
-      wayfinderProgress: `${this.getScrollPercentage(window.scrollY)}%`
+      wayfinderProgress: "1%"
     });
 
-    if(window.scrollY >= this.getElementPosition("about")){
+    if(window.scrollY >= getElementPosition("about")){
       this.updateWaydirectState({
         targetedState: "waydirect-live-status",
         targetedWaydirect: 0
       });
-      if(window.scrollY >= this.getElementPosition("competencies")){
+      if(window.scrollY >= getElementPosition("competencies")){
         this.updateWaydirectState({
           targetedState: "waydirect-live-status",
           targetedWaydirect: 1
         });
-        if(window.scrollY >= this.getElementPosition("projects")){
+        if(window.scrollY >= getElementPosition("projects")){
           this.updateWaydirectState({
             targetedState: "waydirect-live-status",
             targetedWaydirect: 2
           });
-          if(window.scrollY >= this.getElementPosition("contact")){
+          if(window.scrollY >= getElementPosition("contact")){
             this.updateWaydirectState({
               targetedState: "waydirect-live-status",
               targetedWaydirect: 3
@@ -168,14 +153,14 @@ class Wayfinder extends Component {
   wayfinderRouteTo = (targetedWaydirect) => {
     switch (targetedWaydirect) {
       case "about":
-          this.updateScreenPosition("about");
+          updateScreenPosition("about");
           this.updateWaydirectState({
             targetedState: "waydirect-live-status",
             targetedWaydirect: 0
           });
           break;
       case "competencies":
-        this.updateScreenPosition("competencies");
+        updateScreenPosition("competencies");
         this.updateWaydirectState({
           targetedState: "waydirect-live-status",
           targetedWaydirect: 1
@@ -183,14 +168,14 @@ class Wayfinder extends Component {
         break;
 
       case "projects":
-        this.updateScreenPosition("projects");
+        updateScreenPosition("projects");
         this.updateWaydirectState({
           targetedState: "waydirect-live-status",
           targetedWaydirect: 2
         });
         break;
       case "contact":
-        this.updateScreenPosition("contact");
+        updateScreenPosition("contact");
         this.updateWaydirectState({
           targetedState: "waydirect-live-status",
           targetedWaydirect: 3

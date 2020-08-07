@@ -35,22 +35,9 @@ class Contact extends Component {
 
   componentDidUpdate(prevProps){
     if(prevProps.pageLanguage !== this.props.pageLanguage){
-      this.updatePageLanguage()
-    }
-  };
-  
-  updatePageLanguage = () => {
-    switch (this.props.pageLanguage) {
-      case "en_us":
-        this.setState({pageText : this.languageLibrary.en_us})
-        break;
-  
-      case "pt_br":
-        this.setState({pageText : this.languageLibrary.pt_br})
-        break;
-      
-      default:
-        break;
+      this.setState({
+        pageText : this.languageLibrary[this.props.pageLanguage]
+      });
     }
   };
 
@@ -89,11 +76,18 @@ class Contact extends Component {
               >
                 <div className="contact__form-input">
                   <label htmlFor = "email">Email</label>
-                  <input className="contact__form-email" type="email" name="email" />
+                  <input 
+                    className="contact__form-email" 
+                    type="email" 
+                    name="email" 
+                  />
                 </div>
                 <div className="contact__form-input">
                   <label htmlFor = "message">{this.state.pageText[2]}</label>
-                  <textarea className="contact__form-message" name="message" />
+                  <textarea 
+                    className="contact__form-message" 
+                    name="message" 
+                  />
                 </div>
                 <div className="contact__form-submit">
                   {status === "SUCCESS" ? <p>{this.state.pageText[3]}</p> : <button className="contact__form-button">{this.state.pageText[4]}</button>}

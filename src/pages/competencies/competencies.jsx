@@ -42,23 +42,11 @@ class Competencies extends Component {
   }; 
   componentDidUpdate(prevProps){
     if(prevProps.pageLanguage !== this.props.pageLanguage){
-      this.updatePageLanguage()
+      this.setState({
+        pageText : this.languageLibrary[this.props.pageLanguage]
+      });
     }
   }
-  updatePageLanguage = () => {
-    switch (this.props.pageLanguage) {
-      case "en_us":
-        this.setState({pageText : this.languageLibrary.en_us})
-        break;
-    
-      case "pt_br":
-        this.setState({pageText : this.languageLibrary.pt_br})
-        break;
-        
-      default:
-        break;
-    }
-  };
   render() {
     return (
       <article id="competencies">

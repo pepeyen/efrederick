@@ -24,21 +24,9 @@ class Projects extends Component{
   }; 
   componentDidUpdate(prevProps){
     if(prevProps.pageLanguage !== this.props.pageLanguage){
-      this.updatePageLanguage()
-    }
-  };
-  updatePageLanguage = () => {
-    switch (this.props.pageLanguage) {
-      case "en_us":
-        this.setState({pageText : this.languageLibrary.en_us})
-        break;
-
-      case "pt_br":
-        this.setState({pageText : this.languageLibrary.pt_br})
-        break;
-    
-      default:
-        break;
+      this.setState({
+        pageText : this.languageLibrary[this.props.pageLanguage]
+      });
     }
   };
   render() {
@@ -50,21 +38,42 @@ class Projects extends Component{
                 <div className="project__image --efrederickcli"/>
                 <div className="project__description">
                   <div className="project__title">eFrederick CLI</div>
-                  <a className="project__button" href = "https://pepeyen.github.io/efrederick-cli/" target = "_blank" rel="noopener noreferrer">{this.state.pageText[1]}</a>
+                  <a 
+                    className="project__button" 
+                    href="https://pepeyen.github.io/efrederick-cli/" 
+                    target="_blank" 
+                    rel="noopener noreferrer"
+                  >
+                    {this.state.pageText[1]}
+                  </a>
                 </div>
               </div>
               <div className="project">
                 <div className="project__image --cstech"/>
                 <div className="project__description">
                   <div className="project__title">CS Tech</div>
-                  <a className="project__button" href = "https://pepeyen.github.io/cs-tech/" target = "_blank" rel="noopener noreferrer">{this.state.pageText[1]}</a>
+                  <a 
+                    className="project__button" 
+                    href="https://pepeyen.github.io/cs-tech/" 
+                    target="_blank" 
+                    rel="noopener noreferrer"
+                  >
+                    {this.state.pageText[1]}
+                </a>
                 </div>  
               </div>
               <div className="project">
                 <div className="project__image --efrederick"/>
                 <div className="project__description">
                   <div className="project__title">eFrederick</div>
-                  <a className="project__button" href = "https://efrederick.dev/" target = "_blank" rel="noopener noreferrer">{this.state.pageText[1]}</a>
+                  <a 
+                    className="project__button" 
+                    href="https://efrederick.dev/" 
+                    target="_blank" 
+                    rel="noopener noreferrer"
+                  >
+                    {this.state.pageText[1]}
+                  </a>
                 </div> 
               </div>
           </div>

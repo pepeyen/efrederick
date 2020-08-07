@@ -1,5 +1,8 @@
 import React, {Component} from 'react';
 
+//Innerpage Routing
+import { updateScreenPosition } from '../../routing/PageRouting'
+
 //Styles
 import './about.scss'
 import '../pages.scss'
@@ -32,41 +35,10 @@ class About extends Component {
   }; 
   componentDidUpdate(prevProps){
     if(prevProps.pageLanguage !== this.props.pageLanguage){
-      this.updatePageLanguage()
+      this.setState({
+        pageText : this.languageLibrary[this.props.pageLanguage]
+      });
     }
-  };
-  updatePageLanguage = () => {
-    switch (this.props.pageLanguage) {
-      case "en_us":
-        this.setState({pageText : this.languageLibrary.en_us})
-        break;
-
-      case "pt_br":
-        this.setState({pageText : this.languageLibrary.pt_br})
-        break;
-    
-      default:
-        break;
-    }
-  };
-  //Function that calcultes the current height of a given element inside the page
-  getElementPosition = (elementId) => {
-    let element = document.getElementById(elementId)
-    let wayfinderCurrentHeight
-    if(document.documentElement.clientWidth >= 784){
-      wayfinderCurrentHeight = (((Math.max(document.documentElement.clientHeight, window.innerHeight || 0) * 15.5))) / 100
-    } else wayfinderCurrentHeight = 10 * 16
-
-    let waydirectCoordinate = ((element.offsetTop - element.scrollTop) - wayfinderCurrentHeight);
-
-    return waydirectCoordinate
-  };
-  wayfinderRoute = (targetedWaydirect) => {
-    window.scrollTo({
-      top: this.getElementPosition(targetedWaydirect),
-      left: 0,
-      behavior: 'smooth'
-    });
   };
   render() {
     return (
@@ -84,13 +56,13 @@ class About extends Component {
               </div>
               <div className="about__route">
                 <div
-                  onClick={() => this.wayfinderRoute("projects")}
+                  onClick={() => updateScreenPosition("projects")}
                   className="about__route-button --to-projects"
                 >
                   {this.state.pageText[4]}
                 </div>
                 <div
-                  onClick={() => this.wayfinderRoute("contact")}
+                  onClick={() => updateScreenPosition("contact")}
                   className="about__route-button --to-contact"
                 >
                   {this.state.pageText[5]}
