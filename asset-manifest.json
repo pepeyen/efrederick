@@ -1,16 +1,16 @@
 {
   "files": {
-    "main.css": "/static/css/main.cea1017a.chunk.css",
-    "main.js": "/static/js/main.04868481.chunk.js",
-    "main.js.map": "/static/js/main.04868481.chunk.js.map",
+    "main.css": "/static/css/main.62c3bdd0.chunk.css",
+    "main.js": "/static/js/main.fa4e2174.chunk.js",
+    "main.js.map": "/static/js/main.fa4e2174.chunk.js.map",
     "runtime-main.js": "/static/js/runtime-main.96dea9b7.js",
     "runtime-main.js.map": "/static/js/runtime-main.96dea9b7.js.map",
     "static/js/2.5ec40585.chunk.js": "/static/js/2.5ec40585.chunk.js",
     "static/js/2.5ec40585.chunk.js.map": "/static/js/2.5ec40585.chunk.js.map",
     "index.html": "/index.html",
-    "precache-manifest.c3d4950620c77c6c6002d6e34960398e.js": "/precache-manifest.c3d4950620c77c6c6002d6e34960398e.js",
+    "precache-manifest.27b96dc049a99a63cf64a0a667ecf458.js": "/precache-manifest.27b96dc049a99a63cf64a0a667ecf458.js",
     "service-worker.js": "/service-worker.js",
-    "static/css/main.cea1017a.chunk.css.map": "/static/css/main.cea1017a.chunk.css.map",
+    "static/css/main.62c3bdd0.chunk.css.map": "/static/css/main.62c3bdd0.chunk.css.map",
     "static/js/2.5ec40585.chunk.js.LICENSE.txt": "/static/js/2.5ec40585.chunk.js.LICENSE.txt",
     "static/media/index.scss": "/static/media/Nunito-SemiBold.b4ee600d.svg",
     "static/media/about.scss": "/static/media/about.3c093190.svg",
@@ -20,7 +20,7 @@
   "entrypoints": [
     "static/js/runtime-main.96dea9b7.js",
     "static/js/2.5ec40585.chunk.js",
-    "static/css/main.cea1017a.chunk.css",
-    "static/js/main.04868481.chunk.js"
+    "static/css/main.62c3bdd0.chunk.css",
+    "static/js/main.fa4e2174.chunk.js"
   ]
 }
