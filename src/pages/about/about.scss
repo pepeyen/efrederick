@@ -3,12 +3,16 @@ $cyan : #22d1ee;
 $purple : #3d5af1;
 $darkBlue : #0e153a;
 
-.article{
-    &__about{
-        font-family: "Nunito-Bold";
-    }
-    &__about-headline{
+.about{
+    font-family: "Nunito-Bold";
+    color: $darkBlue;
+    flex: 2;
+    margin: 0 0 1rem;
+    font-size: 1.25rem;
+
+    &__headline{
         font-size: 2rem;
+        margin: 0 1rem 0 1rem;
 
         &-comment{
             color: #5766b5;
@@ -17,17 +21,11 @@ $darkBlue : #0e153a;
             margin-top:.5rem;
         }
     }
-    &__about-description{
-        font-family: "Nunito-ExtraLight";
-
-        & p{
-            margin-top: 1rem;
-        }
-    }
-    &__about-route{
+    &__route{
         margin: 5vh 0 0 0;
 
         &-button{
+            font-family: "Nunito-Regular";
             -webkit-user-select: none;
             -moz-user-select: none;
             -ms-user-select: none;
@@ -39,22 +37,7 @@ $darkBlue : #0e153a;
             font-size: 1.2rem;
             width: 10rem;
         }
-    }
-}
-.--language-c{
-    color: #659BD3;
-}
-.--language-dotnet{
-    color: #68217A;
-}
-.--language-html{
-    color: #E95727;
-}
-.--language-css{
-    color: #284DE4;
-}
-.--language-reactjs{
-    color: #19DBFE;
+    }      
 }
 .--start{
     margin-bottom: 1rem;
@@ -69,25 +52,26 @@ $darkBlue : #0e153a;
     margin: 0 0 1rem 0;
 }
 @media (min-width: 801px) {  
-    .article{
-        &__about-headline{
+    .about{
+        margin: 5vh 0 0;
+        font-size: 3vh;
+        background-image: url('../../images/about.svg');
+        background-repeat: no-repeat;
+        background-position-x: right;
+        background-size: 55vh;
+        min-height: 50vh;
+
+        &__headline{
             display: inline-block;
             font-size: 5vh;
+            margin: 15vh 0 0 0;
 
             &-comment{
                 font-size: 2.5vh;
                 margin-top: 1vh;
             }
         }
-        &__about-description{
-            font-size: 2.5vh;
-            margin-top: 4vh;
-
-            & p{
-                margin-top: 1vh;
-            }
-        }
-        &__about-route{
+        &__route{
             margin: 5vh 0 0 0;
 
             &-button{
@@ -96,14 +80,7 @@ $darkBlue : #0e153a;
                 font-size: 2vh;
                 text-align: center;
             }
-        }       
-    }
-    .--about-image{
-        background-image: url('../../images/about.svg');
-        background-repeat: no-repeat;
-        background-position-x: right;
-        background-size: 55vh;
-        min-height: 60vh;
+        } 
     }
     .--start{
         text-align: start;

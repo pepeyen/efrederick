@@ -63,29 +63,29 @@ class App extends Component {
           <Contact pageLanguage = {this.state.pageLanguage}/>
         </main>
         <footer>
-          <div className = "footer">
-            <div className = "footer__text">
-              <div className = "footer__logo">
-                eFrederick
+          <div className="footer">
+            <div className="footer__text">
+              <div className="footer__logo">
+                <p>eFrederick</p>
               </div>
-              <div className = "footer__credits --spaced-from-top">
+              <div className="footer__credits --spaced-from-top">
                 {this.state.pageText[0]}
               </div>
-              <div className = "footer__social">
-                <div className = "footer__social-link --spaced-from-top">
-                  <a className = "footer__outside-link" href = "https://www.linkedin.com/in/erick-frederick-c/" target = "_blank" rel="noopener noreferrer">Linkedin</a>
+              <div className="footer__social">
+                <div className="footer__social-link --spaced-from-top">
+                  <a className="footer__outside-link" href = "https://www.linkedin.com/in/erick-frederick-c/" target = "_blank" rel="noopener noreferrer">Linkedin</a>
                 </div>
-                <div className = "footer__social-link --spaced-from-top">
-                  <a className = "footer__outside-link" href = "https://github.com/pepeyen" target = "_blank" rel="noopener noreferrer">Github</a>
+                <div className="footer__social-link --spaced-from-top">
+                  <a className="footer__outside-link" href = "https://github.com/pepeyen" target = "_blank" rel="noopener noreferrer">Github</a>
                 </div>
               </div>
-              <div className = "footer__lang">
+              <div className="footer__lang">
                 <select 
                   value={this.state.pageLanguage} 
                   onChange={this.__handleLanguage} 
                   name="languages" 
                   id="languages-dropdown"
-                  className = "footer__lang-dropdown"
+                  className="footer__lang-dropdown"
                 >
                   <option value="en_us">{this.state.pageText[1]}</option>
                   <option value="pt_br">{this.state.pageText[2]}</option>

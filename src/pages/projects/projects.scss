@@ -3,15 +3,13 @@ $cyan : #22d1ee;
 $purple : #3d5af1;
 $darkBlue : #0e153a;
 
-.article{
-
-    &__project-box{
-        width: 90%;
-        min-height: 14rem;
-        margin: 2rem 0 0 0;
-        border-radius:  0 0 10px 10px;
-    }
-    &__project-image{
+.project{
+    width: 90%;
+    min-height: 14rem;
+    margin: 2rem 0 0 0;
+    border-radius:  0 0 10px 10px;
+    
+    &__image{
         display: block;
         background-repeat: no-repeat;
         background-size: 100%;
@@ -20,20 +18,20 @@ $darkBlue : #0e153a;
         margin: 1rem auto 0 auto;
         border: .05rem solid $darkBlue;
     }
-    &__project-description{
+    &__description{
         padding-top: 1rem;
         border: .05rem solid $darkBlue;
         border-radius: 0 0 10px 10px;
         border-top: none;
         width: 100%;
     }
-    &__project-title{
+    &__title{
         font-family: "Nunito-SemiBold";
         text-align: center;
         color: $purple;
         font-size: 2rem;
     }
-    &__project-button{
+    &__button{
         display: inline-block;
         font-family: "Nunito-Light";
         text-decoration: none;
@@ -44,14 +42,6 @@ $darkBlue : #0e153a;
         border: .05rem solid $darkBlue;
         border-radius: 5px;
         padding: .25rem;
-
-        &:hover{
-            cursor: pointer;
-            font-family: "Nunito-SemiBold";
-            background-color: $darkBlue;
-            color: $white;
-            transition: background-color ease-in-out 100ms;
-        }
     }
 
 }
@@ -61,34 +51,40 @@ $darkBlue : #0e153a;
     align-items: center;
 }
 @media (min-width: 801px) {
-    .article{
+    .project{
+        padding: 0;
+        margin: 0;
+        min-width: 25%;
+        max-width: 30%;
+        min-height: 32vh;
 
-        &__project-box{
-            padding: 0;
-            margin: 0;
-            min-width: 25%;
-            max-width: 30%;
-            min-height: 32vh;
-        }
-        &__project-image{
+        &__image{
             background-size: 100%;
             width: 100%;
             height: 90%;
             margin: 0;
             border: .2vh solid $darkBlue;
         }
-        &__project-description{
+        &__description{
             padding-top: 2vh;
             border: .2vh solid $darkBlue;
             border-top: none;
         }
-        &__project-title{
+        &__title{
             font-size: 3vh;
         }
-        &__project-button{
+        &__button{
             margin:  1vh 25% 1vh 25%;
             font-size: 2vh;
             padding: .5vh;
+
+            &:hover{
+                cursor: pointer;
+                font-family: "Nunito-SemiBold";
+                background-color: $darkBlue;
+                color: $white;
+                transition: background-color ease-in-out 100ms;
+            }
         }
     }
     .--spaced-flex{

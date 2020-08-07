@@ -76,33 +76,33 @@ class Contact extends Component {
   render () {
     const { status } = this.state;
     return (
-      <div id="contact" className = "article">  
-        <div className="article__title --reverted">{this.state.pageText[0]}</div>
-          <div className = "article__box --contact">
-            <div className = "article__contact">
-              <div className = "article__contact-sub-title">{this.state.pageText[1]}</div>
+      <article id="contact">  
+        <div className="title --reverted">{this.state.pageText[0]}</div>
+          <div className="container">
+            <div className="contact">
+              <div className="contact__title">{this.state.pageText[1]}</div>
               <form
-                className = "article__contact-form"
+                className="contact__form"
                 onSubmit={this.submitForm}
                 action="https://formspree.io/mknqyejb"
                 method="POST"
               >
-                <div className = "article__contact-form-input">
+                <div className="contact__form-input">
                   <label htmlFor = "email">Email</label>
-                  <input className = "article__contact-form-email" type="email" name="email" />
+                  <input className="contact__form-email" type="email" name="email" />
                 </div>
-                <div className = "article__contact-form-input">
+                <div className="contact__form-input">
                   <label htmlFor = "message">{this.state.pageText[2]}</label>
-                  <textarea className = "article__contact-form-message" name="message" />
+                  <textarea className="contact__form-message" name="message" />
                 </div>
-                <div className = "article__contact-form-submit">
-                  {status === "SUCCESS" ? <p>{this.state.pageText[3]}</p> : <button className = "article__contact-form-button">{this.state.pageText[4]}</button>}
+                <div className="contact__form-submit">
+                  {status === "SUCCESS" ? <p>{this.state.pageText[3]}</p> : <button className="contact__form-button">{this.state.pageText[4]}</button>}
                   {status === "ERROR" && <p>{this.state.pageText[5]}</p>} 
                 </div>
               </form>
             </div>
         </div>
-      </div>  
+      </article>  
     );
   }
 }
