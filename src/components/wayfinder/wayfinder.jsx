@@ -1,17 +1,20 @@
 import React, {Component} from 'react';
 
 //Innerpage Routing
-import { getElementPosition, updateScreenPosition } from '../../routing/PageRouting'
+import { getElementPosition, updateScreenPosition } from '../../routing/PageRouting';
 
 //Styles
 import './wayfinder.scss';
+
+//Language library
+import {wayfinder} from '../../language/lib/language-lib';
 
 class Wayfinder extends Component { 
   constructor(props) {
     super(props);
     this.state = {
       pageLanguage: this.props.pageLanguage,
-      pageText : this.languageLibrary.en_us,
+      pageText : wayfinder.en_us,
       deviceWidth: 0,
       deviceHeight: 0,
       wayfinderBarStyle: { },
@@ -21,20 +24,6 @@ class Wayfinder extends Component {
   }
   waydirectLiveStatus = []
   waydirectVisibilityStatus = '--hidden'
-  languageLibrary = {
-    en_us: [
-        "About",
-        "Competencies",
-        "Projects",
-        "Contact"
-    ],
-    pt_br: [
-      "Sobre",
-      "Competências",
-      "Projetos",
-      "Contato"
-    ]
-  }
 
   componentDidMount() {
     window.addEventListener("resize", this.updateDimensions);
@@ -60,7 +49,7 @@ class Wayfinder extends Component {
   componentDidUpdate(prevProps){
     if(prevProps.pageLanguage !== this.props.pageLanguage){
       this.setState({
-        pageText : this.languageLibrary[this.props.pageLanguage]
+        pageText : wayfinder[this.props.pageLanguage]
       });
     }
   };

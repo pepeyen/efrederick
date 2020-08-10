@@ -54,9 +54,9 @@ $darkBlue : #0e153a;
             background-color: $darkBlue;
             border-radius: 5px;
             border: .05rem solid $darkBlue;
-            font-size: 1rem;
+            font-size: 1.2rem;
             min-width: 100%;
-            height: 3rem;
+            padding: 1.5rem;
             margin: 0 0 1rem 0;
         }
     }
@@ -97,7 +97,7 @@ $darkBlue : #0e153a;
                 border: .2vh solid $darkBlue;
                 font-size: 2vh;
                 min-width: 20vh;
-                height: 6vh;
+                padding: 1vh;
                 margin: 0 0 2vh 0;
     
                 &:hover{

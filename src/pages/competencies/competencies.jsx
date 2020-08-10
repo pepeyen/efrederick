@@ -4,46 +4,23 @@ import React, {Component} from 'react';
 import './competencies.scss'
 import '../pages.scss'
 
+//Language library
+import {competencies} from '../../language/lib/language-lib'
+
+
 class Competencies extends Component {
   constructor(props) {
     super(props);
     this.state = {
       pageLanguage: this.props.pageLanguage,
-      pageText : this.languageLibrary.en_us
+      pageText : competencies.en_us
     }; 
   }
-  languageLibrary = {
-    en_us: [
-      "Competencies",
-      "Career",
-      "Companies i've worked and what i worked with",
-      "Companies i've worked :",
-      "Technical Support Internship",
-      "Monitor and maintain Pitagora's computer systems and networks.",
-      "Which are my main knowledges from web development",
-      "Languages I speak :",
-      "Dev Tools :",
-      "Programming",
-      "Which are my main knowledges aside from web development"
-    ],
-    pt_br: [
-      "Competências",
-      "Carreira",
-      "Empresas com quem eu trabalhei e com o que trabalhei",
-      "Empresas com quem eu trabalhei :",
-      "Estágio de Suporte Técnico ",
-      "Prover manuntenção aos aparelhos digitais e de rede da empresa",
-      "Quais são meus maiores conhecimentos de desenvolvimento web",
-      "Línguas qual eu falo :",
-      "Ferramentas Dev :",
-      "Programação",
-      "Quais são meus maiores conhecimentos por fora do desenvolvimento web"
-    ]
-  }; 
+  
   componentDidUpdate(prevProps){
     if(prevProps.pageLanguage !== this.props.pageLanguage){
       this.setState({
-        pageText : this.languageLibrary[this.props.pageLanguage]
+        pageText : competencies[this.props.pageLanguage]
       });
     }
   }

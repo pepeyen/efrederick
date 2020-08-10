@@ -11,29 +11,20 @@ import Contact from './pages/contact/contact'
 import './App.scss';
 import './footer/footer.scss'
 
+//Language library
+import {footer} from './language/lib/language-lib'
+
 class App extends Component { 
   constructor(props) {
     super(props);
     this.state = {
       pageLanguage: "en_us",
-      pageText : this.languageLibrary.en_us
+      pageText : footer.en_us
     };
-  }
-  languageLibrary = {
-    en_us: [
-      "Made with love by me",
-      "English",
-      "Portuguese"
-    ],
-    pt_br: [
-      "Feito com amor por mim",
-      "Inglês",
-      "Português"
-    ]
   }
   updatePageLanguage = (targetLanguage) => {
     this.setState({
-      pageText : this.languageLibrary[targetLanguage]
+      pageText : footer[targetLanguage]
     })
   }
   __handleLanguage = (event) => {

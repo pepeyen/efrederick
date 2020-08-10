@@ -4,28 +4,21 @@ import React, {Component} from 'react';
 import './projects.scss'
 import '../pages.scss'
 
+//Language library
+import {projects} from '../../language/lib/language-lib'
+
 class Projects extends Component{
   constructor(props) {
     super(props);
     this.state = {
       pageLanguage: this.props.pageLanguage,
-      pageText : this.languageLibrary.en_us
+      pageText : projects.en_us
     }; 
   }
-  languageLibrary = {
-    en_us: [
-      "Projects",
-      "Click here to visit the webapp"
-    ],
-    pt_br: [
-      "Projetos",
-      "Clique aqui para visitar o aplicativo web"
-    ]
-  }; 
   componentDidUpdate(prevProps){
     if(prevProps.pageLanguage !== this.props.pageLanguage){
       this.setState({
-        pageText : this.languageLibrary[this.props.pageLanguage]
+        pageText : projects[this.props.pageLanguage]
       });
     }
   };

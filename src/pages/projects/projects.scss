@@ -32,16 +32,18 @@ $darkBlue : #0e153a;
         font-size: 2rem;
     }
     &__button{
-        display: inline-block;
+        display: block;
         font-family: "Nunito-Light";
         text-decoration: none;
         text-align: center;
         color: $darkBlue;
-        margin:  1rem 10% 1rem 10%;
-        font-size: 1rem;
+        margin:  1rem auto 2rem auto;
+        width: 80%;
+        min-width: 10rem;
+        font-size: 1.2rem;
         border: .05rem solid $darkBlue;
         border-radius: 5px;
-        padding: .25rem;
+        padding: 1.5rem 1rem 1.5rem 1rem;
     }
 
 }
@@ -74,9 +76,10 @@ $darkBlue : #0e153a;
             font-size: 3vh;
         }
         &__button{
-            margin:  1vh 25% 1vh 25%;
+            margin:  2.5vh auto 4vh auto;
             font-size: 2vh;
-            padding: .5vh;
+            padding: 2vh;
+            min-width: 30vh;
 
             &:hover{
                 cursor: pointer;

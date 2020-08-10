@@ -7,36 +7,23 @@ import { updateScreenPosition } from '../../routing/PageRouting'
 import './about.scss'
 import '../pages.scss'
 
+//Language library
+import {about} from '../../language/lib/language-lib'
+
+
 class About extends Component {
   constructor(props) {
     super(props);
     this.state = {
       pageLanguage: this.props.pageLanguage,
-      pageText : this.languageLibrary.en_us
+      pageText : about.en_us
     }; 
   }
-  languageLibrary = {
-    en_us: [
-      "About",
-      "Hi, my name's Erick Frederick...",
-      "i'm a devloper you can trust",
-      "...who is available 24/7/365.",
-      "View My Work",
-      "Contact Me"
-    ],
-    pt_br: [
-      "Sobre",
-      "Olá meu nome é Erick Frederick...",
-      "sou um desenvolvedor muito confiável",
-      "...que sempre estará disponível.",
-      "Veja Meu Trabalho",
-      "Entre em contato"
-    ]
-  }; 
+
   componentDidUpdate(prevProps){
     if(prevProps.pageLanguage !== this.props.pageLanguage){
       this.setState({
-        pageText : this.languageLibrary[this.props.pageLanguage]
+        pageText : about[this.props.pageLanguage]
       });
     }
   };

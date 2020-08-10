@@ -31,7 +31,7 @@ $darkBlue : #0e153a;
             -ms-user-select: none;
             user-select: none;
             display: inline-block;
-            padding: 2rem;
+            padding: 1.5rem;
             border: .05rem solid $darkBlue;
             border-radius: 5px;
             font-size: 1.2rem;
@@ -46,10 +46,11 @@ $darkBlue : #0e153a;
     margin-top: 1rem;
 }
 .--to-projects{
+    display: block;
     background-color: $darkBlue;
     color: $white;
     font-family: "Nunito-SemiBold";
-    margin: 0 0 1rem 0;
+    margin: 0 auto 1rem auto;
 }
 @media (min-width: 801px) {  
     .about{
@@ -91,17 +92,22 @@ $darkBlue : #0e153a;
         margin-top: 1vh;
     }
     .--to-projects{
+        display: inline-block;
         margin: 0 2vh 0 0;
+
+        &:hover{
+            cursor: pointer;
+            color: $cyan;
+        }
     }  
-    .--to-projects:hover{
-        cursor: pointer;
-        color: $cyan;
-    }
-    .--to-contact:hover{
-        cursor: pointer;
-        font-family: "Nunito-SemiBold";
-        background-color: $darkBlue;
-        color: $white;
-        transition: background-color ease-in-out 100ms;
+    .--to-contact{
+
+        &:hover{
+            cursor: pointer;
+            font-family: "Nunito-SemiBold";
+            background-color: $darkBlue;
+            color: $white;
+            transition: background-color ease-in-out 100ms;
+        }
     }
 }

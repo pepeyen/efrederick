@@ -4,6 +4,10 @@ import React, { Component } from 'react';
 import './contact.scss'
 import '../pages.scss'
 
+//Language library
+import {contact} from '../../language/lib/language-lib'
+
+
 class Contact extends Component {
   constructor(props) {
     super(props);
@@ -11,32 +15,14 @@ class Contact extends Component {
     this.state = {
       status: "",
       pageLanguage: this.props.pageLanguage,
-      pageText : this.languageLibrary.en_us
+      pageText : contact.en_us
     };
   }
-  languageLibrary = {
-    en_us: [
-      "Contact",
-      "Let's work together",
-      "Message",
-      "Thanks!",
-      "Submit",
-      "Ooops! There was an error."
-    ],
-    pt_br: [
-      "Contato",
-      "Vamos trabalhar juntos",
-      "Menssagem",
-      "Obrigado!",
-      "Enviar",
-      "Ooops! Ocorreu um erro."
-    ]
-  }; 
-
+  
   componentDidUpdate(prevProps){
     if(prevProps.pageLanguage !== this.props.pageLanguage){
       this.setState({
-        pageText : this.languageLibrary[this.props.pageLanguage]
+        pageText : contact[this.props.pageLanguage]
       });
     }
   };
