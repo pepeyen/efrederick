@@ -1,15 +1,14 @@
 import React, {Component} from 'react';
 
 //Innerpage Routing
-import { updateScreenPosition } from '../../routing/PageRouting'
+import { updateScreenPosition } from '../../routing/InnerPageRouting'
 
 //Styles
 import './about.scss'
 import '../pages.scss'
 
 //Language library
-import {about} from '../../language/lib/language-lib'
-
+import {about} from '../../language/lib/language-lib';
 
 class About extends Component {
   constructor(props) {

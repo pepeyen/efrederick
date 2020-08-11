@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
 
 //Innerpage Routing
-import { getElementPosition, updateScreenPosition } from '../../routing/PageRouting';
+import { getElementPosition, updateScreenPosition } from '../../routing/InnerPageRouting';
 
 //Styles
 import './wayfinder.scss';
@@ -22,7 +22,7 @@ class Wayfinder extends Component {
       isWaydirectsHidden: true
     };
   }
-  waydirectLiveStatus = []
+  waydirectLiveStatus = [3]
   waydirectVisibilityStatus = '--hidden'
 
   componentDidMount() {
@@ -88,9 +88,7 @@ class Wayfinder extends Component {
         for(let i = 0; i <= targetedWaydirect; i++){
           this.waydirectLiveStatus[i] = '--visited'
         }
-        let waydirectMaxRange = this.waydirectLiveStatus.length--
-
-        for(let i = waydirectMaxRange; i > targetedWaydirect; i--){
+        for(let i = 3; i > targetedWaydirect; i--){
           this.waydirectLiveStatus[i] = '--unvisited'
         }
         break;
@@ -109,25 +107,24 @@ class Wayfinder extends Component {
   //Function that updates the progress bar styling
   wayfinderBarProgress = () => {
     this.setState({
-      wayfinderProgress: "1%"
+      wayfinderProgress: `{${this.getScrollPercentage(window.pageYOffset)}%}`
     });
-
-    if(window.scrollY >= getElementPosition("about")){
+    if(window.pageYOffset >= getElementPosition("about")){
       this.updateWaydirectState({
         targetedState: "waydirect-live-status",
         targetedWaydirect: 0
       });
-      if(window.scrollY >= getElementPosition("competencies")){
+      if(window.pageYOffset >= getElementPosition("competencies")){
         this.updateWaydirectState({
           targetedState: "waydirect-live-status",
           targetedWaydirect: 1
         });
-        if(window.scrollY >= getElementPosition("projects")){
+        if(window.pageYOffset >= getElementPosition("projects")){
           this.updateWaydirectState({
             targetedState: "waydirect-live-status",
             targetedWaydirect: 2
           });
-          if(window.scrollY >= getElementPosition("contact")){
+          if(window.pageYOffset >= getElementPosition("contact")){
             this.updateWaydirectState({
               targetedState: "waydirect-live-status",
               targetedWaydirect: 3
