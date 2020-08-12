@@ -2,10 +2,6 @@ $white : #e2f3f5;
 $cyan : #22d1ee;
 $purple : #3d5af1;
 $darkBlue : #0e153a;
-$red: #C01829;
-$blue: #211D61;
-$green: #009739;
-$yellow: #F6D800;
 
 .wayfinder{
     overflow: hidden;
@@ -54,31 +50,9 @@ $yellow: #F6D800;
     &__waydirect, &__waysign{
         display: block;
     }
-    &__lang{
-        background-color: #121b4a;
-        align-self: flex-end;
-
-        &-button{
-            background-color: transparent;
-            color: $white;
-            font-family: "Nunito-Bold";
-            font-size: 1rem;
-            margin: .5rem 2rem .5rem 2rem;
-            padding: .5rem;
-            border: .1rem solid $purple;
-            border-radius: .5rem;
-
-            &:focus{
-                outline: none;
-            }
-        } 
-    }
 }
 #wayfinder-competencies , #wayfinder-projects{
     margin: 2.5rem 0 2.5rem 0;
-}
-.--visible{
-    display: block;
 }
 .--hidden{
     display: none;
@@ -87,22 +61,6 @@ $yellow: #F6D800;
     color: $cyan;
     border-bottom: .4rem solid $cyan;
     transition: border-bottom ease-in-out 100ms;
-}
-.--en_us{
-        
-    &-active{
-        background-color: $red;
-        color: $white;
-        border-color: $red;
-    }
-}
-.--pt_br{
-
-    &-active{
-        background-color: $green;
-        color: $yellow;
-        border-color: $green;
-    }
 }
 @media (min-width: 801px) {
     .wayfinder{
@@ -133,29 +91,6 @@ $yellow: #F6D800;
         &__waydirect, &__waysign{
             display: inline-block;
         }
-        &__lang{
-            background-color: transparent;
-            align-self: center;
-
-            &-button{
-                background-color: transparent;
-                color: $white;
-                font-family: "Nunito-Bold";
-                font-size: 1.5vh;
-                margin: 1vh 1vh 0 1vh;
-                padding: .5vh;
-                border: .1vh solid $purple;
-                border-radius: .5vh;
-    
-                &:hover{
-                    cursor: pointer;
-                }
-                &:focus{
-                    outline: none;
-                }
-            } 
-        }
-
     }
     #wayfinder-competencies , #wayfinder-projects{
         margin: 0 5vh 0 5vh;
@@ -166,29 +101,5 @@ $yellow: #F6D800;
     .--visited{
         color: $cyan;
         border-bottom: .5vh solid $cyan;
-    }
-    .--en_us{
-        
-        &-active{
-            background-color: $red;
-            color: $white;
-            border-color: $red;
-        }
-        &:hover{
-            color: $white;
-            border-color: $red;
-        }
-    }
-    .--pt_br{
-
-        &-active{
-            background-color: $green;
-            color: $yellow;
-            border-color: $green;
-        }
-        &:hover{
-            color: $yellow;
-            border-color: $green;
-        }
     }
 }
