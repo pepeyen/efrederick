@@ -1,5 +1,5 @@
-import React, { useState } from 'react'
-import {useDispatch} from 'react-redux';
+import React from 'react'
+import {useSelector} from 'react-redux';
 
 //Styles
 import './footer.scss';
@@ -7,26 +7,9 @@ import './footer.scss';
 //Language library
 import {footer} from '../../language/lib/language-lib' 
 
-import {setToENUS, setToPTBR} from '../../actions';
-
 function Footer() {
-    const [pageText, setPageText] = useState(footer.en_us);
-    const dispatch = useDispatch();
-    
-    const dropdownHandler = (e) => {
-        switch (e.target.value){
-            case "en_us":
-                dispatch(setToENUS());
-                setPageText(footer[e.target.value]);
-                break;
-            case "pt_br":
-                dispatch(setToPTBR());
-                setPageText(footer[e.target.value]);
-                break;
-            default:
-                break;
-        }
-    }
+    let currentPageLanguage = useSelector(state => state.pageLanguage);
+    let pageText = footer[currentPageLanguage]; 
 
     return (
         <div className="footer">
@@ -56,17 +39,6 @@ function Footer() {
                         Github
                     </a>
                     </div>
-                </div>
-                <div className="footer__lang">
-                    <select 
-                        onChange={dropdownHandler} 
-                        name="languages" 
-                        id="languages-dropdown"
-                        className="footer__lang-dropdown"
-                    >
-                    <option value="en_us">{pageText[1]}</option>
-                    <option value="pt_br">{pageText[2]}</option>
-                    </select>
                 </div>
             </div>
         </div>

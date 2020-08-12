@@ -33,7 +33,7 @@ $darkBlue : #0e153a;
             display: inline-block;
             padding: 1.5rem;
             border: .05rem solid $darkBlue;
-            border-radius: 5px;
+            border-radius: .2rem;
             font-size: 1.2rem;
             width: 10rem;
         }
@@ -77,7 +77,8 @@ $darkBlue : #0e153a;
 
             &-button{
                 padding: 1.5vh;
-                border: .1rem solid $darkBlue;
+                border: .1vh solid $darkBlue;
+                border-radius: .5vh;
                 font-size: 2vh;
                 text-align: center;
             }

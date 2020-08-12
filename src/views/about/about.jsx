@@ -1,4 +1,5 @@
-import React, {Component} from 'react';
+import React from 'react';
+import {useSelector} from 'react-redux';
 
 //Innerpage Routing
 import { updateScreenPosition } from '../../routing/InnerPageRouting'
@@ -10,56 +11,42 @@ import '../pages.scss'
 //Language library
 import {about} from '../../language/lib/language-lib';
 
-class About extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      pageLanguage: this.props.pageLanguage,
-      pageText : about.en_us
-    }; 
-  }
+function About (){
+  let currentPageLanguage = useSelector(state => state.pageLanguage);
+  let pageText = about[currentPageLanguage]; 
 
-  componentDidUpdate(prevProps){
-    if(prevProps.pageLanguage !== this.props.pageLanguage){
-      this.setState({
-        pageText : about[this.props.pageLanguage]
-      });
-    }
-  };
-  render() {
-    return (
-      <article id="about">
-        <div className="title">{this.state.pageText[0]}</div>
-        <div className="container">
-          <div className="about"> 
-            <div className="about__headline">
-              <div className="about__headline-comment --start">
-                <p>{this.state.pageText[1]}</p>
+  return (
+    <article id="about">
+      <div className="title">{pageText[0]}</div>
+      <div className="container">
+        <div className="about"> 
+          <div className="about__headline">
+            <div className="about__headline-comment --start">
+              <p>{pageText[1]}</p>
+            </div>
+            <p>{pageText[2]}</p>
+            <div className="about__headline-comment --end">
+              <p>{pageText[3]}</p>
+            </div>
+            <div className="about__route">
+              <div
+                onClick={() => updateScreenPosition("projects")}
+                className="about__route-button --to-projects"
+              >
+                {pageText[4]}
               </div>
-              <p>{this.state.pageText[2]}</p>
-              <div className="about__headline-comment --end">
-                <p>{this.state.pageText[3]}</p>
+              <div
+                onClick={() => updateScreenPosition("contact")}
+                className="about__route-button --to-contact"
+              >
+                {pageText[5]}
               </div>
-              <div className="about__route">
-                <div
-                  onClick={() => updateScreenPosition("projects")}
-                  className="about__route-button --to-projects"
-                >
-                  {this.state.pageText[4]}
-                </div>
-                <div
-                  onClick={() => updateScreenPosition("contact")}
-                  className="about__route-button --to-contact"
-                >
-                  {this.state.pageText[5]}
-                </div>
-              </div>
-            </div>        
-          </div>
+            </div>
+          </div>        
         </div>
-      </article>
-    );
-  }
+      </div>
+    </article>
+  );
 }
 
 export default About;

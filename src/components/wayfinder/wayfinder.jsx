@@ -1,5 +1,8 @@
 import React, {Component} from 'react';
 
+//Components
+import LangSelector from './langSelector';
+
 //Innerpage Routing
 import { getElementPosition, updateScreenPosition } from '../../routing/InnerPageRouting';
 
@@ -19,7 +22,11 @@ class Wayfinder extends Component {
       deviceHeight: 0,
       wayfinderBarStyle: { },
       wayfinderProgress: "0%",
-      isWaydirectsHidden: true
+      isWaydirectsHidden: true,
+      waydirectButtonLiveStatus: [
+        '-active',
+        ''
+      ]
     };
   }
   waydirectLiveStatus = [3]
@@ -85,11 +92,9 @@ class Wayfinder extends Component {
         break;
 
       case "waydirect-live-status":
+        this.waydirectLiveStatus = ['','','','']
         for(let i = 0; i <= targetedWaydirect; i++){
           this.waydirectLiveStatus[i] = '--visited'
-        }
-        for(let i = 3; i > targetedWaydirect; i--){
-          this.waydirectLiveStatus[i] = '--unvisited'
         }
         break;
 
@@ -172,7 +177,6 @@ class Wayfinder extends Component {
         break;
     }
   };
-
   render() {
     return (
       <nav className="wayfinder">
@@ -215,6 +219,7 @@ class Wayfinder extends Component {
         > 
           <div className="wayfinder__hamburguer"/>
         </div>
+        <LangSelector />
       </nav>
     );
   }

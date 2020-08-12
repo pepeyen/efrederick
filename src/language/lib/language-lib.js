@@ -35,27 +35,29 @@ export const competencies = {
         "Competencies",
         "Career",
         "Companies i've worked and what i worked with",
-        "Companies i've worked :",
+        "Companies i've worked",
         "Technical Support Internship",
         "Monitor and maintain Pitagora's computer systems and networks.",
-        "Which are my main knowledges from web development",
-        "Languages I speak :",
-        "Dev Tools :",
-        "Programming",
-        "Which are my main knowledges aside from web development"
+        "Web Development",
+        "Which are my competencies from web development",
+        "Others",
+        "Which are my competencies aside from web development",
+        "Other technologies",
+        "Dev Tools"
     ],
     pt_br: [
         "Competências",
         "Carreira",
         "Empresas com quem eu trabalhei e com o que trabalhei",
-        "Empresas com quem eu trabalhei :",
+        "Empresas com quem eu trabalhei",
         "Estágio de Suporte Técnico ",
         "Prover manuntenção aos aparelhos digitais e de rede da empresa",
-        "Quais são meus maiores conhecimentos de desenvolvimento web",
-        "Línguas qual eu falo :",
-        "Ferramentas Dev :",
-        "Programação",
-        "Quais são meus maiores conhecimentos por fora do desenvolvimento web"
+        "Desenvolvimento Web",
+        "Quais são minhas competências de desenvolvimento web",
+        "Outros",
+        "Quais são minhas competências por fora do desenvolvimento web",
+        "Outras tecnologias",
+        "Ferramentas Dev"
     ]
 }
 export const projects = {
@@ -88,13 +90,9 @@ export const contact = {
 }
 export const footer = {
     en_us: [
-        "Made with love by me",
-        "English",
-        "Portuguese"
+        "Made with love by me"
       ],
     pt_br: [
-        "Feito com amor por mim",
-        "Inglês",
-        "Português"
+        "Feito com amor por mim"
     ]
 }
