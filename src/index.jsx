@@ -11,10 +11,7 @@ import { Provider } from 'react-redux';
 import allReducer from './reducers';
 
 
-const myStore = createStore(
-  allReducer,
-  window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()
-);
+const myStore = createStore(allReducer);
 
 ReactDOM.render(
   <Provider store={myStore}>
