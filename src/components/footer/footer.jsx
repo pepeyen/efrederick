@@ -1,6 +1,9 @@
 import React from 'react'
 import {useSelector} from 'react-redux';
 
+//Components
+import LangSelector from '../langSelector/langSelector';
+
 //Styles
 import './footer.scss';
 
@@ -40,6 +43,7 @@ function Footer() {
                     </a>
                     </div>
                 </div>
+                <LangSelector />
             </div>
         </div>
     );
