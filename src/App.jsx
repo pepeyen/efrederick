@@ -20,10 +20,10 @@ function App(){
         <Wayfinder pageLanguage={pageLanguage}/>
       </header>
       <main>
-        <About pageLanguage={pageLanguage}/>
-        <Competencies pageLanguage={pageLanguage}/>
-        <Projects pageLanguage={pageLanguage}/>
-        <Contact pageLanguage={pageLanguage}/>
+        <About />
+        <Competencies />
+        <Projects />
+        <Contact />
       </main>
       <footer>
         <Footer />
