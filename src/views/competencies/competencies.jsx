@@ -41,14 +41,13 @@ function Competencies (){
             <div className="competence__sub-description">
               <p>HTML</p>
               <p>CSS</p>
-              <p>SCSS</p>
+              <p>Sass</p>
               <p>Javascript</p>
               <p>React.JS</p>
             </div>
             <span>Back-End</span>
             <div className="competence__sub-description">
               <p>Node.JS</p>
-              <p>PHP</p>
             </div>
           </div>
         </div>
