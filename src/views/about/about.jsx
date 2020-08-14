@@ -12,8 +12,8 @@ import '../pages.scss'
 import {about} from '../../language/lib/language-lib';
 
 function About (){
-  let currentPageLanguage = useSelector(state => state.pageLanguage);
-  let pageText = about[currentPageLanguage]; 
+  const currentPageLanguage = useSelector(state => state.pageLanguage);
+  const pageText = about[currentPageLanguage]; 
 
   return (
     <article id="about">

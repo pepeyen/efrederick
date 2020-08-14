@@ -11,8 +11,8 @@ import './footer.scss';
 import {footer} from '../../language/lib/language-lib' 
 
 function Footer() {
-    let currentPageLanguage = useSelector(state => state.pageLanguage);
-    let pageText = footer[currentPageLanguage]; 
+    const currentPageLanguage = useSelector(state => state.pageLanguage);
+    const pageText = footer[currentPageLanguage]; 
 
     return (
         <div className="footer">

@@ -1,5 +1,4 @@
 import React from 'react';
-import {useSelector} from 'react-redux';
 
 //Components
 import Wayfinder from './components/wayfinder/wayfinder'
@@ -13,11 +12,10 @@ import Footer from './components/footer/footer'
 import './App.scss';
 
 function App(){ 
-  const pageLanguage = useSelector(state => state.pageLanguage)
   return (
     <div className="App">
       <header>
-        <Wayfinder pageLanguage={pageLanguage}/>
+        <Wayfinder />
       </header>
       <main>
         <About />

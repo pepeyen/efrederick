@@ -9,9 +9,9 @@ import '../pages.scss'
 import {contact} from '../../language/lib/language-lib'
 
 function Contact () {
-  let currentPageLanguage = useSelector(state => state.pageLanguage);
-  let pageText = contact[currentPageLanguage]; 
-  let [status,setStatus] = useState("");
+  const currentPageLanguage = useSelector(state => state.pageLanguage);
+  const pageText = contact[currentPageLanguage]; 
+  const [status,setStatus] = useState("");
 
   let submitForm = (ev) => {
     ev.preventDefault();

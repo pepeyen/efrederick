@@ -9,8 +9,8 @@ import '../pages.scss'
 import {projects} from '../../language/lib/language-lib'
 
 function Projects (){
-  let currentPageLanguage = useSelector(state => state.pageLanguage);
-  let pageText = projects[currentPageLanguage];
+  const  currentPageLanguage = useSelector(state => state.pageLanguage);
+  const pageText = projects[currentPageLanguage];
 
   return (
     <article id="projects"> 

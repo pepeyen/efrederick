@@ -10,8 +10,8 @@ import {competencies} from '../../language/lib/language-lib'
 
 
 function Competencies (){
-  let currentPageLanguage = useSelector(state => state.pageLanguage);
-  let pageText = competencies[currentPageLanguage]; 
+  const currentPageLanguage = useSelector(state => state.pageLanguage);
+  const pageText = competencies[currentPageLanguage]; 
 
   return (
     <article id="competencies">
