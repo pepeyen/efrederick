@@ -20,42 +20,72 @@ function Projects (){
           <div className="project__image --efrederickcli"/>
           <div className="project__description">
             <div className="project__title">eFrederick CLI</div>
-            <a 
-              className="project__button" 
-              href="https://pepeyen.github.io/efrederick-cli/" 
-              target="_blank" 
-              rel="noopener noreferrer"
-            >
-              {pageText[1]}
-            </a>
+            <div className="project__outside">
+              <a 
+                className="project__button" 
+                href="https://pepeyen.github.io/efrederick-cli/" 
+                target="_blank" 
+                rel="noopener noreferrer"
+              >
+                {pageText[1]}
+              </a>
+              <a 
+                className="project__button" 
+                href="https://github.com/pepeyen/efrederick-cli/" 
+                target="_blank" 
+                rel="noopener noreferrer"
+              >
+                {pageText[2]}
+              </a>
+            </div>
           </div>
         </div>
         <div className="project">
           <div className="project__image --cstech"/>
           <div className="project__description">
             <div className="project__title">CS Tech</div>
-            <a 
-              className="project__button" 
-              href="https://pepeyen.github.io/cs-tech/" 
-              target="_blank" 
-              rel="noopener noreferrer"
-            >
-              {pageText[1]}
-            </a>
+            <div className="project__outside">
+              <a 
+                className="project__button" 
+                href="https://pepeyen.github.io/cs-tech/" 
+                target="_blank" 
+                rel="noopener noreferrer"
+              >
+                {pageText[1]}
+              </a>
+              <a 
+                className="project__button" 
+                href="https://github.com/pepeyen/cs-tech/" 
+                target="_blank" 
+                rel="noopener noreferrer"
+              >
+                {pageText[2]}
+              </a>
+            </div>
           </div>  
         </div>
         <div className="project">
           <div className="project__image --efrederick"/>
           <div className="project__description">
             <div className="project__title">eFrederick</div>
-            <a 
-              className="project__button" 
-              href="https://efrederick.dev/" 
-              target="_blank" 
-              rel="noopener noreferrer"
-            >
-              {pageText[1]}
-            </a>
+            <div className="project__outside">
+              <a 
+                className="project__button" 
+                href="https://efrederick.dev/" 
+                target="_blank" 
+                rel="noopener noreferrer"
+              >
+                {pageText[1]}
+              </a>
+              <a 
+                className="project__button" 
+                href="https://github.com/pepeyen/efrederick/" 
+                target="_blank" 
+                rel="noopener noreferrer"
+              >
+                {pageText[2]}
+              </a>
+            </div>
           </div> 
         </div>
       </div>

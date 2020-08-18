@@ -63,11 +63,13 @@ export const competencies = {
 export const projects = {
     en_us: [
         "Projects",
-        "Click here to visit the live demo"
+        "Click here to visit the live demo",
+        "Click here to visit the source code"
       ],
     pt_br: [
         "Projetos",
-        "Clique aqui para visitar a demonstração ao vivo"
+        "Clique aqui para visitar a demonstração ao vivo",
+        "Clique aqui para visitar o código fonte"
     ]
 }
 export const contact = {

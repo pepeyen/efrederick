@@ -32,13 +32,13 @@ $darkBlue : #0e153a;
         font-size: 2rem;
     }
     &__button{
-        display: block;
+        display: inline-block;
+        width: 35%;
         font-family: "Nunito-Light";
         text-decoration: none;
         text-align: center;
         color: $darkBlue;
         margin:  1rem auto 2rem auto;
-        width: 80%;
         font-size: 1.2rem;
         border: .05rem solid $darkBlue;
         border-radius: 5px;
@@ -65,6 +65,7 @@ $darkBlue : #0e153a;
             height: 90%;
             margin: 0;
             border: .2vh solid $darkBlue;
+
         }
         &__description{
             padding-top: 2vh;
@@ -73,6 +74,9 @@ $darkBlue : #0e153a;
         }
         &__title{
             font-size: 3vh;
+        }
+        &__outside{
+            display: flex;
         }
         &__button{
             margin:  2.5vh auto 4vh auto;
