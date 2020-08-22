@@ -23,15 +23,21 @@ function Wayfinder() {
       window.removeEventListener("scroll", wayfinderBarProgress);
     }
   });
-
-  //Function that handles the overwall webapp inline styling
+  /**
+   * Handles the overwall application inline styling params are an object because they can and will be at a null value since each one,
+   * it's switch case based.
+   * 
+   * @params {string}targetedState Which update it will perform 
+   * @params {int}targetedWaydirect Used to be the max range to perform the styling update at the wayfinder
+   */
   const updateWaydirectState = ({targetedState, targetedWaydirect}) => {
     switch (targetedState) {
       case "waydirect-visibility":
         setIsWaydirectsHidden(!isWaydirectsHidden);
         break;
       case "waydirect-live-status":
-        let waydirectLiveStatus = ['','','','']
+        //Re-setting the current state to ''
+        let waydirectLiveStatus = ['','','',''];
 
         for(let i = 0; i <= targetedWaydirect; i++){
           waydirectLiveStatus[i] = '--visited'
@@ -42,10 +48,19 @@ function Wayfinder() {
     }
   };
 
-  //Function that updates the progress bar styling
+  /**
+   * Updates the progress bar styling
+   */
   const wayfinderBarProgress = () => {
+    /**
+     * Creating a scope array to prevent unintentional re-renders
+     */
     let waydirectLiveStatus = ['','','',''];
 
+    /**
+     * This is a bad implementation, still looking on how to trigger the style update,
+     * only when it hits a certain page height (target component).
+     */
     if(window.pageYOffset >= getElementPosition("about")){
       waydirectLiveStatus = updateWaydirectState({
         targetedState: "waydirect-live-status",
@@ -73,7 +88,10 @@ function Wayfinder() {
     setWaydirectLiveStatus(waydirectLiveStatus);
   };
 
-  //Function that handles UX given a target element
+  /**
+   * Handles UX given a target element
+   * @params {string}targetedWaydirect Targeted element to be routed to
+   */
   const wayfinderRouteTo = (targetedWaydirect) => {
     switch (targetedWaydirect) {
       case "about":

@@ -7,10 +7,11 @@ import './langSelector.scss';
 import {setToENUS, setToPTBR} from '../../actions';
 
 function LangSelector() {
+  const dispatch = useDispatch();
   const [isPageEN_US, setIsPageEN_US] = useState(true);
   const [isPagePT_BR, setIsPagePT_BR] = useState(false);
-  const dispatch = useDispatch();
 
+  //It dispatches the desired page language
   const buttonHandler = (e) => {
     e.preventDefault();
 
