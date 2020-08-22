@@ -8,7 +8,7 @@ import { getElementPosition, updateScreenPosition } from '../../routing/InnerPag
 import './wayfinder.scss';
 
 //Language library
-import {wayfinder} from '../../language/lib/language-lib';
+import {wayfinder} from '../../language/language-lib';
 
 function Wayfinder() { 
   const currentPageLanguage = useSelector(state => state.pageLanguage);

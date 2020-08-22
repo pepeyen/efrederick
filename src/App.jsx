@@ -1,12 +1,12 @@
 import React from 'react';
 
 //Components
-import Wayfinder from './components/wayfinder/wayfinder'
-import About from './views/about/about'
-import Competencies from './views/competencies/competencies'
-import Projects from './views/projects/projects'
-import Contact from './views/contact/contact'
-import Footer from './components/footer/footer'
+import Wayfinder from './components/Wayfinder'
+import About from './views/About'
+import Competencies from './views/Competencies'
+import Projects from './views/Projects'
+import Contact from './views/Contact'
+import Footer from './components/Footer'
 
 //Styles
 import './App.scss';

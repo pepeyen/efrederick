@@ -6,7 +6,7 @@ import './competencies.scss'
 import '../pages.scss'
 
 //Language library
-import {competencies} from '../../language/lib/language-lib'
+import {competencies} from '../../language/language-lib'
 
 
 function Competencies (){

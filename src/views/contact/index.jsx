@@ -6,7 +6,7 @@ import './contact.scss'
 import '../pages.scss'
 
 //Language library
-import {contact} from '../../language/lib/language-lib'
+import {contact} from '../../language/language-lib'
 
 function Contact () {
   const currentPageLanguage = useSelector(state => state.pageLanguage);
