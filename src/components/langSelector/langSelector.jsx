@@ -39,14 +39,14 @@ function LangSelector() {
         value="en_us"
         onClick={buttonHandler}
       >
-        en_us
+        EN-US
       </button>
       <button 
         className={isPagePT_BR ? "lang-selector__button --pt_br-active" : "lang-selector__button --pt_br"}
         value="pt_br"
         onClick={buttonHandler}
       >
-        pt_br
+        PT-BR
       </button>
     </div>
   );
