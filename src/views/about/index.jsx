@@ -5,8 +5,8 @@ import {useSelector} from 'react-redux';
 import { updateScreenPosition } from '../../routing/InnerPageRouting'
 
 //Styles
-import './about.scss'
-import '../pages.scss'
+import './about.scss';
+import '../pages.scss';
 
 //Language library
 import {about} from '../../language/language-lib';
