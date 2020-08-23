@@ -29,18 +29,6 @@ $darkBlue : #0e153a;
         color: $white;
         text-decoration: none;
     }
-    &__lang{
-        margin-top: 1rem;
-
-        &-dropdown{
-            color: $white;
-            font-family: "Nunito-Bold";
-            background-color: $purple;
-            text-align: center;
-            border: .1rem solid $purple;
-            min-width: 6.4rem;
-        }
-    }
 }
 .--spaced-from-top{
     margin-top: 1rem;
@@ -59,14 +47,6 @@ $darkBlue : #0e153a;
         }
         &__outside-link:hover{
             color: $purple;
-        }
-        &__lang{
-            margin-top: 6vh;
-
-            &-dropdown{
-                border: .1vh solid $purple;
-                min-width: 5vh;
-            }
         }
     }
     .--spaced-from-top{

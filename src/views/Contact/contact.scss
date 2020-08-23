@@ -34,8 +34,8 @@ $darkBlue : #0e153a;
             font-family: "Nunito-Light";
             display: block;
             background-color: transparent;
-            border-radius: 5px;
             border: .05rem solid$darkBlue;
+            border-radius: .3rem;
             margin: 1rem 0 1rem 0;
             font-size: 1rem;
             min-width: 20rem;
@@ -52,7 +52,7 @@ $darkBlue : #0e153a;
                 
             color: $white;
             background-color: $darkBlue;
-            border-radius: 5px;
+            border-radius: .5vh;
             border: .05rem solid $darkBlue;
             font-size: 1.2rem;
             min-width: 100%;
@@ -85,7 +85,7 @@ $darkBlue : #0e153a;
                 padding: 1vh;
             }
             &-email, &-message{
-                border: .2vh solid $darkBlue;
+                border: .1vh solid $darkBlue;
                 margin: 2vh 0 2vh 0;
                 font-size: 2vh;
                 min-width: 50vh;
@@ -94,7 +94,7 @@ $darkBlue : #0e153a;
                 font-family: "Nunito-Light";
                 color: $darkBlue;
                 background-color: transparent;
-                border: .2vh solid $darkBlue;
+                border: .1vh solid $darkBlue;
                 font-size: 2vh;
                 min-width: 20vh;
                 padding: 1vh;
