@@ -31,6 +31,11 @@ $darkBlue : #0e153a;
         color: $purple;
         font-size: 2rem;
     }
+    &__outside{
+        display: flex;
+        justify-content: center;
+        margin: 1rem 0 2rem 0;
+    }
     &__button{
         display: inline-block;
         width: 35%;
@@ -38,7 +43,7 @@ $darkBlue : #0e153a;
         text-decoration: none;
         text-align: center;
         color: $darkBlue;
-        margin:  1rem auto 2rem auto;
+        margin:  0 auto 0 auto;
         font-size: 1.2rem;
         border: .05rem solid $darkBlue;
         border-radius: 5px;
@@ -77,9 +82,9 @@ $darkBlue : #0e153a;
         }
         &__outside{
             display: flex;
+            margin: 2.5vh 0 4vh 0;
         }
         &__button{
-            margin:  2.5vh auto 4vh auto;
             font-size: 2vh;
             padding: 1vh 2vh 1vh 2vh;
 
