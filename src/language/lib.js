@@ -11,7 +11,7 @@ export const wayfinder = {
         "Projetos",
         "Contato"
     ]
-}
+};
 export const about = {
     en_US: [
         "About",
@@ -29,7 +29,7 @@ export const about = {
         "Veja Meu Trabalho",
         "Entre em contato"
     ]
-}
+};
 export const competencies = {
     en_US: [
         "Competencies",
@@ -59,19 +59,19 @@ export const competencies = {
         "Outras tecnologias",
         "Ferramentas Dev"
     ]
-}
+};
 export const projects = {
     en_US: [
         "Projects",
-        "Click here to visit the live demo",
-        "Click here to visit the source code"
+        "Live Demo",
+        "Source Code"
       ],
     pt_BR: [
         "Projetos",
-        "Clique aqui para visitar a demonstração ao vivo",
-        "Clique aqui para visitar o código fonte"
+        "Ao Vivo",
+        "Código Fonte"
     ]
-}
+};
 export const contact = {
     en_US: [
         "Contact",
@@ -89,4 +89,4 @@ export const contact = {
         "Enviar",
         "Ooops! Ocorreu um erro."
     ]
-}
+};
