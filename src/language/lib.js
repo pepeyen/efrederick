@@ -1,11 +1,11 @@
 export const wayfinder = {
-    en_us: [
+    en_US: [
         "About",
         "Competencies",
         "Projects",
         "Contact"
     ],
-    pt_br: [
+    pt_BR: [
         "Sobre",
         "Competências",
         "Projetos",
@@ -13,7 +13,7 @@ export const wayfinder = {
     ]
 }
 export const about = {
-    en_us: [
+    en_US: [
         "About",
         "Hi, my name's Erick Frederick...",
         "i'm a devloper you can trust",
@@ -21,7 +21,7 @@ export const about = {
         "View My Work",
         "Contact Me"
       ],
-    pt_br: [
+    pt_BR: [
         "Sobre",
         "Olá meu nome é Erick Frederick...",
         "sou um desenvolvedor muito confiável",
@@ -31,7 +31,7 @@ export const about = {
     ]
 }
 export const competencies = {
-    en_us: [
+    en_US: [
         "Competencies",
         "Career",
         "Companies i've worked and what i worked with",
@@ -45,7 +45,7 @@ export const competencies = {
         "Other technologies",
         "Dev Tools"
     ],
-    pt_br: [
+    pt_BR: [
         "Competências",
         "Carreira",
         "Empresas com quem eu trabalhei e com o que trabalhei",
@@ -61,19 +61,19 @@ export const competencies = {
     ]
 }
 export const projects = {
-    en_us: [
+    en_US: [
         "Projects",
         "Click here to visit the live demo",
         "Click here to visit the source code"
       ],
-    pt_br: [
+    pt_BR: [
         "Projetos",
         "Clique aqui para visitar a demonstração ao vivo",
         "Clique aqui para visitar o código fonte"
     ]
 }
 export const contact = {
-    en_us: [
+    en_US: [
         "Contact",
         "Let's work together",
         "Message",
@@ -81,20 +81,12 @@ export const contact = {
         "Submit",
         "Ooops! There was an error."
       ],
-    pt_br: [
+    pt_BR: [
         "Contato",
         "Vamos trabalhar juntos",
         "Menssagem",
         "Obrigado!",
         "Enviar",
         "Ooops! Ocorreu um erro."
-    ]
-}
-export const footer = {
-    en_us: [
-        "Made with love by me"
-      ],
-    pt_br: [
-        "Feito com amor por mim"
     ]
 }

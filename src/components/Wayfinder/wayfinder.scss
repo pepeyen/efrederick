@@ -1,0 +1,105 @@
+$white : #e2f3f5;
+$cyan : #22d1ee;
+$purple : #3d5af1;
+$darkBlue : #0e153a;
+
+.wayfinder{
+    overflow: hidden;
+    font-family: "Nunito-Bold";
+    background-color: $darkBlue;
+    width: 100%;
+    text-align: center;
+
+    &__toggle{
+        padding: 1rem 0 1rem 0;
+        background-color: #121b4a;
+    }
+    &__hamburguer{
+        background-image: url('../../images/wayfinder-toggle.svg');
+        background-size: 1.5rem;
+        width: 1.5rem;
+        height: 1.5rem;
+        margin: 0 auto 0 auto;
+    }
+    &__waypaths{
+        display: inline-block;
+        position:relative;
+        -webkit-user-select: none;
+        -khtml-user-select: none;
+        -moz-user-select: none;
+        -ms-user-select: none;
+        -o-user-select: none;
+        user-select: none;
+        margin: 1rem 0 1rem 0;
+    }
+    &__waydirect{
+        -webkit-touch-callout: none;
+        -webkit-user-select: none;
+        -khtml-user-select: none;
+        -moz-user-select: none;
+        -ms-user-select: none;
+        user-select: none;
+        color: $white;
+        font-size: 1.5rem;
+        border-bottom: .1rem solid transparent;
+    }
+    &__waysign{
+        color: $cyan;
+        font-size: 2rem;
+    }
+    &__waydirect, &__waysign{
+        display: block;
+    }
+}
+#wayfinder-competencies , #wayfinder-projects{
+    margin: 2.5rem 0 2.5rem 0;
+}
+.--hidden{
+    display: none;
+}
+.--visited{
+    color: $cyan;
+    border-bottom: .1rem solid $cyan;
+    transition: border-bottom ease-in-out 100ms;
+}
+@media (min-width: 801px) {
+    .wayfinder{
+        display: flex;
+        flex-direction: row;
+        min-height: 6.5vh;
+
+        &__toggle{
+            display: none;
+        }
+        &__waypaths{
+            display: block;
+            margin: 1vh auto 1vh auto;  
+        }
+        &__waydirect{
+            font-size: 2.5vh;
+            border-bottom: .1vh solid transparent;
+            transition: border-bottom ease-in-out 100ms;
+
+            &:hover {
+                color: $cyan;
+                cursor: pointer;
+            }
+        }
+        &__waysign{
+            font-size: 3rem;
+        }
+        &__waydirect, &__waysign{
+            display: inline-block;
+        }
+    }
+    #wayfinder-competencies , #wayfinder-projects{
+        margin: 0 5vh 0 5vh;
+    }
+    .--active{
+        display: inline-block;
+    }
+    .--visited{
+        color: $cyan;
+        border-bottom: .1vh solid $cyan;
+    }
+}
