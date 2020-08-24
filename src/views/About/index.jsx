@@ -2,7 +2,7 @@ import React from 'react';
 import {useSelector} from 'react-redux';
 
 //Innerpage Routing
-import { updateScreenPosition } from '../../routing/pageRouting'
+import { updateScreenPosition } from '../../services/pageRouting'
 
 //Styles
 import './about.scss';

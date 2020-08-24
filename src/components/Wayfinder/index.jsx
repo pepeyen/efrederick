@@ -2,7 +2,7 @@ import React, {useState, useEffect} from 'react';
 import {useSelector} from 'react-redux';
 
 //Innerpage Routing
-import { getElementPosition, updateScreenPosition } from '../../routing/pageRouting';
+import { getElementPosition, updateScreenPosition } from '../../services/pageRouting';
 
 //Styles
 import './wayfinder.scss';
@@ -132,37 +132,37 @@ function Wayfinder() {
   return (
     <nav className="wayfinder">
       <ul className="wayfinder__waypaths">
-        <div 
+        <li 
           id="wayfinder-about" 
           className={isWaydirectsHidden ? `wayfinder__waydirect ${waydirectLiveStatus[0]} --hidden` : 
           `wayfinder__waydirect ${waydirectLiveStatus[0]}`}
         >
-          <li onClick={() => wayfinderRouteTo("about")}>{pageText[0]}</li>
-        </div>
-        <div 
+          <div onClick={() => wayfinderRouteTo("about")}>{pageText[0]}</div>
+        </li>
+        <li 
           id="wayfinder-competencies" 
           className={isWaydirectsHidden ? `wayfinder__waydirect ${waydirectLiveStatus[1]} --hidden` : 
           `wayfinder__waydirect ${waydirectLiveStatus[1]}`}
         >
-          <li onClick={() => wayfinderRouteTo("competencies")}>{pageText[1]}</li>
-        </div>
-        <div className="wayfinder__waysign">
-          <li>eFrederick</li>
-        </div>
-        <div 
+          <div onClick={() => wayfinderRouteTo("competencies")}>{pageText[1]}</div>
+        </li>
+        <li className="wayfinder__waysign">
+          <p>eFrederick</p>
+        </li>
+        <li 
           id="wayfinder-projects" 
           className={isWaydirectsHidden ? `wayfinder__waydirect ${waydirectLiveStatus[2]} --hidden` : 
           `wayfinder__waydirect ${waydirectLiveStatus[2]}`}
         >
-          <li onClick={() => wayfinderRouteTo("projects")}>{pageText[2]}</li>
-        </div>
-        <div 
+          <div onClick={() => wayfinderRouteTo("projects")}>{pageText[2]}</div>
+        </li>
+        <li 
           id="wayfinder-contact" 
           className={isWaydirectsHidden ? `wayfinder__waydirect ${waydirectLiveStatus[3]} --hidden` : 
           `wayfinder__waydirect ${waydirectLiveStatus[3]}`}
         >
-          <li onClick={() => wayfinderRouteTo("contact")}>{pageText[3]}</li>
-        </div>
+          <div onClick={() => wayfinderRouteTo("contact")}>{pageText[3]}</div>
+        </li>
       </ul>
       <div className="wayfinder__toggle"> 
         <div 
