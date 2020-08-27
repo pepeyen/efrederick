@@ -1,6 +1,6 @@
 {
   "files": {
-    "main.css": "/static/css/main.b598318b.chunk.css",
+    "main.css": "/static/css/main.94d2f7bb.chunk.css",
     "main.js": "/static/js/main.697bf02f.chunk.js",
     "main.js.map": "/static/js/main.697bf02f.chunk.js.map",
     "runtime-main.js": "/static/js/runtime-main.96dea9b7.js",
@@ -8,9 +8,9 @@
     "static/js/2.5d6f4efc.chunk.js": "/static/js/2.5d6f4efc.chunk.js",
     "static/js/2.5d6f4efc.chunk.js.map": "/static/js/2.5d6f4efc.chunk.js.map",
     "index.html": "/index.html",
-    "precache-manifest.9d972fecd9d850799e37dba64a45bc4a.js": "/precache-manifest.9d972fecd9d850799e37dba64a45bc4a.js",
+    "precache-manifest.c329de2c691e220171a932b534348e22.js": "/precache-manifest.c329de2c691e220171a932b534348e22.js",
     "service-worker.js": "/service-worker.js",
-    "static/css/main.b598318b.chunk.css.map": "/static/css/main.b598318b.chunk.css.map",
+    "static/css/main.94d2f7bb.chunk.css.map": "/static/css/main.94d2f7bb.chunk.css.map",
     "static/js/2.5d6f4efc.chunk.js.LICENSE.txt": "/static/js/2.5d6f4efc.chunk.js.LICENSE.txt",
     "static/media/index.scss": "/static/media/Nunito-SemiBold.b4ee600d.svg",
     "static/media/about.scss": "/static/media/about.4de89a54.svg",
@@ -21,7 +21,7 @@
   "entrypoints": [
     "static/js/runtime-main.96dea9b7.js",
     "static/js/2.5d6f4efc.chunk.js",
-    "static/css/main.b598318b.chunk.css",
+    "static/css/main.94d2f7bb.chunk.css",
     "static/js/main.697bf02f.chunk.js"
   ]
 }
