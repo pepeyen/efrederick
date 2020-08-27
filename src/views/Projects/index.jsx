@@ -22,20 +22,20 @@ function Projects (){
             <div className="project__title">eFrederick CLI</div>
             <div className="project__outside">
               <a 
-                className="project__button" 
+                className="project__button --demo" 
                 href="https://pepeyen.github.io/efrederick-cli/" 
                 target="_blank" 
                 rel="noopener noreferrer"
               >
-                {pageText[1]}
+                <p>{pageText[1]}</p>
               </a>
               <a 
-                className="project__button" 
+                className="project__button --source" 
                 href="https://github.com/pepeyen/efrederick-cli/" 
                 target="_blank" 
                 rel="noopener noreferrer"
               >
-                {pageText[2]}
+                <p>{pageText[2]}</p>
               </a>
             </div>
           </div>
@@ -46,20 +46,20 @@ function Projects (){
             <div className="project__title">CS Tech</div>
             <div className="project__outside">
               <a 
-                className="project__button" 
+                className="project__button --demo" 
                 href="https://pepeyen.github.io/cs-tech/" 
                 target="_blank" 
                 rel="noopener noreferrer"
               >
-                {pageText[1]}
+                <p>{pageText[1]}</p>
               </a>
               <a 
-                className="project__button" 
+                className="project__button --source" 
                 href="https://github.com/pepeyen/cs-tech/" 
                 target="_blank" 
                 rel="noopener noreferrer"
               >
-                {pageText[2]}
+                <p>{pageText[2]}</p>
               </a>
             </div>
           </div>  
@@ -70,20 +70,20 @@ function Projects (){
             <div className="project__title">eFrederick</div>
             <div className="project__outside">
               <a 
-                className="project__button" 
+                className="project__button --demo" 
                 href="https://efrederick.dev/" 
                 target="_blank" 
                 rel="noopener noreferrer"
               >
-                {pageText[1]}
+                <p>{pageText[1]}</p>
               </a>
               <a 
-                className="project__button" 
+                className="project__button --source" 
                 href="https://github.com/pepeyen/efrederick/" 
                 target="_blank" 
                 rel="noopener noreferrer"
               >
-                {pageText[2]}
+                <p>{pageText[2]}</p>
               </a>
             </div>
           </div> 

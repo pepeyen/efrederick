@@ -29,24 +29,28 @@ $darkBlue : #0e153a;
         text-align: center;
         color: $purple;
         font-size: 2rem;
+        margin: 0 0 1rem 0;
     }
     &__outside{
         display: flex;
-        justify-content: center;
-        margin: 1rem 0 2rem 0;
     }
     &__button{
         display: inline-block;
-        width: 35%;
+        width: 100%;
         font-family: "Nunito-Light";
         text-decoration: none;
         text-align: center;
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: 3rem;
         color: $darkBlue;
-        margin: 0 auto 0 auto;
         font-size: 1.2rem;
         border-radius: .3rem;
-        border: .05rem solid $darkBlue;
         padding: 1.5rem 1rem 1.5rem 1rem;
+
+        & p{
+            visibility: hidden;
+        }
     }
 
 }
@@ -79,29 +83,38 @@ $darkBlue : #0e153a;
         }
         &__title{
             font-size: 3vh;
-        }
-        &__outside{
-            display: flex;
-            margin: 2.5vh 0 4vh 0;
+            margin: 0 0 2vh 0;
         }
         &__button{
             font-size: 2vh;
-            padding: 1vh 2vh 1vh 2vh;
-            border: .1vh solid $darkBlue;
-            border-radius: .5vh;
+            padding: 2vh;
+            border-radius: 0;
+            background-size: 4vh;
 
             &:hover{
                 cursor: pointer;
+                background-image: none;
                 font-family: "Nunito-SemiBold";
                 background-color: $darkBlue;
                 color: $white;
                 transition: background-color ease-in-out 100ms;
+            }
+            &:hover p{
+                visibility: visible;
             }
         }
     }
     .--spaced-flex{
         flex-direction: row;
     }
+}
+.--source{
+    background-image: url('../../assets/images/outside-github.svg');
+    border-radius: 0 0 .5vh 0;
+}
+.--demo{
+    background-image: url('../../assets/images/outside-global.svg');
+    border-radius: 0 .0 0 .5vh;
 }
 .--efrederickcli{
     background-image: url('https://repository-images.githubusercontent.com/275693390/6b759e80-cf5d-11ea-8d8f-a22f2ac03276');
