@@ -46,16 +46,18 @@ function Contact () {
             <div className="contact__form-input">
               <label htmlFor = "email">Email</label>
               <input 
+                id="email" 
+                name="email" 
                 className="contact__form-email" 
                 type="email" 
-                name="email" 
               />
             </div>
             <div className="contact__form-input">
               <label htmlFor = "message">{pageText[2]}</label>
               <textarea 
-                className="contact__form-message" 
+                id="message" 
                 name="message" 
+                className="contact__form-message"
               />
             </div>
             <div className="contact__form-submit">
