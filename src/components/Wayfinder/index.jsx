@@ -18,7 +18,7 @@ function Wayfinder() {
 
   useEffect(() => {
     window.addEventListener("scroll", wayfinderBarProgress);
-
+    
     return function cleanup() {
       window.removeEventListener("scroll", wayfinderBarProgress);
     }
@@ -130,21 +130,26 @@ function Wayfinder() {
   };
   
   return (
-    <nav className="wayfinder">
+    <nav 
+      className="wayfinder"
+      role="navigation"
+    >
       <ul className="wayfinder__waypaths">
         <li 
           id="wayfinder-about" 
           className={isWaydirectsHidden ? `wayfinder__waydirect ${waydirectLiveStatus[0]} --hidden` : 
           `wayfinder__waydirect ${waydirectLiveStatus[0]}`}
+          onClick={() =>wayfinderRouteTo("about")}
         >
-          <div onClick={() => wayfinderRouteTo("about")}>{pageText[0]}</div>
+          <p>{pageText[0]}</p>
         </li>
         <li 
           id="wayfinder-competencies" 
           className={isWaydirectsHidden ? `wayfinder__waydirect ${waydirectLiveStatus[1]} --hidden` : 
           `wayfinder__waydirect ${waydirectLiveStatus[1]}`}
+          onClick={() =>wayfinderRouteTo("competencies")}
         >
-          <div onClick={() => wayfinderRouteTo("competencies")}>{pageText[1]}</div>
+          <p>{pageText[1]}</p>
         </li>
         <li className="wayfinder__waysign">
           <p>eFrederick</p>
@@ -153,23 +158,25 @@ function Wayfinder() {
           id="wayfinder-projects" 
           className={isWaydirectsHidden ? `wayfinder__waydirect ${waydirectLiveStatus[2]} --hidden` : 
           `wayfinder__waydirect ${waydirectLiveStatus[2]}`}
+          onClick={() =>wayfinderRouteTo("projects")}
         >
-          <div onClick={() => wayfinderRouteTo("projects")}>{pageText[2]}</div>
+          <p>{pageText[2]}</p>
         </li>
         <li 
           id="wayfinder-contact" 
           className={isWaydirectsHidden ? `wayfinder__waydirect ${waydirectLiveStatus[3]} --hidden` : 
           `wayfinder__waydirect ${waydirectLiveStatus[3]}`}
+          onClick={() =>wayfinderRouteTo("contact")}
         >
-          <div onClick={() => wayfinderRouteTo("contact")}>{pageText[3]}</div>
+          <p>{pageText[3]}</p>
         </li>
-      </ul>
-      <div className="wayfinder__toggle"> 
-        <div 
-          className="wayfinder__hamburguer"
+        <li 
+          className="wayfinder__toggle"
           onClick={() => updateWaydirectState({targetedState: "waydirect-visibility"})}
-        />
-      </div>
+        > 
+          <div className="wayfinder__hamburguer"/>
+      </li>
+      </ul>
     </nav>
   );
 }

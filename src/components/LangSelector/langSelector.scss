@@ -21,9 +21,6 @@ $yellow: #F6D800;
         border: .05rem solid $purple;
         border-radius: .3rem;
 
-        &:focus{
-            outline: none;
-        }
     } 
 }
 
@@ -58,9 +55,6 @@ $yellow: #F6D800;
     
             &:hover{
                 cursor: pointer;
-            }
-            &:focus{
-                outline: none;
             }
         } 
     }

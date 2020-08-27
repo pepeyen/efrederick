@@ -29,18 +29,18 @@ function About (){
               <p>{pageText[3]}</p>
             </div>
             <div className="about__route">
-              <div
+              <button
                 onClick={() => updateScreenPosition("projects")}
                 className="about__route-button --to-projects"
               >
                 {pageText[4]}
-              </div>
-              <div
+              </button>
+              <button
                 onClick={() => updateScreenPosition("contact")}
                 className="about__route-button --to-contact"
               >
                 {pageText[5]}
-              </div>
+              </button>
             </div>
           </div>        
         </div>

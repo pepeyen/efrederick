@@ -18,10 +18,12 @@ function LangSelector() {
       case "en_US":
         dispatch(setToENUS());
         setPageCurrentLang("en_US");
+        document.documentElement.setAttribute('lang', 'en');
         break;
       case "pt_BR":
         dispatch(setToPTBR());
-        setPageCurrentLang("pt_BR");  
+        setPageCurrentLang("pt_BR"); 
+        document.documentElement.setAttribute('lang', 'pt');
         break;
       default:
         break;
