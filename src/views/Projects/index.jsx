@@ -29,6 +29,7 @@ function Projects (){
               >
                 <p>{pageText[1]}</p>
               </a>
+              <div className="project__button-divider"/>
               <a 
                 className="project__button --source" 
                 href="https://github.com/pepeyen/efrederick-cli/" 
@@ -53,6 +54,7 @@ function Projects (){
               >
                 <p>{pageText[1]}</p>
               </a>
+              <div className="project__button-divider"/>
               <a 
                 className="project__button --source" 
                 href="https://github.com/pepeyen/cs-tech/" 
@@ -77,6 +79,7 @@ function Projects (){
               >
                 <p>{pageText[1]}</p>
               </a>
+              <div className="project__button-divider"/>
               <a 
                 className="project__button --source" 
                 href="https://github.com/pepeyen/efrederick/" 
