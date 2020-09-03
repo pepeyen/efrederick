@@ -8,7 +8,7 @@ import { getElementPosition, updateScreenPosition } from '../../services/pageRou
 import './wayfinder.scss';
 
 //Language library
-import {wayfinder} from '../../language/lib';
+import {wayfinder} from '../../assets/language/lib';
 
 function Wayfinder() { 
   const currentPageLanguage = useSelector(state => state.pageLanguage);

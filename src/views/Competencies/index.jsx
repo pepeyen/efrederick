@@ -6,7 +6,7 @@ import './competencies.scss';
 import '../pages.scss';
 
 //Language library
-import {competencies} from '../../language/lib';
+import {competencies} from '../../assets/language/lib';
 
 function Competencies (){
   const currentPageLanguage = useSelector(state => state.pageLanguage);

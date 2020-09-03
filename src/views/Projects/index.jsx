@@ -6,7 +6,7 @@ import './projects.scss';
 import '../pages.scss';
 
 //Language library
-import {projects} from '../../language/lib';
+import {projects} from '../../assets/language/lib';
 
 function Projects (){
   const  currentPageLanguage = useSelector(state => state.pageLanguage);

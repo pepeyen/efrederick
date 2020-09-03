@@ -9,7 +9,7 @@ import './about.scss';
 import '../pages.scss';
 
 //Language library
-import {about} from '../../language/lib';
+import {about} from '../../assets/language/lib';
 
 function About (){
   const currentPageLanguage = useSelector(state => state.pageLanguage);
