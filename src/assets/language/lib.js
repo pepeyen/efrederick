@@ -16,7 +16,7 @@ export const about = {
     en_US: [
         "About",
         "Hi, my name's Erick Frederick...",
-        "i'm a devloper you can trust",
+        "i'm a developer you can trust",
         "...who is available 24/7/365.",
         "View My Work",
         "Contact Me"
@@ -68,7 +68,7 @@ export const projects = {
       ],
     pt_BR: [
         "Projetos",
-        "Ao Vivo",
+        "Demonstração",
         "Código Fonte"
     ]
 };
