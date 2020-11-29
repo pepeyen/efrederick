@@ -8,90 +8,52 @@ import '../pages.scss';
 //Language library
 import {projects} from '../../assets/language/lib';
 
+//Services
+import {projectList} from '../../services/mockUpData';
+
 function Projects (){
   const  currentPageLanguage = useSelector(state => state.pageLanguage);
   const pageText = projects[currentPageLanguage];
 
   return (
     <article id="projects"> 
-      <div className="title">{pageText[0]}</div>
-      <div className="container --spaced-flex">
-        <div className="project">
-          <div className="project__image --efrederickcli"/>
-          <div className="project__description">
-            <div className="project__title">eFrederick CLI</div>
-            <div className="project__outside">
-              <a 
-                className="project__button --demo" 
-                href="https://pepeyen.github.io/efrederick-cli/" 
-                target="_blank" 
-                rel="noopener noreferrer"
-              >
-                <p>{pageText[1]}</p>
-              </a>
-              <div className="project__button-divider"/>
-              <a 
-                className="project__button --source" 
-                href="https://github.com/pepeyen/efrederick-cli/" 
-                target="_blank" 
-                rel="noopener noreferrer"
-              >
-                <p>{pageText[2]}</p>
-              </a>
-            </div>
-          </div>
-        </div>
-        <div className="project">
-          <div className="project__image --cstech"/>
-          <div className="project__description">
-            <div className="project__title">CS Tech</div>
-            <div className="project__outside">
-              <a 
-                className="project__button --demo" 
-                href="https://pepeyen.github.io/cs-tech/" 
-                target="_blank" 
-                rel="noopener noreferrer"
-              >
-                <p>{pageText[1]}</p>
-              </a>
-              <div className="project__button-divider"/>
-              <a 
-                className="project__button --source" 
-                href="https://github.com/pepeyen/cs-tech/" 
-                target="_blank" 
-                rel="noopener noreferrer"
-              >
-                <p>{pageText[2]}</p>
-              </a>
-            </div>
-          </div>  
-        </div>
-        <div className="project">
-          <div className="project__image --efrederick"/>
-          <div className="project__description">
-            <div className="project__title">eFrederick</div>
-            <div className="project__outside">
-              <a 
-                className="project__button --demo" 
-                href="https://efrederick.dev/" 
-                target="_blank" 
-                rel="noopener noreferrer"
-              >
-                <p>{pageText[1]}</p>
-              </a>
-              <div className="project__button-divider"/>
-              <a 
-                className="project__button --source" 
-                href="https://github.com/pepeyen/efrederick/" 
-                target="_blank" 
-                rel="noopener noreferrer"
-              >
-                <p>{pageText[2]}</p>
-              </a>
-            </div>
-          </div> 
-        </div>
-      </div>
+		<div className="title">{pageText[0]}</div>
+    	<ul className="container --grid-3">
+			{
+				projectList.map((element, index) => {
+				return(
+					<li
+						key={index}
+						className="project"
+					>
+						<div className="project__image" style={{backgroundImage: `url('${element.projectBannerURL}')`}}/>
+						<div className="project__description">
+							<div className="project__title">{element.projectName}</div>
+							<div className="project__outside">
+								<a 
+									className="project__button --demo" 
+									href={element.projectLiveURL}
+									target="_blank" 
+									rel="noopener noreferrer"
+								>
+									<p>{pageText[1]}</p>
+								</a>
+								<div className="project__button-divider"/>
+								<a 
+									className="project__button --source" 
+									href={`https://github.com/pepeyen/${element.projectName}`}
+									target="_blank" 
+									rel="noopener noreferrer"
+								>
+									<p>{pageText[2]}</p>
+								</a>
+							</div>
+						</div>
+					</li>
+				);
+				})
+			}
+		</ul>
     </article>
   );
 }

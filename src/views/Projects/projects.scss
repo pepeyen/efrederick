@@ -59,12 +59,18 @@ $darkBlue : #0e153a;
     justify-content: space-between;
     align-items: center;
 }
+.--grid-3{
+    display: grid !important;
+    grid-template-columns: repeat(auto-fit,minmax(auto, 1fr));
+
+    & li{
+        margin: 0 auto 0 auto;
+    }
+}
 @media (min-width: 801px) {
     .project{
         padding: 0;
         margin: 0;
-        min-width: 25%;
-        max-width: 30%;
         min-height: 32vh;
 
         &__image{
@@ -118,13 +124,9 @@ $darkBlue : #0e153a;
         background-image: url('../../assets/images/outside-global.svg');
         border-radius: 0 .0 0 .5vh;
     }
-}
-.--efrederickcli{
-    background-image: url('https://repository-images.githubusercontent.com/275693390/6b759e80-cf5d-11ea-8d8f-a22f2ac03276');
-}
-.--cstech{
-    background-image: url('https://repository-images.githubusercontent.com/245696462/5bab8980-cf60-11ea-95f0-bc5f566cd9e8');
-}
-.--efrederick{
-    background-image: url('https://repository-images.githubusercontent.com/280514081/218fb700-cf63-11ea-9aaf-b75efd0e17d2');
+    .--grid-3{
+        grid-template-columns: repeat(auto-fill, 45vh);
+        justify-content: space-between;
+        align-items: center;
+    }
 }
