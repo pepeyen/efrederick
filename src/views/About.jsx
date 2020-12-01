@@ -1,8 +1,12 @@
-import React from 'react';
+import React, {useEffect} from 'react';
 import {useSelector} from 'react-redux';
 
 //Innerpage Routing
-import {updateScreenPosition} from '../services'
+import {
+	updateScreenPosition,
+	getRepoList,
+	getRepo
+} from '../services'
 
 //Language library
 import {about} from '../language/lib';
@@ -10,6 +14,21 @@ import {about} from '../language/lib';
 const About = () => {
 	const currentPageLanguage = useSelector(state => state.pageLanguage);
 	const pageText = about[currentPageLanguage]; 
+
+	useEffect( () => {
+		const myHeaders = new Headers();
+
+		myHeaders.append('authorization', `token ${process.env.REACT_APP_GITHUB_KEY}`);
+
+		getRepoList('pepeyen', myHeaders)
+		.then(data => data
+			.map(currentRepo => getRepo('pepeyen', currentRepo.name, myHeaders)
+				.then(contributors => contributors
+					.map(contributor => contributor.weeks
+						.reduce((lineCount, week) => lineCount + week.a - week.d, 0)))
+				.then(lineCounts => lineCounts.reduce((lineTotal, lineCount) => lineTotal + lineCount))
+				.then(lines => console.log(Math.round(lines / 2)))))
+	},[]);
 
 	return (
 		<article id="about">
