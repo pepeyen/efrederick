@@ -1,15 +1,18 @@
 export let getElementPosition = (elementId) => {
+    let element = document.getElementById(elementId);
+    let wayfinderCurrentHeight;
 
-    let element = document.getElementById(elementId)
-    let wayfinderCurrentHeight
-
-    if(document.documentElement.clientWidth >= 784){
+    if(window.innerWidth >= 801){
       wayfinderCurrentHeight = (((Math.max(document.documentElement.clientHeight, window.innerHeight || 0) * 15.5))) / 100
     } else wayfinderCurrentHeight = 10 * 16
 
-    let waydirectCoordinate = ((element.offsetTop - element.scrollTop) - wayfinderCurrentHeight);
+    const bodyRect = document.body.getBoundingClientRect(),
+    elemRect = element.getBoundingClientRect(),
+    offset   = elemRect.top - bodyRect.top;
 
-    return waydirectCoordinate
+    let waydirectCoordinate = (offset - wayfinderCurrentHeight);
+
+    return waydirectCoordinate;
 };
 
 export let updateScreenPosition = (targetedWaydirect) => {
