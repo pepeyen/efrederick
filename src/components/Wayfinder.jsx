@@ -109,7 +109,7 @@ function Wayfinder() {
     window.addEventListener("scroll", wayfinderBarProgress);
     
     return () => window.removeEventListener("scroll", wayfinderBarProgress);
-  },[wayfinderBarProgress]);
+  });
   
   return (
     <nav 
