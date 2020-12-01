@@ -1,12 +1,8 @@
 import React, { useState } from 'react';
 import {useSelector} from 'react-redux';
 
-//Styles
-import './contact.scss';
-import '../pages.scss';
-
 //Language library
-import {contact} from '../../assets/language/lib';
+import {contact} from '../assets/language/lib';
 
 function Contact () {
   const currentPageLanguage = useSelector(state => state.pageLanguage);
@@ -48,20 +44,20 @@ function Contact () {
               <input 
                 id="email" 
                 name="email" 
-                className="contact__form-email" 
+                className="contact__form-email --box-shadowed" 
                 type="email" 
               />
             </div>
-            <div className="contact__form-input">
+            <div className="contact__form-input ">
               <label htmlFor = "message">{pageText[2]}</label>
               <textarea 
                 id="message" 
                 name="message" 
-                className="contact__form-message"
+                className="contact__form-message --box-shadowed"
               />
             </div>
             <div className="contact__form-submit">
-              {status === "SUCCESS" ? <p>{pageText[3]}</p> : <button className="contact__form-button">{pageText[4]}</button>}
+              {status === "SUCCESS" ? <p>{pageText[3]}</p> : <button className="contact__form-button --box-shadowed">{pageText[4]}</button>}
               {status === "ERROR" && <p>{pageText[5]}</p>} 
             </div>
           </form>

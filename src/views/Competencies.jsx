@@ -1,12 +1,8 @@
 import React from 'react';
 import {useSelector} from 'react-redux';
 
-//Styles
-import './competencies.scss';
-import '../pages.scss';
-
 //Language library
-import {competencies} from '../../assets/language/lib';
+import {competencies} from '../assets/language/lib';
 
 function Competencies (){
   const currentPageLanguage = useSelector(state => state.pageLanguage);
@@ -16,7 +12,7 @@ function Competencies (){
     <article id="competencies">
       <div className="title  --reverted">{pageText[0]}</div>
       <div className="container --spaced">
-        <div className="competence"> 
+        <div className="competence --box-shadowed"> 
           <div className = "competence__headline">
             <div className="competence__name"><p>{pageText[1]}</p></div>
             <div className="competence__info"><p>{pageText[2]}</p></div>
@@ -30,7 +26,7 @@ function Competencies (){
             </div>
           </div>
         </div>
-        <div className="competence">
+        <div className="competence --box-shadowed">
           <div className = "competence__headline">
             <div className="competence__name"><p>{pageText[6]}</p></div>
             <div className="competence__info"><p>{pageText[7]}</p></div>
@@ -50,7 +46,7 @@ function Competencies (){
             </div>
           </div>
         </div>
-        <div className="competence">
+        <div className="competence --box-shadowed">
           <div className = "competence__headline">
             <div className="competence__name"><p>{pageText[8]}</p></div>
             <div className="competence__info"><p>{pageText[9]}</p></div>

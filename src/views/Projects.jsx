@@ -1,15 +1,11 @@
 import React from 'react';
 import {useSelector} from 'react-redux';
 
-//Styles
-import './projects.scss';
-import '../pages.scss';
-
 //Language library
-import {projects} from '../../assets/language/lib';
+import {projects} from '../assets/language/lib';
 
 //Services
-import {projectList} from '../../services/mockUpData';
+import {projectList} from '../services/mockUpData';
 
 function Projects (){
   const  currentPageLanguage = useSelector(state => state.pageLanguage);
@@ -24,7 +20,7 @@ function Projects (){
 				return(
 					<li
 						key={index}
-						className="project"
+						className="project --box-shadowed"
 					>
 						<div className="project__image" style={{backgroundImage: `url('${element.projectBannerURL}')`}}/>
 						<div className="project__description">

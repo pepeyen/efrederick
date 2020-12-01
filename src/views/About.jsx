@@ -2,14 +2,10 @@ import React from 'react';
 import {useSelector} from 'react-redux';
 
 //Innerpage Routing
-import { updateScreenPosition } from '../../services/pageRouting'
-
-//Styles
-import './about.scss';
-import '../pages.scss';
+import {updateScreenPosition} from '../services'
 
 //Language library
-import {about} from '../../assets/language/lib';
+import {about} from '../assets/language/lib';
 
 function About (){
   const currentPageLanguage = useSelector(state => state.pageLanguage);
@@ -37,7 +33,7 @@ function About (){
               </button>
               <button
                 onClick={() => updateScreenPosition("contact")}
-                className="about__route-button --to-contact"
+                className="about__route-button --to-contact --box-shadowed"
               >
                 {pageText[5]}
               </button>
