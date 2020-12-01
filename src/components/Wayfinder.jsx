@@ -106,6 +106,8 @@ function Wayfinder() {
   };
 
   useEffect(() => {
+    updateWaydirectState({targetedState: "waydirect-visibility"});
+
     window.addEventListener("scroll", wayfinderBarProgress);
     
     return () => window.removeEventListener("scroll", wayfinderBarProgress);
