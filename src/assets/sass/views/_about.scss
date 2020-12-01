@@ -37,7 +37,10 @@ $darkBlue : #0e153a;
             font-size: 1.2rem;
             width: 10rem;
         }
-    }      
+    }
+    & svg{
+        display: none;
+    }    
 }
 .--start{
     margin-bottom: 1rem;
@@ -58,12 +61,10 @@ $darkBlue : #0e153a;
 }
 @media (min-width: 801px) {  
     .about{
+        display: flex;
+        flex-direction: row;
         margin: 5vh 0 0;
         font-size: 3vh;
-        background-image: url('../../images/about.svg');
-        background-repeat: no-repeat;
-        background-position-x: right;
-        background-size: 55vh;
         min-height: 50vh;
 
         &__headline{
@@ -87,7 +88,12 @@ $darkBlue : #0e153a;
                 text-align: center;
                 width: 20vh;
             }
-        } 
+        }
+        & svg{
+            display: block;
+            margin: 0 0 0 auto;
+            width: 55vh;
+        }
     }
     .--start{
         text-align: start;
@@ -107,7 +113,6 @@ $darkBlue : #0e153a;
         }
     }  
     .--to-contact{
-
         &:hover{
             cursor: pointer;
             font-family: "Nunito-SemiBold";
