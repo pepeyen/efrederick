@@ -1,19 +1,22 @@
 import React from 'react';
 
 //Components
-import Wayfinder from './components/Wayfinder'
-import About from './views/About'
-import Competencies from './views/Competencies'
-import Projects from './views/Projects'
-import Contact from './views/Contact'
-import Footer from './components/Footer'
+import {
+  Footer,
+  Wayfinder
+} from './components';
 
-//Styles
-import './App.scss';
+//Views
+import {
+  About,
+  Competencies,
+  Contact,
+  Projects
+} from './views';
 
 function App(){ 
   return (
-    <div className="App">
+    <React.Fragment>
       <header>
         <Wayfinder />
       </header>
@@ -26,7 +29,7 @@ function App(){
       <footer>
         <Footer />
       </footer>
-    </div>
+    </React.Fragment>
   );
 }
 

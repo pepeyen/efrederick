@@ -1,0 +1,128 @@
+$white : #e2f3f5;
+$cyan : #22d1ee;
+$purple : #3d5af1;
+$darkBlue : #0e153a;
+
+.project{
+    width: 90%;
+    margin: 2rem 0 0 0;
+    border-radius: 0 0 .6rem .6rem;
+    
+    &__image{
+        display: block;
+        background-repeat: no-repeat;
+        background-size: 100%;
+        width: 100%;
+        min-height: 9.5rem;
+        margin: 1rem auto 0 auto;
+        border: none;
+    }
+    &__description{
+        padding-top: 1rem;
+        border: none;
+        border-top: none;
+        width: 100%;
+    }
+    &__title{
+        font-family: "Nunito-SemiBold";
+        text-align: center;
+        color: $purple;
+        font-size: 2rem;
+        margin: 0 0 1rem 0;
+    }
+    &__outside{
+        display: flex;
+    }
+    &__button{
+        display: inline-block;
+        width: 100%;
+        font-family: "Nunito-Light";
+        text-decoration: none;
+        text-align: center;
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: 3rem;
+        color: $darkBlue;
+        font-size: 1.2rem;
+        border-radius: .3rem;
+        padding: 1.5rem 1rem 1.5rem 1rem;
+
+        &-divider{
+            padding: 1.5rem 0 1.5rem 0;
+            border-right: .05rem solid $darkBlue;
+        }
+    }
+}
+.--spaced-flex{
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+}
+.--grid-3{
+    display: grid !important;
+    grid-template-columns: repeat(auto-fit,minmax(auto, 1fr));
+
+    & li{
+        margin: 0 auto 0 auto;
+    }
+}
+@media (min-width: 801px) {
+    .project{
+        padding: 0;
+        margin: 0;
+        border-radius: 0 0 1vh 1vh;
+
+        &__image{
+            background-size: 100%;
+            width: 100%;
+            height: 90%;
+            margin: 0;
+        }
+        &__description{
+            padding-top: 2vh;
+            border-top: none;
+        }
+        &__title{
+            font-size: 3vh;
+            margin: 0 0 2vh 0;
+        }
+        &__button{
+            color: $darkBlue;
+            font-size: 2vh;
+            padding: 2vh;
+            border-radius: 0;
+            background-size: 4vh;
+            background-image: none;
+
+            &-divider{
+                padding: 2vh 0 2vh 0;
+                border-right: .1vh solid $darkBlue;
+            }
+            &:hover{
+                cursor: pointer;
+                background-color: $darkBlue;
+                transition: background-color ease-in-out 100ms;
+            }
+            &:hover p{
+                visibility: hidden;
+            }
+        }
+    }
+    .--spaced-flex{
+        flex-direction: row;
+    }
+    .--source{
+        background-image: url('../../images/outside-github.svg');
+        border-radius: 0 0 .5vh 0;
+    }
+    .--demo{
+        background-image: url('../../images/outside-global.svg');
+        border-radius: 0 .0 0 .5vh;
+    }
+    .--grid-3{
+        grid-template-columns: repeat(3, 33%);
+        justify-content: space-between;
+        align-items: center;
+        gap: 4vh 0;
+    }
+}
