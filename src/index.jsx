@@ -12,10 +12,10 @@ import './assets/sass/main.scss';
 const myStore = createStore(allReducer);
 
 ReactDOM.render(
-  <Provider store={myStore}>
-    <App />
-  </Provider>,
-  document.getElementById('root')
+	<Provider store={myStore}>
+		<App />
+	</Provider>,
+	document.getElementById('root')
 );
 
 serviceWorker.unregister();

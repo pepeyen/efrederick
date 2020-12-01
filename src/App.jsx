@@ -2,35 +2,35 @@ import React from 'react';
 
 //Components
 import {
-  Footer,
-  Wayfinder
+	Footer,
+	Wayfinder
 } from './components';
 
 //Views
 import {
-  About,
-  Competencies,
-  Contact,
-  Projects
+	About,
+	Competencies,
+	Contact,
+	Projects
 } from './views';
 
-function App(){ 
-  return (
-    <React.Fragment>
-      <header>
-        <Wayfinder />
-      </header>
-      <main>
-        <About />
-        <Competencies />
-        <Projects />
-        <Contact />
-      </main>
-      <footer>
-        <Footer />
-      </footer>
-    </React.Fragment>
-  );
+const App = () => { 
+	return (
+		<React.Fragment>
+			<header>
+				<Wayfinder />
+			</header>
+			<main>
+				<About />
+				<Competencies />
+				<Projects />
+				<Contact />
+			</main>
+			<footer>
+				<Footer />
+			</footer>
+		</React.Fragment>
+	);
 }
 
 export default App;

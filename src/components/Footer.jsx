@@ -15,28 +15,28 @@ function Footer() {
                 </div>
                 <div className="footer__social">
                     <div className="footer__social-link --spaced-from-top">
-                    <a 
-                        className="footer__outside-link" 
-                        href={`https://www.linkedin.com/in/erick-frederick-c/?locale=${currentPageLanguage}`}
-                        target="_blank" rel="noopener noreferrer"
-                    >
-                        Linkedin
-                    </a>
+                        <a 
+                            className="footer__outside-link" 
+                            href={`https://www.linkedin.com/in/erick-frederick-c/?locale=${currentPageLanguage}`}
+                            target="_blank" rel="noopener noreferrer"
+                        >
+                            Linkedin
+                        </a>
                     </div>
                     <div className="footer__social-link --spaced-from-top">
-                    <a 
-                        className="footer__outside-link" 
-                        href="https://github.com/pepeyen" 
-                        target="_blank" rel="noopener noreferrer"
-                    >
-                        Github
-                    </a>
+                        <a 
+                            className="footer__outside-link" 
+                            href="https://github.com/pepeyen" 
+                            target="_blank" rel="noopener noreferrer"
+                        >
+                            Github
+                        </a>
                     </div>
                 </div>
                 <LangSelector />
             </div>
         </div>
     );
-}
+};
 
 export default Footer;

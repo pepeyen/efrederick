@@ -2,7 +2,7 @@ import React from 'react';
 import {useSelector} from 'react-redux';
 
 //Language library
-import {projects} from '../assets/language/lib';
+import {projects} from '../language/lib';
 
 //Services
 import {projectList} from '../services/mockUpData';
