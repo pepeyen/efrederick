@@ -1,11 +1,6 @@
-export const setToENUS = () => {
+export const setLanguage = (targetLanguage) => {
     return {
-        type: 'SET_EN-US'
-    };
-};
-
-export const setToPTBR  = () => {
-    return {
-        type: 'SET_PT-BR'
+        type: 'SET_LANGUAGE',
+        targetLanguage: targetLanguage
     };
 };
