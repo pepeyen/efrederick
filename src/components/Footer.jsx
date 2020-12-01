@@ -2,10 +2,7 @@ import React from 'react'
 import {useSelector} from 'react-redux';
 
 //Components
-import LangSelector from '../LangSelector';
-
-//Styles
-import './footer.scss';
+import LangSelector from './LangSelector';
 
 function Footer() {
     const currentPageLanguage = useSelector(state => state.pageLanguage);

@@ -1,10 +1,7 @@
 import React, {useState} from 'react';
 import {useDispatch} from 'react-redux';
 
-//Styles
-import './langSelector.scss';
-
-import {setToENUS, setToPTBR} from '../../actions';
+import {setLanguage} from '../actions';
 
 function LangSelector() {
   const dispatch = useDispatch();
@@ -14,20 +11,9 @@ function LangSelector() {
   const buttonHandler = (e) => {
     e.preventDefault();
 
-    switch (e.target.value) {
-      case "en_US":
-        dispatch(setToENUS());
-        setPageCurrentLang("en_US");
-        document.documentElement.setAttribute('lang', 'en');
-        break;
-      case "pt_BR":
-        dispatch(setToPTBR());
-        setPageCurrentLang("pt_BR"); 
-        document.documentElement.setAttribute('lang', 'pt');
-        break;
-      default:
-        break;
-      }
+    dispatch(setLanguage(e.target.value));
+    setPageCurrentLang(e.target.value);
+    document.documentElement.setAttribute('lang', e.target.value.split('_')[0]);
   }
 
   return(
