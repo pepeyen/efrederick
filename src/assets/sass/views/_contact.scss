@@ -51,8 +51,8 @@ $darkBlue : #0e153a;
             -ms-user-select: none;
             user-select: none;
                 
-            color: $white;
-            background-color: $darkBlue;
+            color: $darkBlue;
+            background-color: transparent;
             border-radius: .5vh;
             border: none;
             font-size: 1.2rem;
@@ -97,8 +97,6 @@ $darkBlue : #0e153a;
             }
             &-button{
                 font-family: "Nunito-Light";
-                color: $darkBlue;
-                background-color: transparent;
                 font-size: 2vh;
                 min-width: 20vh;
                 padding: 1vh;
