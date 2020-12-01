@@ -31,23 +31,22 @@ $darkBlue : #0e153a;
         -webkit-user-select:none;
         -moz-user-select:none;
         user-select:none;
+        display: none;
         color: $white;
         font-size: 1.5rem;
         border-bottom: .1rem solid transparent;
     }
     &__waysign{
+        display: block;
         color: $cyan;
         font-size: 2rem;
-    }
-    &__waydirect, &__waysign{
-        display: block;
     }
 }
 #wayfinder-competencies , #wayfinder-projects{
     margin: 2.5rem 0 2.5rem 0;
 }
-.--hidden{
-    display: none;
+.--visible{
+    display: block;
 }
 .--visited{
     color: $cyan;

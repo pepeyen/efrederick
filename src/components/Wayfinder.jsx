@@ -28,10 +28,10 @@ function Wayfinder() {
           if(element.id && element.id !== 'wayfinder-toggle'){
             const splittedClassname = element.className.split(' ');
 
-            if(splittedClassname.find(className => className === '--hidden')){
-              element.classList.remove('--hidden');
+            if(splittedClassname.find(className => className === '--visible')){
+              element.classList.remove('--visible');
             }else{
-              element.classList.add('--hidden');
+              element.classList.add('--visible');
             }
           }
         });
@@ -106,8 +106,6 @@ function Wayfinder() {
   };
 
   useEffect(() => {
-    updateWaydirectState({targetedState: "waydirect-visibility"});
-
     window.addEventListener("scroll", wayfinderBarProgress);
     
     return () => window.removeEventListener("scroll", wayfinderBarProgress);
