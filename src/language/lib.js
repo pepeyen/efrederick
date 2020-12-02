@@ -19,7 +19,9 @@ export const about = {
         "i'm a developer you can trust",
         "...who is available 24/7/365.",
         "View My Work",
-        "Contact Me"
+        "Contact Me",
+        "lines of code",
+        "projects"
       ],
     pt_BR: [
         "Sobre",
@@ -27,7 +29,9 @@ export const about = {
         "sou um desenvolvedor muito confiável",
         "...que sempre estará disponível.",
         "Veja Meu Trabalho",
-        "Entre em contato"
+        "Entre em contato",
+        "linhas de código",
+        "projetos"
     ]
 };
 export const competencies = {

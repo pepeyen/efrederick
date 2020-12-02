@@ -38,8 +38,12 @@ $darkBlue : #0e153a;
             width: 10rem;
         }
     }
-    & svg{
+    & ul{
         display: none;
+
+        & li{
+            display: none;
+        }
     }    
 }
 .--start{
@@ -89,10 +93,20 @@ $darkBlue : #0e153a;
                 width: 20vh;
             }
         }
-        & svg{
-            display: block;
+        & ul{
+            display: flex;
+            flex-direction: column;
+            gap: 4vh 0;
             margin: 0 0 0 auto;
             width: 55vh;
+        }
+    }
+    #status-list{
+        & span{
+            color: $darkBlue;
+        }
+        & li{
+            font-size: 5.25vh;
         }
     }
     .--start{
