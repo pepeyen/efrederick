@@ -93,19 +93,49 @@ $darkBlue : #0e153a;
                 width: 20vh;
             }
         }
-        & ul{
-            display: flex;
-            flex-direction: column;
-            gap: 4vh 0;
-            margin: 0 0 0 auto;
-            width: 55vh;
+    }
+    #status-wrapper{
+        align-self: center;
+        overflow: hidden;
+        position: relative;
+        margin: 0 18vh 8vh auto;
+        height: 7vh;
+
+        &:before{
+            top: 0;
+            left: 0;
+            z-index: 1;
+            width: 100%;
+            content: '';
+            height: 1vh;
+            position: absolute;
+            background: linear-gradient(180deg, #e2f3f5, rgba(255, 142, 113, 0));
+        }
+        &:after{
+            left: 0;
+            bottom: 0;
+            z-index: 1;
+            width: 100%;
+            content: '';
+            height: 1vh;
+            position: absolute;
+            background: linear-gradient(180deg, rgba(255, 142, 113, 0), #e2f3f5);
         }
     }
     #status-list{
+        display: flex;
+        flex-direction: column;
+        margin: 0;
+        padding: 0;
+
         & span{
             color: $darkBlue;
         }
         & li{
+            opacity: 1;
+            height: 3vh;
+            padding: 3vh;
+            list-style: none;
             font-size: 5.25vh;
         }
     }
@@ -133,6 +163,32 @@ $darkBlue : #0e153a;
             background-color: $darkBlue;
             color: $white;
             transition: background-color ease-in-out 100ms;
+        }
+    }
+    .--is-active{
+        -moz-animation: scrollUp 5s ease-in-out infinite reverse;
+        -webkit-animation: scrollUp 5s ease-in-out infinite reverse;
+        animation: scrollUp 5s ease-in-out infinite reverse;
+    }
+    @-webkit-keyframes scrollUp {
+        0%{
+            -webkit-transform: translateY(4vh);
+            transform: translateY(4vh);
+        }
+        100%{
+            -webkit-transform: translateY(-100%);
+            transform: translateY(-100%);
+        }
+      }
+      
+    @keyframes scrollUp {
+        0%{
+            -webkit-transform: translateY(4vh);
+            transform: translateY(4vh);
+        }
+        100%{
+            -webkit-transform: translateY(-100%);
+            transform: translateY(-100%);
         }
     }
 }

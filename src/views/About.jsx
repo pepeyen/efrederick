@@ -56,17 +56,10 @@ const About = () => {
 			setLinesOfCode({totalLinesOfCode, totalNumberOfRepos});
 
 			for(let i = 0;i < statusList.childNodes.length;i ++){
-				(() => {
-					const timer = setTimeout(() => {
-						if(statusList.childNodes[i].style.display !== 'block'){
-							statusList.childNodes[i].style.display = 'block';
-						}else{
-							statusList.childNodes[i].style.display = 'none';
-						}
-					}, 500 * (i + 1));
-					return () => clearTimeout(timer);
-				})();
+				statusList.childNodes[i].style.display = 'block';	
 			}
+
+			statusList.classList.add('--is-active');
 		})
 	},[]);
 
@@ -98,10 +91,12 @@ const About = () => {
 							</button>
 						</div>
 					</div>
-					<ul id="status-list">
-						<li className="title"><span>{linesOfCode.totalLinesOfCode}</span> {pageText[6]}</li>
-						<li className="title"><span>{linesOfCode.totalNumberOfRepos}</span> {pageText[7]}</li>
-					</ul>
+					<div id="status-wrapper">
+						<ul id="status-list">
+							<li className="title"><span>{linesOfCode.totalLinesOfCode}</span> {pageText[6]}</li>
+							<li className="title"><span>{linesOfCode.totalNumberOfRepos}</span> {pageText[7]}</li>
+						</ul>
+					</div>
 				</div>
 			</div>
 		</article>
