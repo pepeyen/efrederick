@@ -19,47 +19,67 @@ const About = () => {
 	const [linesOfCode, setLinesOfCode] = useState('');
 	const pageText = about[currentPageLanguage]; 
 
-	useEffect(() => {
-		const statusList = document.getElementById('status-list');
+	useEffect(() => {		
+		fetch(`http://${process.env.REACT_APP_BACK_END_HOST}/api/v1/keys`, {
+			headers: {
+				'Content-Type': 'application/json'
+			},
+			method: 'POST',
+			body: JSON.stringify({
+				keyId: 'ghub:1',
+				keyOrigin: 'github'
+			})
+		})
+		.then(response => {
+			return response.json();
+		})
+		.then(data => {
+			return data.key;
+		})
+		.then(key => {
+			if(key.api_key_value){
+				const statusList = document.getElementById('status-list');
 
-		const myHeaders = new Headers();
+				const myHeaders = new Headers();
 
-		myHeaders.append('authorization', `token ${process.env.REACT_APP_GITHUB_KEY}`);
+				myHeaders.append('authorization', `token ${key.api_key_value}`);
 
-		getRepoList('pepeyen', myHeaders)
-		.then(data => data
-			.map(currentRepo => getRepo('pepeyen', currentRepo.name, myHeaders)
-				.then(contributors => contributors
-					.map(contributor => contributor.weeks
-						.reduce((lineCount, week) => lineCount + week.a - week.d, 0)
+				getRepoList('pepeyen', myHeaders)
+				.then(data => data
+					.map(currentRepo => getRepo('pepeyen', currentRepo.name, myHeaders)
+						.then(contributors => contributors
+							.map(contributor => contributor.weeks
+								.reduce((lineCount, week) => lineCount + week.a - week.d, 0)
+							)
+						)
+						.then(lineCounts => lineCounts.reduce((lineTotal, lineCount) => lineTotal + lineCount))
+						.then(lines => lines)
 					)
 				)
-				.then(lineCounts => lineCounts.reduce((lineTotal, lineCount) => lineTotal + lineCount))
-				.then(lines => lines)
-			)
-		)
-		.then(result => Promise.all(result))
-		.then(linesOfCodeList => {
-			let totalLinesOfCode = 0, totalNumberOfRepos = 0;
+				.then(result => Promise.all(result))
+				.then(linesOfCodeList => {
+					let totalLinesOfCode = 0, totalNumberOfRepos = 0;
 
-			linesOfCodeList.map(currentRepoLinesOfCode => {
-				if(currentRepoLinesOfCode >= 300){
-					totalLinesOfCode = totalLinesOfCode + Math.round(currentRepoLinesOfCode * 0.01);
-				}else{
-					totalLinesOfCode = totalLinesOfCode + currentRepoLinesOfCode;
-				}
-				
-				return null;
-			})
-			totalNumberOfRepos = linesOfCodeList.length;
+					linesOfCodeList.map(currentRepoLinesOfCode => {
+						if(currentRepoLinesOfCode >= 300){
+							totalLinesOfCode = totalLinesOfCode + Math.round(currentRepoLinesOfCode * 0.01);
+						}else{
+							totalLinesOfCode = totalLinesOfCode + currentRepoLinesOfCode;
+						}
+						
+						return null;
+					})
+					totalNumberOfRepos = linesOfCodeList.length;
 
-			setLinesOfCode({totalLinesOfCode, totalNumberOfRepos});
+					setLinesOfCode({totalLinesOfCode, totalNumberOfRepos});
 
-			for(let i = 0;i < statusList.childNodes.length;i ++){
-				statusList.childNodes[i].style.display = 'block';	
+					for(let i = 0;i < statusList.childNodes.length;i ++){
+						statusList.childNodes[i].style.display = 'block';	
+					}
+
+					statusList.classList.add('--is-active');
+				})
 			}
-
-			statusList.classList.add('--is-active');
 		})
 	},[]);
 
