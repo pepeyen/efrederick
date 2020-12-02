@@ -20,7 +20,7 @@ const About = () => {
 	const pageText = about[currentPageLanguage]; 
 
 	useEffect(() => {		
-		fetch(`http://${process.env.REACT_APP_BACK_END_HOST}/api/v1/keys`, {
+		fetch(`${process.env.REACT_APP_BACK_END_HOST}/api/v1/keys`, {
 			headers: {
 				'Content-Type': 'application/json'
 			},
