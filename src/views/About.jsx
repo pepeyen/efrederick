@@ -1,17 +1,69 @@
-import React from 'react';
+import React, {
+	useState,
+	useEffect
+} from 'react';
 import {useSelector} from 'react-redux';
 
 //Innerpage Routing
-import {updateScreenPosition} from '../services'
+import {
+	updateScreenPosition,
+	getRepoList,
+	getRepo
+} from '../services'
 
 //Language library
 import {about} from '../language/lib';
 
 const About = () => {
 	const currentPageLanguage = useSelector(state => state.pageLanguage);
+	const [linesOfCode, setLinesOfCode] = useState('');
 	const pageText = about[currentPageLanguage]; 
 
-	return (
+	useEffect(() => {
+		const statusList = document.getElementById('status-list');
+
+		const myHeaders = new Headers();
+
+		myHeaders.append('authorization', `token ${process.env.REACT_APP_GITHUB_KEY}`);
+
+		getRepoList('pepeyen', myHeaders)
+		.then(data => data
+			.map(currentRepo => getRepo('pepeyen', currentRepo.name, myHeaders)
+				.then(contributors => contributors
+					.map(contributor => contributor.weeks
+						.reduce((lineCount, week) => lineCount + week.a - week.d, 0)
+					)
+				)
+				.then(lineCounts => lineCounts.reduce((lineTotal, lineCount) => lineTotal + lineCount))
+				.then(lines => lines)
+			)
+		)
+		.then(result => Promise.all(result))
+		.then(linesOfCodeList => {
+			let totalLinesOfCode = 0, totalNumberOfRepos = 0;
+
+			linesOfCodeList.map(currentRepoLinesOfCode => {
+				if(currentRepoLinesOfCode >= 300){
+					totalLinesOfCode = totalLinesOfCode + Math.round(currentRepoLinesOfCode * 0.01);
+				}else{
+					totalLinesOfCode = totalLinesOfCode + currentRepoLinesOfCode;
+				}
+				
+				return null;
+			})
+			totalNumberOfRepos = linesOfCodeList.length;
+
+			setLinesOfCode({totalLinesOfCode, totalNumberOfRepos});
+
+			for(let i = 0;i < statusList.childNodes.length;i ++){
+				statusList.childNodes[i].style.display = 'block';	
+			}
+
+			statusList.classList.add('--is-active');
+		})
+	},[]);
+
+	return(
 		<article id="about">
 			<div className="title">{pageText[0]}</div>
 			<div className="container">
@@ -39,21 +91,16 @@ const About = () => {
 							</button>
 						</div>
 					</div>
-					<svg
-						viewBox="0 0 512 512"
-						fill="none"
-						xmlns="http://www.w3.org/2000/svg"
-					>
-						<path
-							opacity="0.25"
-							d="M426.777 323.229C399.548 296 367.138 275.843 331.776 263.641C369.649 237.556 394.531 193.901 394.531 144.538C394.531 64.8432 329.694 0.00630188 250 0.00630188C170.306 0.00630188 105.469 64.8432 105.469 144.538C105.469 193.901 130.351 237.556 168.225 263.641C132.863 275.843 100.453 296 73.2236 323.229C26.0048 370.449 -3.8147e-05 433.229 -3.8147e-05 500.006H39.0625C39.0625 383.695 133.688 289.069 250 289.069C366.311 289.069 460.937 383.695 460.937 500.006H500C500 433.229 473.995 370.449 426.777 323.229ZM250 250.006C191.845 250.006 144.531 202.694 144.531 144.538C144.531 86.3813 191.845 39.0688 250 39.0688C308.155 39.0688 355.469 86.3813 355.469 144.538C355.469 202.694 308.155 250.006 250 250.006Z"
-							fill="#22D1EE"
-						/>
-					</svg>
+					<div id="status-wrapper">
+						<ul id="status-list">
+							<li className="title"><span>{linesOfCode.totalLinesOfCode}</span> {pageText[6]}</li>
+							<li className="title"><span>{linesOfCode.totalNumberOfRepos}</span> {pageText[7]}</li>
+						</ul>
+					</div>
 				</div>
 			</div>
 		</article>
-	);
+	);	
 }
 
 export default About;
