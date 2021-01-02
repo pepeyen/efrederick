@@ -93,50 +93,27 @@ $darkBlue : #0e153a;
                 width: 20vh;
             }
         }
-    }
-    #status-wrapper{
-        align-self: center;
-        overflow: hidden;
-        position: relative;
-        margin: 0 18vh 8vh auto;
-        height: 7vh;
+        &__repo-info{
+            margin: 0 18vh 8vh auto;
 
-        &:before{
-            top: 0;
-            left: 0;
-            z-index: 1;
-            width: 100%;
-            content: '';
-            height: 1vh;
-            position: absolute;
-            background: linear-gradient(180deg, #e2f3f5, rgba(255, 142, 113, 0));
-        }
-        &:after{
-            left: 0;
-            bottom: 0;
-            z-index: 1;
-            width: 100%;
-            content: '';
-            height: 1vh;
-            position: absolute;
-            background: linear-gradient(180deg, rgba(255, 142, 113, 0), #e2f3f5);
-        }
-    }
-    #status-list{
-        display: flex;
-        flex-direction: column;
-        margin: 0;
-        padding: 0;
-
-        & span{
-            color: $darkBlue;
-        }
-        & li{
-            opacity: 1;
-            height: 3vh;
-            padding: 3vh;
-            list-style: none;
-            font-size: 5.25vh;
+            & ul{
+                display: flex;
+                flex-direction: column; 
+        
+                & li{
+                    align-self: center;
+                    display: block;
+                    opacity: 1;
+                    height: 3vh;
+                    padding: 3vh;
+                    list-style: none;
+                    font-size: 5.25vh;
+    
+                    & span{
+                        color: $darkBlue;
+                    }
+                }
+            }
         }
     }
     .--start{
@@ -165,30 +142,71 @@ $darkBlue : #0e153a;
             transition: background-color ease-in-out 100ms;
         }
     }
-    .--is-active{
-        -moz-animation: scrollUp 5s ease-in-out infinite reverse;
-        -webkit-animation: scrollUp 5s ease-in-out infinite reverse;
-        animation: scrollUp 5s ease-in-out infinite reverse;
+    .--loading-info{
+        & li{
+            & span{
+                -webkit-animation: rgbc 2s infinite;
+                -moz-animation: rgbc 2s infinite;
+                -o-animation: rgbc 2s infinite;
+                animation: rgbc 2s infinite;
+                transition: color .1s ease-in-out;
+            }
+        }
     }
-    @-webkit-keyframes scrollUp {
-        0%{
-            -webkit-transform: translateY(4vh);
-            transform: translateY(4vh);
+
+    @-webkit-keyframes rgbc {
+        0% {
+            color: $darkBlue;
         }
-        100%{
-            -webkit-transform: translateY(-100%);
-            transform: translateY(-100%);
+        50% {
+            color: $purple;
         }
-      }
-      
-    @keyframes scrollUp {
-        0%{
-            -webkit-transform: translateY(4vh);
-            transform: translateY(4vh);
+        100% {
+            color: $darkBlue;
         }
-        100%{
-            -webkit-transform: translateY(-100%);
-            transform: translateY(-100%);
+    }
+    @-moz-keyframes rgbc {
+        0% {
+            color: $darkBlue;
+        }
+        50% {
+            color: $purple;
+        }
+        100% {
+            color: $darkBlue;
+        }
+    }
+    @-ms-keyframes rgbc {
+        0% {
+            color: $darkBlue;
+        }
+        50% {
+            color: $purple;
+        }
+        100% {
+            color: $darkBlue;
+        }
+    }
+    @-o-keyframes rgbc {
+        0% {
+            color: $darkBlue;
+        }
+        50% {
+            color: $purple;
+        }
+        100% {
+            color: $darkBlue;
+        }
+    }
+    @keyframes rgbc {
+        0% {
+            color: $darkBlue;
+        }
+        50% {
+            color: $purple;
+        }
+        100% {
+            color: $darkBlue;
         }
     }
 }
