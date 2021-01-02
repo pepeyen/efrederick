@@ -20,6 +20,7 @@ export const about = {
         "...who is available 24/7/365.",
         "View My Work",
         "Contact Me",
+        "Loading",
         "lines of code",
         "projects"
       ],
@@ -30,6 +31,7 @@ export const about = {
         "...que sempre estará disponível.",
         "Veja Meu Trabalho",
         "Entre em contato",
+        "Carregando",
         "linhas de código",
         "projetos"
     ]
