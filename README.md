@@ -1,4 +1,4 @@
-[![efrderick](https://repository-images.githubusercontent.com/280514081/218fb700-cf63-11ea-9aaf-b75efd0e17d2)](https://efrederick.dev)
+[![efrderick](https://raw.githubusercontent.com/pepeyen/efrederick/master/.github/images/project-thumbnail.png)](https://efrederick.dev)
 
 # efrederick
 
