@@ -35,7 +35,7 @@ export const getRepoList = (userName, requestHeaders) => {
 			reject(error);
 		})
 	})
-}
+};
 
 export const getRepo = (userName, repoName, requestHeaders) => {
 	return new Promise((resolve, reject) => {
@@ -49,4 +49,25 @@ export const getRepo = (userName, repoName, requestHeaders) => {
 			reject(error);
 		})
 	})
-}
+};
+
+export const animateValue = (targetValueId, start, end, duration) => {
+	if (start === end) return;
+	
+	const range = end - start;
+	const increment = end > start? 1 : -1;
+    const stepTime = Math.abs(Math.floor(duration / range));
+	const targetValue = document.getElementById(targetValueId);
+	let current = start;
+
+    var timer = setInterval(() => {
+		current += increment;
+
+		targetValue.textContent = current;		
+		
+        if(current === end){
+            clearInterval(timer);
+		}
+		
+	}, stepTime);
+};

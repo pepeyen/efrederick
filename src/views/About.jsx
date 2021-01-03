@@ -1,6 +1,6 @@
 import React, {
-	useState,
-	useEffect
+	useEffect,
+	useState
 } from 'react';
 import {useSelector} from 'react-redux';
 
@@ -8,7 +8,8 @@ import {useSelector} from 'react-redux';
 import {
 	updateScreenPosition,
 	getRepoList,
-	getRepo
+	getRepo,
+	animateValue
 } from '../services'
 
 //Language library
@@ -16,10 +17,13 @@ import {about} from '../language/lib';
 
 const About = () => {
 	const currentPageLanguage = useSelector(state => state.pageLanguage);
-	const [linesOfCode, setLinesOfCode] = useState('');
-	const pageText = about[currentPageLanguage]; 
+	const pageText = about[currentPageLanguage];
+	const [isLoading, setIsLoading] = useState(false);
+	const [linesOfCode, setLinesOfCode] = useState(-1);
 
-	useEffect(() => {		
+	useEffect(() => {
+		setIsLoading(true);
+
 		fetch(`${process.env.REACT_APP_BACK_END_HOST}/api/v1/keys`, {
 			headers: {
 				'Content-Type': 'application/json'
@@ -38,8 +42,6 @@ const About = () => {
 		})
 		.then(key => {
 			if(key.api_key_value){
-				const statusList = document.getElementById('status-list');
-
 				const myHeaders = new Headers();
 
 				myHeaders.append('authorization', `token ${key.api_key_value}`);
@@ -71,13 +73,11 @@ const About = () => {
 					})
 					totalNumberOfRepos = linesOfCodeList.length;
 
+					setIsLoading(false);
 					setLinesOfCode({totalLinesOfCode, totalNumberOfRepos});
 
-					for(let i = 0;i < statusList.childNodes.length;i ++){
-						statusList.childNodes[i].style.display = 'block';	
-					}
-
-					statusList.classList.add('--is-active');
+					animateValue("lines-of-code", Math.round(totalLinesOfCode * 0.9), totalLinesOfCode, 340);
+					animateValue("total-repos", Math.round(totalNumberOfRepos * 0.2), totalNumberOfRepos, 340);
 				})
 			}
 		})
@@ -111,10 +111,18 @@ const About = () => {
 							</button>
 						</div>
 					</div>
-					<div id="status-wrapper">
-						<ul id="status-list">
-							<li className="title"><span>{linesOfCode.totalLinesOfCode}</span> {pageText[6]}</li>
-							<li className="title"><span>{linesOfCode.totalNumberOfRepos}</span> {pageText[7]}</li>
+					<div className="about__repo-info">
+						<ul className={isLoading ? '--loading-info' : null}>
+							<li className="title">
+								<span id="lines-of-code">
+									{isLoading ? pageText[6] : linesOfCode.totalLinesOfCode}
+								</span> {pageText[7]}
+							</li>
+							<li className="title">
+								<span id="total-repos">
+									{isLoading ? pageText[6] : linesOfCode.totalNumberOfRepos}
+								</span> {pageText[8]}
+							</li>
 						</ul>
 					</div>
 				</div>
