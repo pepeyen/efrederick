@@ -108,7 +108,7 @@ const About = () => {
 					setIsLoading(false);
 					setLinesOfCode({totalLinesOfCode, totalNumberOfRepos});
 
-					animateValue("lines-of-code", Math.round(totalLinesOfCode * 0.9), totalLinesOfCode, 340);
+					animateValue("lines-of-code", Math.round(totalLinesOfCode * 0.99), totalLinesOfCode, 340);
 					animateValue("total-repos", Math.round(totalNumberOfRepos * 0.2), totalNumberOfRepos, 340);
 				})
 			}
