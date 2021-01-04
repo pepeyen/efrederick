@@ -23,32 +23,18 @@ export const updateScreenPosition = (targetedWaydirect) => {
 	});
 };
 
-export const getRepoList = (userName, requestHeaders) => {
-	return new Promise((resolve, reject) => {
-		fetch(`https://api.github.com/users/${userName}/repos`, {
-			headers: requestHeaders
-		})
-		.then(response => {
-			resolve(response.json());
-		})
-		.catch(error => {
-			reject(error);
-		})
-	})
-};
+export const fetchFromBackEnd = (fetchingEndPoint,fetchingParam,fetchingOptions,fetchingBranch) => {
+    fetchingBranch = fetchingBranch ?? 'v1';
 
-export const getRepo = (userName, repoName, requestHeaders) => {
-	return new Promise((resolve, reject) => {
-		fetch(`https://api.github.com/repos/${userName}/${repoName}/stats/contributors`, {
-			headers: requestHeaders
-		})
-		.then(response => {
-			resolve(response.json());
-		})
-		.catch(error => {
-			reject(error);
-		})
-	})
+    return new Promise((resolve, reject) => {
+        fetch(`${process.env.REACT_APP_BACK_END_HOST}/api/${fetchingBranch}/${fetchingEndPoint}${fetchingParam === '' || fetchingParam ? `?${fetchingParam}` : ''}`, fetchingOptions)
+        .then(response => {
+            resolve(response.json());
+        })
+        .catch(error => {
+            reject(error);
+        })
+    });
 };
 
 export const animateValue = (targetValueId, start, end, duration) => {
