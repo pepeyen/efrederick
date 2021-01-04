@@ -2,7 +2,10 @@ import React, {
 	useEffect,
 	useState
 } from 'react';
-import {useSelector} from 'react-redux';
+import {
+	useSelector,
+	useDispatch
+} from 'react-redux';
 
 //Innerpage Routing
 import {
@@ -15,11 +18,15 @@ import {
 //Language library
 import {about} from '../language/lib';
 
+//Actions
+import {setProjectList} from '../actions';
+
 const About = () => {
 	const currentPageLanguage = useSelector(state => state.pageLanguage);
 	const pageText = about[currentPageLanguage];
 	const [isLoading, setIsLoading] = useState(false);
 	const [linesOfCode, setLinesOfCode] = useState(-1);
+	const dispatch = useDispatch();
 
 	useEffect(() => {
 		setIsLoading(true);
@@ -47,18 +54,43 @@ const About = () => {
 				myHeaders.append('authorization', `token ${key.api_key_value}`);
 
 				getRepoList('pepeyen', myHeaders)
-				.then(data => data
-					.map(currentRepo => getRepo('pepeyen', currentRepo.name, myHeaders)
-						.then(contributors => contributors
-							.map(contributor => contributor.weeks
-								.reduce((lineCount, week) => lineCount + week.a - week.d, 0)
-							)
+				.then(data => {
+					let projectList = [];
+
+					data.forEach(repository => {
+						if(repository.homepage && repository.name !== 'efrederick'){
+							projectList.push({
+								repositoryName: repository.name,
+								reporitoryThumbnailURL: `https://raw.githubusercontent.com/${repository.owner.login}/${repository.name}/master/.github/images/project-thumbnail.png`,
+								repositoryURL: repository.html_url,
+								repositoryDemoURL: repository.homepage
+							});
+						}
+					});
+
+					dispatch(setProjectList(projectList));
+
+					return data;
+				})
+				.then(data => {
+					return data.map(currentRepo => getRepo('pepeyen', currentRepo.name, myHeaders)
+					.then(contributors => contributors
+						.map(contributor => contributor.weeks
+							.reduce((lineCount, week) => lineCount + week.a - week.d, 0)
 						)
-						.then(lineCounts => lineCounts.reduce((lineTotal, lineCount) => lineTotal + lineCount))
-						.then(lines => lines)
 					)
-				)
-				.then(result => Promise.all(result))
+					.then(lineCounts => {
+						return lineCounts.reduce((lineTotal, lineCount) => {
+							return lineTotal + lineCount;
+						});
+					})
+					.then(lines => {
+						return lines;
+					}))
+				})
+				.then(result => {
+					return Promise.all(result);
+				})
 				.then(linesOfCodeList => {
 					let totalLinesOfCode = 0, totalNumberOfRepos = 0;
 
@@ -81,7 +113,7 @@ const About = () => {
 				})
 			}
 		})
-	},[]);
+	},[dispatch]);
 
 	return(
 		<article id="about">
