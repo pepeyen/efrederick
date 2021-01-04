@@ -4,3 +4,10 @@ export const setLanguage = (targetLanguage) => {
         targetLanguage: targetLanguage
     };
 };
+
+export const setProjectList = (targetProjectList) => {
+    return {
+        type: 'SET_PROJECT_LIST',
+        targetProjectList: targetProjectList
+    };
+};
